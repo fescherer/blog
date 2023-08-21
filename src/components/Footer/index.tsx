@@ -1,7 +1,10 @@
 'use client'
 
-import * as Separator from '@radix-ui/react-separator'
+import { LinkedinLogo } from 'phosphor-react'
+import Link from 'next/link'
+import { Separator } from '../Lib'
 import { LogoIcon } from '@/Icons'
+import { footerLinkedinLink } from '@/utils/config'
 
 export function Footer() {
   const initialDate = new Date('2023-08-20')
@@ -18,7 +21,9 @@ export function Footer() {
         <p className='max-w-prose text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non risus molestie, tristique purus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non risus molestie, tristique purus </p>
 
       <div>
-        <span>Linkedin</span>
+        <Link href={footerLinkedinLink}>
+        <LinkedinLogo />
+        </Link>
         <span>Figma</span>
         <span>Youtube</span>
         <span>Github</span>
@@ -36,11 +41,11 @@ export function Footer() {
 
       </div>
 
-      <Separator.Root className="bg-text data-[orientation=horizontal]:h-px data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-px my-[15px]" />
+      <Separator />
 
       <div className='flex flex-col max-w-screen-2xl m-auto items-center'>
-        <span>Copyright C {`${initialDate.getFullYear().toString()} - ${today.getFullYear().toString()}`}</span>
-        <span>ofelipescherer | Felipe Scherer</span>
+        <small>Copyright C {`${initialDate.getFullYear().toString()} - ${today.getFullYear().toString()}`}</small>
+        <small>fescherer | Felipe Scherer</small>
       </div>
 
     </footer>
