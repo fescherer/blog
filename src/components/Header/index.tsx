@@ -7,7 +7,7 @@ export function Header() {
   return (
     <header className="flex justify-between max-w-screen-2xl m-auto w-full">
 
-      <LogoIcon color="var(--primary)"/>
+      <LogoIcon color="var(--primary)" />
 
       <nav>
         <ul className="flex gap-3 items-center">
