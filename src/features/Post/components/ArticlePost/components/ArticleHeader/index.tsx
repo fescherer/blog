@@ -7,8 +7,9 @@ export function ArticleHeader() {
     <div className='flex justify-between items-center'>
       <div>
         <h1 className='text-h1 font-gambarino'>Article Name</h1>
-        <div>
+        <div className='text-sm'>
           <small>21, January 2023</small>
+          <small>{' 🞄 '}</small>
           <small>14 minutes</small>
         </div>
       </div>

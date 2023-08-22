@@ -23,3 +23,25 @@
       --text-on-primary: #FFFFFF;
     }
 }
+
+@layer base{
+  h1{
+    @apply text-h1 font-gambarino
+  }
+
+  h2{
+    @apply text-h2 font-gambarino
+  }
+
+  h3{
+    @apply text-h3 font-gambarino
+  }
+
+  p {
+    @apply text-base
+  }
+
+  body{
+    @apply font-switzer
+  }
+}
