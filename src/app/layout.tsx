@@ -16,7 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='flex min-h-screen p-4'>
-      <body className="flex flex-col gap-8 w-full bg-background text-text">
+
+      <head>
+        <link href="https://api.fontshare.com/v2/css?f[]=switzer@300&f[]=gambarino@400&display=swap" rel="stylesheet" />
+      </head>
+
+      <body className="flex flex-col gap-8 w-full bg-background text-text font-switzer">
         <Header />
         <main className="w-full flex-1 flex max-w-screen-2xl m-auto ">
           {children}

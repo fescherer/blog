@@ -6,7 +6,7 @@ export function ArticleHeader() {
   return (
     <div className='flex justify-between items-center'>
       <div>
-        <h2>Article Name</h2>
+        <h1 className='text-h1 font-gambarino'>Article Name</h1>
         <div>
           <small>21, January 2023</small>
           <small>14 minutes</small>
