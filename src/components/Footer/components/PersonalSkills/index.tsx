@@ -1,9 +1,9 @@
 'use client'
 
-import Link from 'next/link'
-import { LinkedinLogo } from 'phosphor-react'
+import { FigmaLogo, GithubLogo, LinkedinLogo, TiktokLogo, TwitterLogo, YoutubeLogo } from 'phosphor-react'
+import { Link } from '@/components/Lib/Link'
 import { LogoIcon } from '@/Icons'
-import { footerLinkedinLink } from '@/utils/config'
+import { footerFigmaLink, footerGithubLink, footerLinkedinLink, footerTiktokLink, footerTwitter, footerYoutubeLink } from '@/utils/config'
 
 export function PersonalSkills() {
   return (
@@ -13,17 +13,26 @@ export function PersonalSkills() {
 
       <p className='max-w-prose text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non risus molestie, tristique purus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non risus molestie, tristique purus </p>
 
-      <div>
+      <div className='flex gap-2'>
         <Link href={footerLinkedinLink}>
-          <LinkedinLogo />
+          <LinkedinLogo size={20} />
         </Link>
-        <span>Figma</span>
-        <span>Youtube</span>
-        <span>Github</span>
-        <span>Twitter</span>
-        <span>Tiktok</span>
+        <Link href={footerFigmaLink}>
+          <FigmaLogo size={20} />
+        </Link>
+        <Link href={footerYoutubeLink}>
+          <YoutubeLogo size={20} />
+        </Link>
+        <Link href={footerGithubLink}>
+          <GithubLogo size={20} />
+        </Link>
+        <Link href={footerTwitter}>
+          <TwitterLogo size={20} />
+        </Link>
+        <Link href={footerTiktokLink}>
+          <TiktokLogo size={20} />
+        </Link>
       </div>
-
     </div>
   )
 }

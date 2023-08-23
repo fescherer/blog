@@ -10,6 +10,7 @@
   --foreground: #282929;
   --background: #131313;
   --text-on-primary: #FFFFFF;
+  --text-hover: #888888;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,5 +22,28 @@
       --foreground: #282929;
       --background: #131313;
       --text-on-primary: #FFFFFF;
+      --text-hover: #888888;
     }
+}
+
+@layer base{
+  h1{
+    @apply text-h1 font-gambarino
+  }
+
+  h2{
+    @apply text-h2 font-gambarino
+  }
+
+  h3{
+    @apply text-h3 font-gambarino
+  }
+
+  p {
+    @apply text-base
+  }
+
+  body{
+    @apply font-switzer
+  }
 }
