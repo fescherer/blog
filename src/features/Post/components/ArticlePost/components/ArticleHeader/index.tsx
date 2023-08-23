@@ -1,6 +1,7 @@
 'use client'
 
 import { FigmaLogo, GithubLogo, Laptop } from 'phosphor-react'
+import { Link } from '@/components/Lib/Link'
 
 export function ArticleHeader() {
   return (
@@ -15,9 +16,15 @@ export function ArticleHeader() {
       </div>
 
       <div className='flex gap-2'>
-        <Laptop size={32} />
-        <FigmaLogo size={32} />
-        <GithubLogo size={32} />
+        <Link href={''}>
+          <Laptop size={24} />
+        </Link>
+        <Link href={''}>
+          <FigmaLogo size={24} />
+        </Link>
+        <Link href={''}>
+          <GithubLogo size={24} />
+        </Link>
       </div>
     </div>
   )

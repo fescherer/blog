@@ -14,6 +14,7 @@ const config: Config = {
       'foreground': 'var(--foreground)',
       'background': 'var(--background)',
       'text-on-primary': 'var(--text-on-primary)',
+      'text-hover': 'var(--text-hover)',
     },
     fontSize: {
       xxs: ['10px', {}],

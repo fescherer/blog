@@ -10,6 +10,7 @@
   --foreground: #282929;
   --background: #131313;
   --text-on-primary: #FFFFFF;
+  --text-hover: #888888;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,6 +22,7 @@
       --foreground: #282929;
       --background: #131313;
       --text-on-primary: #FFFFFF;
+      --text-hover: #888888;
     }
 }
 
