@@ -1,4 +1,4 @@
-export function LogoIcon({ color }: { color?: string }) {
+export function LogoIcon({ color = 'currentColor' }: { color?: string }) {
   return (
     <svg
         xmlns="http://www.w3.org/2000/svg"
