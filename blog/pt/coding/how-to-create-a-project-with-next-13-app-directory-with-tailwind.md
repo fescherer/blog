@@ -1,29 +1,29 @@
 ---
-slug: 'how-to-create-a-project-with-next-13-app-directory-with-tailwind'
-title: 'How to create a project with NextJS 13 using app directory and Tailwind'
-description: 'This is a recipe to create a good and maintainable Next app'
-image: '/static/images/posts/how-to-create-a-project-with-next-13-app-directory-with-tailwind.png'
-video_url: ''
-project_url: ''
-figma_url: ''
-tags: ['next-js', 'react-js', 'tailwind', 'frontend']
-tagged:
-  [
-    'react-js',
-    'next-js',
-    'DOM',
-    'typescript',
-    'eslint',
-    'prettier',
-    'lint-staged',
-    'husky',
-    'tailwind'
-  ]
-related:
-  [
-    'how to create npm packaged- eslint package',
-    'How to create more than two themes in Tailwind, tailwind themes strategy'
-  ]
+title: How to create a project with NextJS 13 using app directory and Tailwind
+description: This is a recipe to create a good and maintainable Next app
+published_date: dsadas
+image: /static/images/posts/how-to-create-a-project-with-next-13-app-directory-with-tailwind.png
+video_url:
+project_url:
+figma_url:
+tags:
+  - next-js
+  - react-js
+  - tailwind
+  - frontend
+related_tags:
+  - react-js,
+  - next-js,
+  - DOM,
+  - typescript,
+  - eslint,
+  - prettier,
+  - lint-staged,
+  - husky,
+  - tailwind
+related_articles:
+  - how to create npm packaged- eslint package
+  - How to create more than two themes in Tailwind, tailwind themes strategy
 ---
 
 [NextJS](https://nextjs.org) is a powerful framework used in a lot of sites. It can be really useful specially if you need a [SSR version](https://nextjs.org/docs/app/building-your-application/rendering) of your's [SPA react pages](https://stackoverflow.com/questions/62529631/why-is-react-js-called-as-single-page-application).
@@ -103,7 +103,7 @@ Here you can use as JSON or a Javascript module file. Personally I like to use a
 
 Continuing, I recommend you to look at [Rocketseat's Eslint](https://github.com/Rocketseat/eslint-config-rocketseat), because they have a lot of good configurations and I use it as reference to make my own configurations. You can take a look at them here:
 
-```json
+```JSON
 {
   "plugins": ["react", "jsx-a11y", "@typescript-eslint"],
   "extends": [
@@ -170,13 +170,13 @@ npm install eslint eslint-plugin-react-hooks eslint-config-prettier prettier @ty
 
 Lastly we can configure to every `ctrl` + `s` pressed, run eslint with prettier, this is very helpful and easy to do just makes VS code `source.fixAll.eslint` as true. Create a `.vscode` folder in root directory and a file `settings.json` inside with the configuration:
 
-```json
+```JSON
 {
-  ...
+  // ...
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  ...
+  // ...
 }
 ```
 
@@ -228,12 +228,13 @@ And for last we create a configuration file that can look something like this:
 ```js
 // .lintstagedrc.js
 
-const path = require('path')
+const path = require('node:path')
 
-const buildEslintCommand = (filenames) =>
-  `next lint --fix --file ${filenames
-    .map((f) => path.relative(process.cwd(), f))
+function buildEslintCommand(filenames) {
+  return `next lint --fix --file ${filenames
+    .map(f => path.relative(process.cwd(), f))
     .join(' --file ')}`
+}
 
 module.exports = {
   '*.{js,jsx,ts,tsx}': [buildEslintCommand]
@@ -248,7 +249,7 @@ I want to bring this as an extra configuration to do in your projects because, s
 
 To do that, create a file called `settings.json` inside a folder `.vscode` at the root of your workspace. In this json you can have all VSCode configurations. I will show mine and explain why have this is good for me:
 
-```json
+```JSON
 {
   // It is a way for me to always use the Typescript version of my workspace instead the global VSCode version, this prevent some version errors.
   "typescript.tsdk": "node_modules\\typescript\\lib",
@@ -299,7 +300,7 @@ To do that, create a file called `settings.json` inside a folder `.vscode` at th
 
 For last, if you are using VSCode there are plenty of extensions you can use to decrease your work time. I am gonna make an article about my favorites extensions, but for now, what you need to install is the [Eslint VSCode extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and also [TailwindCSS](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) and to make everyone that use your workspace install the extension make a file `extensions.json` inside `.vscode` and type:
 
-```json
+```JSON
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",

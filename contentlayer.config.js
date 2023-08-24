@@ -19,8 +19,8 @@ const computedFields = {
 
 export const Doc = defineDocumentType(() => ({
   name: 'Doc',
-  filePathPattern: 'blog/**/*.mdx',
-  contentType: 'mdx',
+  filePathPattern: '**/*.md',
+  contentType: 'md',
   fields: {
     title: {
       type: 'string',
@@ -28,17 +28,47 @@ export const Doc = defineDocumentType(() => ({
     },
     description: {
       type: 'string',
+      required: true,
     },
-    published: {
-      type: 'boolean',
+    published_date: {
+      type: 'string',
       default: true,
     },
+    image: {
+      type: 'string',
+      required: true,
+    },
+    video_url: {
+      type: 'string',
+    },
+    project_url: {
+      type: 'string',
+    },
+    figma_url: {
+      type: 'string',
+    },
+    tags: {
+      type: 'list',
+      of: { type: 'string' },
+      required: true,
+    },
+    related_articles: {
+      type: 'list',
+      of: { type: 'string' },
+      required: true,
+    },
+    related_tags: {
+      type: 'list',
+      of: { type: 'string' },
+      required: true,
+    },
+
   },
   computedFields,
 }))
 
 export default makeSource({
-  contentDirPath: 'src/content',
+  contentDirPath: 'blog',
   documentTypes: [Doc],
   mdx: {
     remarkPlugins: [remarkGfm],

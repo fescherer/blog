@@ -1,28 +1,26 @@
 ---
-slug: 'publish-your-first-npm-package-eslint'
-title: 'Publish your first NPM Package | Eslint'
-description: 'Eslint is a super common dependency, so let's create a package to use everywhere'
-image: '/static/images/posts/publish-your-first-npm-package-eslint.png'
-video_url: ''
-project_url: ''
-figma_url: ''
-tags: ['code', 'npm']
-tagged:
-  [
-    'npm',
-    'eslint'
-  ]
-related:
-  [
-    'how-to-create-a-project-with-next-13-app-directory-with-tailwind'
-  ]
+title: Publish your first NPM Package | Eslint
+description: Eslint is a super common dependency, so lets create a package to use everywhere
+published_date: dsadas
+image: /static/images/posts/publish-your-first-npm-package-eslint.png
+video_url: sda
+project_url: dsad
+figma_url: dsad
+tags:
+  - code
+  - npm
+related_tags:
+  - npm
+  - eslint
+related_articles:
+  - how-to-create-a-project-with-next-13-app-directory-with-tailwind
 ---
 
 ## What is NPM
 
 ## What is Eslint
 
-eslint is very common so that's why we gonna make a package of it
+eslint is very common so thats why we gonna make a package of it
 
 ## Create NPM account
 

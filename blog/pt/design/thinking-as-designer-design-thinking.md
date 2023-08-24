@@ -1,18 +1,18 @@
 ---
-slug: 'think-as-designer-design-thinking'
-title: 'Think as designer | Design Thinking'
-description: 'Creative process and how to elaborate an interface based on UX and UI'
-image: '/static/images/posts/think-as-designer-design-thinking.png'
-video_url: ''
-project_url: ''
-figma_url: ''
-tags: ['design','frontend']
-tagged:
-  [
-  ]
-related:
-  [
-  ]
+title: Think as designer | Design Thinking
+description: Creative process and how to elaborate an interface based on UX and UI
+published_date: dsadas
+image: /static/images/posts/think-as-designer-design-thinking.png
+video_url: das
+project_url: das
+figma_url: das
+tags:
+  - design
+  - frontend
+related_tags:
+  - dsada
+related_articles:
+  - dsada
 ---
 
 
