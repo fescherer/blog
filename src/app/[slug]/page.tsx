@@ -9,8 +9,7 @@ interface PageProps {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/require-await
-async function getDocFromParams(slug: string) {
+function getDocFromParams(slug: string) {
   const doc = allDocs.find(doc => doc.slugAsParams === slug)
 
   if (!doc)
@@ -19,8 +18,8 @@ async function getDocFromParams(slug: string) {
   return doc
 }
 
-export default async function PostPage({ params: { slug } }: PageProps) {
-  const doc = await getDocFromParams(slug)
+export default function PostPage({ params: { slug } }: PageProps) {
+  const doc = getDocFromParams(slug)
 
   return (
     <div className='flex flex-col'>
