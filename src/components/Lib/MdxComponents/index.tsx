@@ -1,9 +1,21 @@
 import * as React from 'react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import { Button } from './components'
+
+interface ComponentChildren {
+  children: React.ReactNode
+}
 
 const components = {
-  p: Button,
+  h1: ({ children }: ComponentChildren) => (
+    <h1>
+      {children}
+    </h1>
+  ),
+  h2: ({ children }: ComponentChildren) => (
+    <h2 className='text-primary'>
+      {children}
+    </h2>
+  ),
   // h1: ({ className, ...props }: ComponentType) => (
   //   <h1
   //       className={cn(
@@ -156,7 +168,7 @@ export function Mdx({ code }: MdxProps) {
 
   return (
     <div className="mdx">
-      <Component components={components} />
+      {/* <Component components={components} /> */}
     </div>
   )
 }
