@@ -67,4 +67,13 @@ module.exports = {
     'react/void-dom-elements-no-children': 'error',
     'react/jsx-max-props-per-line': ['error', { maximum: { single: 4, multi: 1 } }],
   },
+  overrides: [
+    {
+      files: ['*.mdx'],
+      extends: 'plugin:mdx/recommended',
+      rules: {
+        '@typescript-eslint/indent': 'off',
+      },
+    },
+  ],
 }

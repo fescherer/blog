@@ -19,8 +19,8 @@ const computedFields = {
 
 export const Doc = defineDocumentType(() => ({
   name: 'Doc',
-  filePathPattern: '**/*.md',
-  contentType: 'md',
+  filePathPattern: '**/*.mdx',
+  contentType: 'mdx',
   fields: {
     title: {
       type: 'string',
@@ -76,7 +76,7 @@ export default makeSource({
       rehypeSlug,
       [
         rehypePrettyCode, {
-          theme: 'github-dark',
+          theme: 'dracula',
           onVisitLine(node) {
             // Prevent lines from collapsing in display: grid mode, and allow
             // empty lines to be copy/pasted

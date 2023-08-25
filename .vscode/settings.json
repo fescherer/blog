@@ -18,6 +18,7 @@
     "vue",
     "html",
     "markdown",
+    "mdx",
     "yaml"
   ]
 }
