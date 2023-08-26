@@ -85,7 +85,9 @@ export default makeSource({
           },
           onVisitHightlightedLine(node) {
             node.properties.className.push('line--hightlighted')
+            node.properties.className.push('line--highlighted')
           },
+
         },
       ], [
         rehypeAutolinkHeading, {

@@ -16,6 +16,7 @@ const config: Config = {
       'text-on-primary': 'var(--text-on-primary)',
       'text-hover': 'var(--text-hover)',
       'primary-hover': 'var(--primary-hover)',
+      'transparent': 'transparent',
     },
     fontSize: {
       xxs: ['10px', {}],

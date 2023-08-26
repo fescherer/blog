@@ -2,12 +2,17 @@
 
 import { FigmaLogo, GithubLogo, Laptop } from 'phosphor-react'
 import { Link } from '@/components/Lib/Link'
+import type { Doc } from 'contentlayer/generated'
 
-export function ArticleHeader() {
+interface ArticleHeaderProps {
+  doc: Doc
+}
+
+export function ArticleHeader({ doc }: ArticleHeaderProps) {
   return (
     <div className='flex justify-between items-center'>
       <div>
-        <h1 className='text-h1 font-gambarino'>Article Name</h1>
+        <h1 className='text-h1 font-gambarino'>{doc.title}</h1>
         <div className='text-sm'>
           <small>21, January 2023</small>
           <small>{' 🞄 '}</small>

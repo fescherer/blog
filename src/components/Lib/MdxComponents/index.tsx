@@ -1,20 +1,26 @@
 import * as React from 'react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 
-interface ComponentChildren {
-  children: React.ReactNode
-}
-
 const components = {
-  h1: ({ children }: ComponentChildren) => (
+  h1: ({ children }: any | undefined) => (
     <h1>
       {children}
     </h1>
   ),
-  h2: ({ children }: ComponentChildren) => (
-    <h2 className='text-primary'>
+  h2: ({ children }: any) => (
+    <h2>
       {children}
     </h2>
+  ),
+  code: ({ children, className, ...props }: any) => (
+    <code className={`${className}`} {...props}>
+      {children}
+    </code>
+  ),
+  pre: ({ children, className, ...props }: any) => (
+    <pre className={`overflow-scroll max-w-full ${className}`} {...props}>
+      {children}
+    </pre>
   ),
   // h1: ({ className, ...props }: ComponentType) => (
   //   <h1
@@ -168,7 +174,7 @@ export function Mdx({ code }: MdxProps) {
 
   return (
     <div className="mdx">
-      {/* <Component components={components} /> */}
+      <Component components={components} />
     </div>
   )
 }
