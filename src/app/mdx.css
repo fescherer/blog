@@ -30,3 +30,16 @@
 [data-rehype-pretty-code-title] + pre {
   @apply mt-0;
 }
+
+
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+  }

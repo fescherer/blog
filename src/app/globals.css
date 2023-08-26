@@ -12,6 +12,8 @@
   --text-on-primary: #FFFFFF;
   --text-hover: #888888;
   --primary-hover: #409c6e;
+
+  --code-header: #21222C;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +27,8 @@
       --text-on-primary: #FFFFFF;
       --text-hover: #888888;
       --primary-hover: #409c6e;
+
+      --code-header: #21222C;
     }
 }
 
