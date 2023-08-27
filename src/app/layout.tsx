@@ -24,7 +24,7 @@ export default function RootLayout({
 
       <body className="flex w-full flex-col gap-8 bg-background font-switzer text-text">
         <Header />
-        <main className="m-auto flex w-full max-w-screen-2xl flex-1 px-4 pt-16">
+        <main className="m-auto flex w-full max-w-screen-2xl flex-1 px-4 pt-24">
           {children}
         </main>
         <Footer />
