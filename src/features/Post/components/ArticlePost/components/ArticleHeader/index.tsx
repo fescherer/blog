@@ -18,7 +18,7 @@ export function ArticleHeader({ doc }: ArticleHeaderProps) {
   }).format(date)
 
   return (
-    <div className='flex items-center justify-between'>
+    <div className='flex items-center justify-between gap-2'>
       <div>
         <h1 className='font-gambarino text-h1'>{doc.title}</h1>
         <div className='text-sm'>

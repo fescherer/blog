@@ -9,7 +9,7 @@ export function Post({ doc }: PostProps) {
   return (
     <div className="relative grid max-w-full grid-cols-1 gap-2 lg:grid-cols-[7fr,3fr]">
       <ArticlePost doc={doc} />
-      <AsidePost />
+      <AsidePost doc={doc} />
     </div>
   )
 }
