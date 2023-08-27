@@ -22,7 +22,7 @@ function getDocFromParams(language: string, type: string, slug: string) {
 export default function PostPage({ params: { language, type, slug } }: PageProps) {
   const doc = getDocFromParams(language, type, slug)
   return (
-    <div className='flex flex-col max-w-full'>
+    <div className='flex max-w-full flex-col'>
       <Post doc={doc} />
     </div>
   )

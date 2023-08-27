@@ -6,14 +6,14 @@ import { LogoIcon } from '@/Icons'
 
 export function Header() {
   return (
-    <header className="flex justify-between max-w-screen-2xl m-auto w-full">
+    <header className="m-auto flex w-full max-w-screen-2xl justify-between">
 
       <Link href="/" target="_self" className="text-primary hover:text-primary-hover">
         <LogoIcon />
       </Link>
 
       <nav>
-        <ul className="flex gap-3 items-center">
+        <ul className="flex items-center gap-3">
           <li>Home</li>
           <li>Blog</li>
           <li>About me</li>

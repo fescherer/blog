@@ -4,9 +4,9 @@ export function AdContainer() {
   return (
     <Card>
       <h2>Advertising</h2>
-      <div className="bg-background w-[300px] my-2 mx-auto h-[250px]" />
+      <div className="mx-auto my-2 h-[250px] w-[300px] bg-background" />
 
-      <div className="bg-background w-[240px] my-2 mx-auto h-[360px]" />
+      <div className="mx-auto my-2 h-[360px] w-[240px] bg-background" />
     </Card>
   )
 }

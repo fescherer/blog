@@ -5,7 +5,7 @@ export function Profile() {
     <Card className='flex gap-2'>
       <picture>
         <img src="" alt="" />
-        <div className='w-24 h-36 bg-background rounded-md' />
+        <div className='h-36 w-24 rounded-md bg-background' />
       </picture>
 
       <div>

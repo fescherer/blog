@@ -10,9 +10,9 @@ interface ArticleHeaderProps {
 
 export function ArticleHeader({ doc }: ArticleHeaderProps) {
   return (
-    <div className='flex justify-between items-center'>
+    <div className='flex items-center justify-between'>
       <div>
-        <h1 className='text-h1 font-gambarino'>{doc.title}</h1>
+        <h1 className='font-gambarino text-h1'>{doc.title}</h1>
         <div className='text-sm'>
           <small>21, January 2023</small>
           <small>{' 🞄 '}</small>

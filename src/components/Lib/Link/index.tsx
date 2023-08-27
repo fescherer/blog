@@ -9,7 +9,7 @@ interface LinkProps {
 
 export function Link({ children, href, target = '_blank', className, ...props }: LinkProps) {
   return (
-    <LinkNext className={`hover:text-text-hover transition-all ${className}`} href={href} target={target} {...props}>
+    <LinkNext className={`transition-all hover:text-text-hover ${className}`} href={href} target={target} {...props}>
       {children}
     </LinkNext>
   )

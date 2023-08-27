@@ -17,17 +17,17 @@ export function ArticleDetails() {
 
       <div>
         <h3>Tags:</h3>
-        <div className='text-sm flex gap-2'>
-          <span className='bg-background py-1 px-4 my-1 rounded-full text-xxs'>React</span>
-          <span className='bg-background py-1 px-4 my-1 rounded-full text-xxs'>React</span>
-          <span className='bg-background py-1 px-4 my-1 rounded-full text-xxs'>React</span>
-          <span className='bg-background py-1 px-4 my-1 rounded-full text-xxs'>React</span>
+        <div className='flex gap-2 text-sm'>
+          <span className='my-1 rounded-full bg-background px-4 py-1 text-xxs'>React</span>
+          <span className='my-1 rounded-full bg-background px-4 py-1 text-xxs'>React</span>
+          <span className='my-1 rounded-full bg-background px-4 py-1 text-xxs'>React</span>
+          <span className='my-1 rounded-full bg-background px-4 py-1 text-xxs'>React</span>
         </div>
       </div>
 
       <div>
         <h3>Links:</h3>
-        <div className='text-sm flex gap-2'>
+        <div className='flex gap-2 text-sm'>
           <span>Deploy</span>
           <span>Figma</span>
           <span>Github</span>
