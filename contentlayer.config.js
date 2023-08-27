@@ -101,6 +101,9 @@ export const Doc = defineDocumentType(() => ({
     figma_url: {
       type: 'string',
     },
+    github_url: {
+      type: 'string',
+    },
     tags: {
       type: 'list',
       of: { type: 'string' },

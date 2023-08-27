@@ -1,4 +1,5 @@
 import { ArticlePost, AsidePost } from './components'
+import { AsidePostIndex } from './components/AsidePostIndex'
 import type { Doc } from 'contentlayer/generated'
 
 interface PostProps {
@@ -7,7 +8,8 @@ interface PostProps {
 
 export function Post({ doc }: PostProps) {
   return (
-    <div className="relative grid max-w-full grid-cols-1 gap-2 lg:grid-cols-[7fr,3fr]">
+    <div className="relative flex max-w-full gap-2">
+      <AsidePostIndex doc={doc} />
       <ArticlePost doc={doc} />
       <AsidePost doc={doc} />
     </div>

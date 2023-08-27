@@ -1,8 +1,6 @@
 'use client'
 
-import { FigmaLogo, GithubLogo, Laptop } from 'phosphor-react'
 import readingTime from 'reading-time'
-import { Link } from '@/components/Lib/Link'
 import type { Doc } from 'contentlayer/generated'
 
 interface ArticleHeaderProps {
@@ -26,17 +24,6 @@ export function ArticleHeader({ doc }: ArticleHeaderProps) {
         </div>
       </div>
 
-      <div className='flex gap-2'>
-        <Link href={''}>
-          <Laptop size={24} />
-        </Link>
-        <Link href={''}>
-          <FigmaLogo size={24} />
-        </Link>
-        <Link href={''}>
-          <GithubLogo size={24} />
-        </Link>
-      </div>
     </div>
   )
 }

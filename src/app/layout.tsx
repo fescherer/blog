@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='flex min-h-screen p-4'>
+    <html lang="en" className='flex min-h-screen'>
 
       <head>
 
@@ -24,7 +24,7 @@ export default function RootLayout({
 
       <body className="flex w-full flex-col gap-8 bg-background font-switzer text-text">
         <Header />
-        <main className="m-auto flex w-full max-w-screen-2xl flex-1 ">
+        <main className="m-auto flex w-full max-w-screen-2xl flex-1 px-4 pt-16">
           {children}
         </main>
         <Footer />
