@@ -8,7 +8,7 @@ interface ArticlePostProps {
 
 export function ArticlePost({ doc }: ArticlePostProps) {
   return (
-    <article className="p-2 flex-col gap-4 px-8 flex min-w-0">
+    <article className="flex min-w-0 flex-col gap-4 p-2 lg:px-8">
 
       <div>
         <small className='text-xs'>Home - Category - Article</small>
@@ -16,7 +16,7 @@ export function ArticlePost({ doc }: ArticlePostProps) {
         <ArticleHeader doc={doc} />
       </div>
 
-      <div className='bg-foreground border border-background w-[80%] h-96 m-auto rounded-md' />
+      <div className='m-auto h-96 w-[80%] rounded-md border border-background bg-foreground' />
 
       <div className='text-justify text-base'>
         <Mdx code={doc.body.code } />

@@ -1,21 +1,93 @@
 import * as React from 'react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import Link from 'next/link'
 import { Pre } from './components'
 
 const components = {
-  h1: ({ children }: any | undefined) => (
-    <h1>
+  h1: ({ children, ...props }: any | undefined) => (
+    <h1 {...props}>
       {children}
     </h1>
   ),
-  h2: ({ children }: any) => (
-    <h2>
+  h2: ({ children, ...props }: any) => (
+    <h2 {...props}>
       {children}
     </h2>
+  ),
+  h3: ({ children, ...props }: any) => (
+    <h3 {...props}>
+      {children}
+    </h3>
+  ),
+  h4: ({ children, ...props }: any) => (
+    <h4 {...props}>
+      {children}
+    </h4>
+  ),
+  h5: ({ children, ...props }: any) => (
+    <h5 {...props}>
+      {children}
+    </h5>
+  ),
+  h6: ({ children, ...props }: any) => (
+    <h6 {...props}>
+      {children}
+    </h6>
   ),
 
   // How to create a copy code button https://claritydev.net/blog/copy-to-clipboard-button-nextjs-mdx-rehype
   pre: ({ ...props }: any) => (<Pre {...props} />),
+
+  a: ({ children, ...props }: any) => (
+    <Link {...props} target='_blank' className='tracking-wide text-secondary transition-all hover:border-b hover:border-b-primary-hover hover:text-primary-hover'>{children}</Link>
+  ),
+  p: ({ children, ...props }: any) => (
+    <p className='my-4 leading-relaxed tracking-wide' {...props}>
+      {children}
+    </p>
+  ),
+  blockquote: ({ children, ...props }: any) => (
+    <blockquote className=' mt-6 border-l-2 border-l-text pl-6 italic' {...props}>
+      {children}
+    </blockquote>
+  ),
+
+  ul: ({ children, ...props }: any) => (
+    <ul className='list-disc' {...props}>
+      {children}
+    </ul>
+  ),
+  ol: ({ children, ...props }: any) => (
+    <ol className='list-decimal' {...props}>
+      {children}
+    </ol>
+  ),
+  li: ({ children, ...props }: any) => (
+    <li className='' {...props}>
+      {children}
+    </li>
+  ),
+
+  table: ({ children, ...props }: any) => (
+    <table className='border-collapse' {...props}>
+      {children}
+    </table>
+  ),
+  th: ({ children, ...props }: any) => (
+    <th className='border border-foreground bg-foreground text-center' {...props}>
+      {children}
+    </th>
+  ),
+  tr: ({ children, ...props }: any) => (
+    <tr className='' {...props}>
+      {children}
+    </tr>
+  ),
+  td: ({ children, ...props }: any) => (
+    <td className='border border-foreground px-6 py-2 text-center' {...props}>
+      {children}
+    </td>
+  ),
 
   // ({ children, className, ...props }: any) => (
   //   <pre className={`overflow-scroll max-w-full ${className}`} {...props}>

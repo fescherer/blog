@@ -1,6 +1,5 @@
 import React from 'react'
 import './globals.css'
-import './mdx.css'
 import type { Metadata } from 'next'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -23,9 +22,9 @@ export default function RootLayout({
         <link href="https://api.fontshare.com/v2/css?f[]=switzer@300&f[]=gambarino@400&display=swap" rel="stylesheet" />
       </head>
 
-      <body className="flex flex-col gap-8 w-full bg-background text-text font-switzer">
+      <body className="flex w-full flex-col gap-8 bg-background font-switzer text-text">
         <Header />
-        <main className="w-full flex-1 flex max-w-screen-2xl m-auto ">
+        <main className="m-auto flex w-full max-w-screen-2xl flex-1 ">
           {children}
         </main>
         <Footer />

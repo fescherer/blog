@@ -7,7 +7,7 @@ interface PostProps {
 
 export function Post({ doc }: PostProps) {
   return (
-    <div className="grid grid-cols-[auto,1fr] relative gap-2 max-w-full">
+    <div className="relative grid max-w-full grid-cols-1 gap-2 lg:grid-cols-[7fr,3fr]">
       <ArticlePost doc={doc} />
       <AsidePost />
     </div>

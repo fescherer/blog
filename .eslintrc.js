@@ -5,7 +5,7 @@ process.env.ESLINT_TSCONFIG = 'tsconfig.json'
 
 module.exports = {
   // "parser": "@typescript-eslint/parser",
-  extends: ['@antfu', 'next/core-web-vitals'],
+  extends: ['@antfu', 'next/core-web-vitals', 'plugin:tailwindcss/recommended'],
   plugins: ['react'],
   rules: {
     'react/jsx-indent': ['error', 2],
