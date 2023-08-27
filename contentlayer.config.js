@@ -92,6 +92,10 @@ export const Doc = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
+    author: {
+      type: 'string',
+      required: true,
+    },
     video_url: {
       type: 'string',
     },

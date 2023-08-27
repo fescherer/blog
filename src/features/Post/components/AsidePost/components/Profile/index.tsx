@@ -1,18 +1,27 @@
 import { Card } from '@/components/Lib/Card'
+import { authors } from '@/utils/authors'
 
-export function Profile() {
+interface ProfileProps {
+  author: string
+}
+
+export function Profile({ author }: ProfileProps) {
+  const authorData = authors[author as keyof typeof authors]
+
+  if (!authorData)
+    return <></>
+
   return (
     <Card className='flex gap-2'>
       <picture>
-        <img src="" alt="" />
-        <div className='h-36 w-24 rounded-md bg-background' />
+        <img src={authorData.image} alt="" className='w-64 rounded-md bg-background' />
       </picture>
 
       <div>
-        <h2>Felipe Scherer</h2>
-        <small className='text-xxs'>Software Engenering - Author</small>
+        <h2>{authorData.fullName}</h2>
+        <small className='text-xxs'>{`${authorData.profession} - Author`}</small>
 
-        <p className='text-justify text-xs'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptatibus repudiandae ut modi repellat error nulla reiciendis, mollitia </p>
+        <p className='text-justify text-xs'>{authorData.description}</p>
       </div>
     </Card>
   )

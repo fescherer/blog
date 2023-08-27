@@ -11,7 +11,7 @@ export function AsidePost({ doc }: AsidePostProps) {
       <aside className="sticky top-[70px] hidden h-max w-[320px] flex-col gap-2 lg:flex">
         <AdContainer />
         <ArticleDetails doc={doc} />
-        <Profile />
+        <Profile author={doc.author } />
         <Newsletter />
       </aside>
     </div>
