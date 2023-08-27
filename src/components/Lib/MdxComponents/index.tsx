@@ -42,7 +42,7 @@ const components = {
     <Link {...props} target='_blank' className='tracking-wide text-secondary transition-all hover:border-b hover:border-b-primary-hover hover:text-primary-hover'>{children}</Link>
   ),
   p: ({ children, ...props }: any) => (
-    <p className='my-4 leading-relaxed tracking-wide' {...props}>
+    <p className='my-10 leading-normal tracking-wide' {...props}>
       {children}
     </p>
   ),
