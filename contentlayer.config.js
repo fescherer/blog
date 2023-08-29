@@ -116,7 +116,7 @@ export const Doc = defineDocumentType(() => ({
     related_articles: {
       type: 'list',
       of: { type: 'string' },
-      required: true,
+
     },
     related_tags: {
       type: 'list',

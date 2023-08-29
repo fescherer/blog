@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowUpRight } from 'phosphor-react'
+import readingTime from 'reading-time'
 import { Link } from '@/components/Lib/Link'
 import { getTimeFormated } from '@/utils/functions'
 import type { Doc } from 'contentlayer/generated'
@@ -11,10 +12,16 @@ interface PostCardProps {
 
 export function PostCard({ data }: PostCardProps) {
   const publishedDate = getTimeFormated(data.published_date)
+  const articleTime = Math.ceil(readingTime(data.body.raw).minutes)
+
   return (
     <div className='flex h-60 w-80 flex-col gap-2 rounded bg-[#ffffff0a] p-4 '>
       <div className='flex justify-between'>
-        <small className='text-xs'>{publishedDate}</small>
+
+        <div className='flex flex-col gap-1 text-xs'>
+          <time>{publishedDate}</time>
+          <small> {`${articleTime} minute${articleTime > 1 ? 's' : ''} read`}</small>
+        </div>
         <ArrowUpRight size={16} />
       </div>
 
