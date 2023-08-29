@@ -33,7 +33,7 @@ export function ArticlePost({ doc }: ArticlePostProps) {
 
       <Separator dataOrientation='horizontal' />
 
-      {
+      {/* {
         doc.related_articles?.length
           ? (
             <section>
@@ -45,7 +45,7 @@ export function ArticlePost({ doc }: ArticlePostProps) {
             </section>
             )
           : null
-      }
+      } */}
 
       <RecommendedArticles doc={doc} />
 
