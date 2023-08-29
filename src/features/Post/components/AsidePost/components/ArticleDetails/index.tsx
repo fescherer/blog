@@ -2,6 +2,7 @@
 
 import { Card } from '@/components/Lib/Card'
 import { Link } from '@/components/Lib/Link'
+import { getTimeFormated } from '@/utils/functions'
 import type { Doc } from 'contentlayer/generated'
 
 interface ArticleDetailsProps {
@@ -9,12 +10,7 @@ interface ArticleDetailsProps {
 }
 
 export function ArticleDetails({ doc }: ArticleDetailsProps) {
-  const date = new Date(doc.published_date)
-  const publishedDate = new Intl.DateTimeFormat('en-US', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  }).format(date)
+  const publishedDate = getTimeFormated(doc.published_date)
 
   return (
     <Card className='flex flex-col gap-2'>

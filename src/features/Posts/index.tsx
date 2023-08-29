@@ -3,17 +3,10 @@ import { allDocs } from 'contentlayer/generated'
 
 export function Posts() {
   return (
-
-  // <div className='grid'>
-    // <div className='flex justify-center'>
-    //         <div className='flex flex-wrap gap-2'>
-    <div className='grid w-full grid-flow-row grid-cols-4 justify-between justify-items-center gap-5'>
+    <div className='grid w-full grid-cols-[repeat(auto-fit,minmax(320px,max-content))] justify-center gap-6'>
       {
         allDocs.map(item => <PostCard key={item._id} data={item} />)
         }
     </div>
-    //   </div>
-    // </div>
-
   )
 }
