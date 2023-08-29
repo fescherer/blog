@@ -3,7 +3,7 @@
 import { FigmaLogo, GithubLogo, LinkedinLogo, TiktokLogo, TwitterLogo, YoutubeLogo } from 'phosphor-react'
 import { Link } from '@/components/Lib/Link'
 import { LogoIcon } from '@/Icons'
-import { figmaLink, githubLink, linkedinLink, tiktokLink, twitterLink, youtubeLink } from '@/utils/config'
+import { ownerConfigs } from '@/utils/ownerConfigs'
 
 export function PersonalSkills() {
   return (
@@ -11,25 +11,25 @@ export function PersonalSkills() {
 
       <LogoIcon color="var(--primary)" />
 
-      <p className='max-w-prose text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non risus molestie, tristique purus Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non risus molestie, tristique purus </p>
+      <p className='max-w-prose text-sm'>{ownerConfigs.description}</p>
 
       <div className='flex gap-2'>
-        <Link href={linkedinLink}>
+        <Link href={ownerConfigs.linkedinLink}>
           <LinkedinLogo size={20} />
         </Link>
-        <Link href={figmaLink}>
+        <Link href={ownerConfigs.figmaLink}>
           <FigmaLogo size={20} />
         </Link>
-        <Link href={youtubeLink}>
+        <Link href={ownerConfigs.youtubeLink}>
           <YoutubeLogo size={20} />
         </Link>
-        <Link href={githubLink}>
+        <Link href={ownerConfigs.githubLink}>
           <GithubLogo size={20} />
         </Link>
-        <Link href={twitterLink}>
+        <Link href={ownerConfigs.twitterLink}>
           <TwitterLogo size={20} />
         </Link>
-        <Link href={tiktokLink}>
+        <Link href={ownerConfigs.tiktokLink}>
           <TiktokLogo size={20} />
         </Link>
       </div>

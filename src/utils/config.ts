@@ -1,7 +1,0 @@
-export const mainLink = 'https://github.com/fescherer'
-export const linkedinLink = ''
-export const figmaLink = ''
-export const githubLink = ''
-export const youtubeLink = ''
-export const tiktokLink = ''
-export const twitterLink = ''
