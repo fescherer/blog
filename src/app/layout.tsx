@@ -15,13 +15,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='flex h-screen py-4'>
-      <body className="flex flex-col w-full">
-      <Header />
-      <main className="w-full flex-1 flex max-w-screen-2xl m-auto">
-        {children}
-      </main>
-      <Footer />
+    <html lang="en" className='flex min-h-screen'>
+
+      <head>
+
+        <link href="https://api.fontshare.com/v2/css?f[]=switzer@300&f[]=gambarino@400&display=swap" rel="stylesheet" />
+      </head>
+
+      <body className="flex w-full flex-col gap-8 bg-background font-switzer text-text">
+        <Header />
+        <main className="m-auto flex w-full max-w-screen-2xl flex-1 px-4 pt-24">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   )

@@ -3,33 +3,65 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
   --primary: #51C28A;
   --secondary: #74DFAA;
   --text: #DDDDDD;
   --title: #EAEAEA;
   --foreground: #282929;
   --background: #131313;
-  --text-on-primary: #FFFFFF
+  --text-on-primary: #FFFFFF;
+  --text-hover: #888888;
+  --primary-hover: #409c6e;
+
+  --code-header: #21222C;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --primary: #51C28A;
+      --secondary: #74DFAA;
+      --text: #DDDDDD;
+      --title: #EAEAEA;
+      --foreground: #282929;
+      --background: #131313;
+      --text-on-primary: #FFFFFF;
+      --text-hover: #888888;
+      --primary-hover: #409c6e;
+
+      --code-header: #21222C;
+    }
+}
+
+@layer base{
+  h1{
+    @apply text-h1 font-gambarino
+  }
+
+  h2{
+    @apply text-h2 font-gambarino
+  }
+
+  h3{
+    @apply text-h3 font-gambarino
+  }
+
+  p {
+    @apply text-base
+  }
+
+  body{
+    @apply font-switzer
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+  }

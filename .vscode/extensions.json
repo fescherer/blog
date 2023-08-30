@@ -4,7 +4,13 @@
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
     "bradlc.vscode-tailwindcss",
-    "vscode-icons-team.vscode-icons"
+    "vscode-icons-team.vscode-icons",
+    "usernamehw.errorlens",
+    "wix.vscode-import-cost",
+    "vincaslt.highlight-matching-tag",
+    "naumovs.color-highlight",
+    "formulahendry.auto-rename-tag",
+    "unifiedjs.vscode-mdx"
   ]
 
 }

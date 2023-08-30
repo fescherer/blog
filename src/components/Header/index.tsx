@@ -1,20 +1,19 @@
+'use client'
+
+import { Link } from '../Lib/Link'
+import { Nav } from './components'
 import { LogoIcon } from '@/Icons'
 
 export function Header() {
   return (
-    <header className="flex justify-between max-w-screen-2xl m-auto w-full">
+    <header className="fixed left-1/2 z-50 flex w-full max-w-screen-2xl -translate-x-1/2 justify-between p-4 backdrop-blur">
 
-      <LogoIcon color="var(--primary)"/>
+      <Link href="/" target="_self" className="text-primary hover:text-primary-hover">
+        <LogoIcon />
+      </Link>
 
-      <nav>
-        <ul className="flex gap-3">
-          <li>Home</li>
-          <li>Blog</li>
-          <li>About me</li>
-          <li>Projects</li>
-          <li>Settings</li>
-        </ul>
-      </nav>
+      <Nav />
+
     </header>
   )
 }

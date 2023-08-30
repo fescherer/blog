@@ -1,10 +1,9 @@
 import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     colors: {
@@ -15,14 +14,42 @@ const config: Config = {
       'foreground': 'var(--foreground)',
       'background': 'var(--background)',
       'text-on-primary': 'var(--text-on-primary)',
+      'text-hover': 'var(--text-hover)',
+      'primary-hover': 'var(--primary-hover)',
+
+      'code-header': 'var(--code-header)',
+
+      'transparent': 'transparent',
     },
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+    fontSize: {
+      xxs: ['10px', {}],
+      xs: ['12px', {}],
+      sm: ['14px', {}],
+      base: [
+        '0.875rem',
+        {
+          lineHeight: '1.5rem',
+          // letterSpacing: '-0.01em',
+          fontWeight: '400',
+        },
+      ],
+      lg: ['12px', {}],
+      h4: ['12px', { letterSpacing: '0.05em', fontWeight: '500' }],
+      h3: ['14px', { letterSpacing: '0.05em', fontWeight: '600' }],
+      h2: ['20px', { letterSpacing: '0.05em', fontWeight: '700' }],
+      h1: ['32px', {
+        // lineHeight: '1.5rem',
+        letterSpacing: '0.01em',
+        fontWeight: '800',
+      }],
+
     },
+    fontFamily: {
+      switzer: ['Switzer', 'sans-serif', ...defaultTheme.fontFamily.sans],
+      gambarino: ['Gambarino', 'serif', ...defaultTheme.fontFamily.sans],
+
+    },
+    extend: {},
   },
   plugins: [],
 }
