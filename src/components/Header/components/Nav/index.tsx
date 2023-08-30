@@ -1,6 +1,7 @@
 import clsx from 'clsx'
-import { Gear, List, X } from 'phosphor-react'
+import { List, X } from 'phosphor-react'
 import { useState } from 'react'
+import { Link } from '@/components/Lib/Link'
 
 export function Nav() {
   const [isMenuHidden, setIsMenuHidden] = useState(true)
@@ -17,11 +18,9 @@ export function Nav() {
       })}
       >
         <ul className="flex flex-col items-center gap-3 md:flex-row">
-          <li>Home</li>
-          <li>Blog</li>
-          <li>About me</li>
-          <li>Projects</li>
-          <li><Gear size={20} /></li>
+          <li><Link href="/" target='_self'>Home</Link></li>
+          <li><Link href="https://felipescherer.com" target='_self'>Portifolio</Link></li>
+          {/* <li><Gear size={20} /></li> */}
         </ul>
       </nav>
 

@@ -1,5 +1,4 @@
-import { ArticleHeader, Rating, Sharing } from './components'
-import { NavigationHeader } from './components/NavigationHeader'
+import { ArticleHeader } from './components'
 import { RecommendedArticles } from './components/RecommendedArticles'
 import { type Doc } from 'contentlayer/generated'
 import { Mdx } from '@/components/Lib/MdxComponents'
@@ -14,7 +13,7 @@ export function ArticlePost({ doc }: ArticlePostProps) {
     <article className="flex min-w-0 flex-1 flex-col gap-4 p-2 lg:px-8">
 
       <div>
-        <NavigationHeader doc={doc} />
+        {/* <NavigationHeader doc={doc} /> */}
 
         <ArticleHeader doc={doc} />
       </div>
@@ -25,11 +24,11 @@ export function ArticlePost({ doc }: ArticlePostProps) {
         <Mdx code={doc.body.code } />
       </div>
 
-      <section className='flex flex-col gap-4'>
+      {/* <section className='flex flex-col gap-4'>
         <Rating />
 
         <Sharing />
-      </section>
+      </section> */}
 
       <Separator dataOrientation='horizontal' />
 

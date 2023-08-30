@@ -12,16 +12,19 @@ export function Profile({ author }: ProfileProps) {
     return <></>
 
   return (
-    <Card className='flex gap-2'>
-      <picture>
-        <img src={authorData.image} alt="" className='w-64 rounded-md bg-background' />
-      </picture>
+    <Card>
+      <h2 className='mb-2'>Author</h2>
+      <div className='flex gap-2'>
+        <picture>
+          <img src={authorData.image} alt="" className='w-64 rounded-md bg-background' />
+        </picture>
 
-      <div>
-        <h2>{authorData.fullName}</h2>
-        <small className='text-xxs'>{`${authorData.profession} - Author`}</small>
+        <div>
+          <h2 className='whitespace-nowrap'>{authorData.fullName}</h2>
+          <small className='text-xxs'>{`${authorData.profession}`}</small>
 
-        <p className='text-justify text-xs'>{authorData.description}</p>
+          <p className='text-justify text-xs'>{authorData.description}</p>
+        </div>
       </div>
     </Card>
   )

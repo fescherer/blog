@@ -1,6 +1,6 @@
 'use client'
 
-import { FigmaLogo, GithubLogo, LinkedinLogo, TiktokLogo, TwitterLogo, YoutubeLogo } from 'phosphor-react'
+import { GithubLogo, LinkedinLogo } from 'phosphor-react'
 import { Link } from '@/components/Lib/Link'
 import { LogoIcon } from '@/Icons'
 import { ownerConfigs } from '@/utils/ownerConfigs'
@@ -17,21 +17,21 @@ export function PersonalSkills() {
         <Link href={ownerConfigs.linkedinLink}>
           <LinkedinLogo size={20} />
         </Link>
-        <Link href={ownerConfigs.figmaLink}>
+        <Link href={ownerConfigs.githubLink}>
+          <GithubLogo size={20} />
+        </Link>
+        {/* <Link href={ownerConfigs.figmaLink}>
           <FigmaLogo size={20} />
         </Link>
         <Link href={ownerConfigs.youtubeLink}>
           <YoutubeLogo size={20} />
-        </Link>
-        <Link href={ownerConfigs.githubLink}>
-          <GithubLogo size={20} />
         </Link>
         <Link href={ownerConfigs.twitterLink}>
           <TwitterLogo size={20} />
         </Link>
         <Link href={ownerConfigs.tiktokLink}>
           <TiktokLogo size={20} />
-        </Link>
+        </Link> */}
       </div>
     </div>
   )

@@ -1,4 +1,4 @@
-import { AdContainer, ArticleDetails, Newsletter, Profile } from './components'
+import { AdContainer, ArticleDetails, Profile } from './components'
 import type { Doc } from 'contentlayer/generated'
 
 interface AsidePostProps {
@@ -12,7 +12,7 @@ export function AsidePost({ doc }: AsidePostProps) {
         <AdContainer />
         <ArticleDetails doc={doc} />
         <Profile author={doc.author } />
-        <Newsletter />
+        {/* <Newsletter /> */}
       </aside>
     </div>
   )

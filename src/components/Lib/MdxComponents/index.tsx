@@ -5,32 +5,32 @@ import { Pre } from './components'
 
 const components = {
   h1: ({ children, ...props }: any | undefined) => (
-    <h1 {...props}>
+    <h1 className='scroll-m-24' {...props}>
       {children}
     </h1>
   ),
   h2: ({ children, ...props }: any) => (
-    <h2 {...props}>
+    <h2 className='scroll-m-24' {...props}>
       {children}
     </h2>
   ),
   h3: ({ children, ...props }: any) => (
-    <h3 {...props}>
+    <h3 className='scroll-m-24' {...props}>
       {children}
     </h3>
   ),
   h4: ({ children, ...props }: any) => (
-    <h4 {...props}>
+    <h4 className='scroll-m-24' {...props}>
       {children}
     </h4>
   ),
   h5: ({ children, ...props }: any) => (
-    <h5 {...props}>
+    <h5 className='scroll-m-24' {...props}>
       {children}
     </h5>
   ),
   h6: ({ children, ...props }: any) => (
-    <h6 {...props}>
+    <h6 className='scroll-m-24' {...props}>
       {children}
     </h6>
   ),
