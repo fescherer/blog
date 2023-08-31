@@ -28,10 +28,10 @@ export function ArticleDetails({ doc }: ArticleDetailsProps) {
 
       <div>
         <h3>Tags:</h3>
-        <div className='flex gap-2 text-sm'>
+        <div className='flex flex-wrap gap-2 text-sm'>
           {
             doc.tags.map(item => (
-              <span key={item} className='my-1 rounded-full bg-background px-4 py-1 text-xxs capitalize'>
+              <span key={item} className='my-1 whitespace-pre rounded-full bg-background px-4 py-1 text-xxs capitalize'>
                 {item}
               </span>
             ),

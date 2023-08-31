@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ArticleHeader } from './components'
 import { RecommendedArticles } from './components/RecommendedArticles'
 import { type Doc } from 'contentlayer/generated'
@@ -18,7 +19,14 @@ export function ArticlePost({ doc }: ArticlePostProps) {
         <ArticleHeader doc={doc} />
       </div>
 
-      <div className='h-96 w-[100%] rounded-md border border-background bg-foreground' />
+      <Image
+          alt=""
+          height={568}
+          width={853}
+          src={doc.image}
+          quality={100}
+          className='mx-auto rounded-lg border border-background bg-foreground'
+      />
 
       <div className='text-justify text-base'>
         <Mdx code={doc.body.code } />
