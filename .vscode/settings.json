@@ -20,5 +20,10 @@
     "markdown",
     "mdx",
     "yaml"
-  ]
+  ],
+  "cSpell.enableFiletypes": [
+    "mdx"
+  ],
+
+
 }

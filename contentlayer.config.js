@@ -116,14 +116,12 @@ export const Doc = defineDocumentType(() => ({
     related_articles: {
       type: 'list',
       of: { type: 'string' },
-
     },
-    related_tags: {
+    sources: {
       type: 'list',
       of: { type: 'string' },
       required: true,
     },
-
   },
   computedFields,
 }))
