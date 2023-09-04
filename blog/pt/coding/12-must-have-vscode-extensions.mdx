@@ -11,9 +11,7 @@ tags:
   - vscode
   - configuration
   - eslint
-  - react-js
 related_tags:
-related_articles:
 author: fescherer
 sources:
   - https://aws.amazon.com/what-is/ide/
@@ -23,41 +21,75 @@ sources:
 
 **// Explicar como deixar extensões por padrão no VSCode (extensions.json)**
 
-1. [VSCode Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+## 1. [VSCode Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-// Explicar o que é eslint
+![Print showing VSCode Eslint extension](https://github.com/fescherer/blog/assets/62115215/be8bd7f5-b4f1-40c7-9974-290068604da3)
 
-// Para habilitar eslint precisa a extensão
+As the doc says:
+
+> [Eslint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code](https://eslint.org/docs/latest/use/getting-started)
+
+This means that its goal is to be a tool to enforce certain patterns that we can consider "Good practices" or just avoid errors and bad syntaxes. This is possible by using a big set of rules that are completely customizable, and with just one line you can turn on or off the rules that you prefer and of course there are a lot of custom rules made by the community that in addition to add more validation to Javascript, also makes an integration to other stuff you may have like [React](https://www.npmjs.com/package/eslint-plugin-react), [TailwindCSS](https://www.npmjs.com/package/eslint-plugin-tailwindcss), [Typescript](https://typescript-eslint.io) and many more.
+
+So Eslint is very good but why do I need the extension? Well, you can run `npx eslint .` every time to check if Eslint got any error or warning, but if you want something more fast and easy to do, and trust me, you do, [installing the extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) allows Eslint to run parallel while coding, ensuring that the error will be shown as you code.
+
+> Link for download: [VSCode Eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 2. [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
-// Ver quem fez a última modificação daquela linha do código
+![Print showing Git Lens extension](https://github.com/fescherer/blog/assets/62115215/5a918dda-768d-40ae-b1aa-7baf01632f11)
+
+Have you ever code with a partner? A friend, co-worker or relative and found a line with a very serious bug and needed went to Github to found how made that line? Well, with Git Lens solves your problem by adding a little hint of who made the last update to that line and in how much time ago. I can tell you must be thinking. How this is so useful? For me, it can be handy to have, you may forgot the extension installed but at some time I can assure you will use. Not only for to know the person how did change the line, but also to know when was the last time that line was updated.
+
+I know Git Lens offers other uses, but for my necessities this is good enough. You can read more about it [here](https://www.gitkraken.com/gitlens).
+
+> Link for download: [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
 3. [Editor Config](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
-// Na extensão tem bastante coisa que pode ajudar a descrever
+![Print showing Editor Config extension](https://github.com/fescherer/blog/assets/62115215/433781d2-df06-44ee-a87c-0399dd640e7e)
+
+[Editor config](https://editorconfig.org) is a set of configurations that can maintain consistent coding across multiple IDEs, the configurations are basically about indentations, file formats, charset, unix style new lines, etc.
+
+This extensions enables to overwrite vscode configurations with the ones set on `.editorconfig` file.
+
+I always like to config this file instead my vscode because this way I know the code will be more consistent across multiple IDEs.
+
+> Link for download: [Editor Config](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
 4. [Code Snapshot](https://marketplace.visualstudio.com/items?itemName=robertz.code-snapshot)
 
-// Tirar captura do código no estilo MacOS
+![Print showing Code Snapshot extension](https://github.com/fescherer/blog/assets/62115215/9fe14a53-fdf7-4849-b417-7ad969150b72)
 
-5. [Highlight Matching Tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
+I confess that Code Snapshot is not a super must have extension, but it is really nice and works really well. It can take screenshots from your code in MacOS style for you to post anywhere you want, like in a social media.
 
-// Faz um highlight nas tags correspondentes
+> Link for download: [Code Snapshot](https://marketplace.visualstudio.com/items?itemName=robertz.code-snapshot)
 
-6. [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
+5. [VSCode Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 
-7. [VSCode Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
+![VSCode Icons](https://github.com/fescherer/blog/assets/62115215/f310c814-9f83-4752-a1a6-d21c8e9be2e2)
+
+This one can be a little to much opined, but I really think you should have an extension to modify your icons. It help so much when finding that specific file, I always go for the icon first instead of the file extension or the name of it.
+
+> Link for download: [VSCode Icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
+
+6. [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
+
+7.
 
 8. [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 
-9. [Import Cost](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
+9. [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
 
 10. [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 
 11. []()
 
 12. [Themes](https://vscodethemes.com/)
+
+[Highlight Matching Tag](https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag)
+
+![Print showing Highlight Matching Tag extension](https://github.com/fescherer/blog/assets/62115215/e6d4ea5c-6803-446f-8bbb-f0f2aa0f9a8a)
 
 // Essa aqui tem o tema específico, eu uso o [drácula](https://marketplace.visualstudio.com/items?itemName=dracula-theme.theme-dracula), mas vai de pessoa para pessoa
 

@@ -1,0 +1,34 @@
+{
+
+  "version": "0.2",
+  "dictionaryDefinitions": [
+    {
+      "name": "project-words",
+      "path": "./project-words.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["project-words"],
+  "ignorePaths": [
+    "node_modules",
+    "src/**",
+    ".next/**",
+    ".contentlayer/**",
+    "./husky/**",
+    ".vscode/**",
+    "public/**",
+    ".editorconfig/**",
+    ".eslintrc.js/**",
+    ".gitignore/**",
+    ".lintstagedrc.js",
+    "contentlayer.config.js",
+    "cspell.json",
+    "next-end.d.ts",
+    "next.config.js",
+    "package-lock.json",
+    "package.json",
+    "postcss.config.js",
+    "tailwind.config.ts",
+    "tsconfig.json"
+  ]
+}
