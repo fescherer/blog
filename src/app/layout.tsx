@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='flex min-h-screen'>
+    <html lang="en" className='flex min-h-screen scroll-smooth'>
 
       <head>
 

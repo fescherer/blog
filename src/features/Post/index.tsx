@@ -1,6 +1,10 @@
-import { ArticlePost, AsidePost } from './components'
-import { AsidePostIndex } from './components/AsidePostIndex'
-import { ReadingBarIndicator } from './components/ReadingBarIndicator'
+import {
+  ArticleMenu,
+  ArticlePost,
+  AsidePost,
+  AsidePostIndex,
+  ReadingBarIndicator,
+} from './components'
 import type { Doc } from 'contentlayer/generated'
 
 interface PostProps {
@@ -13,9 +17,10 @@ export function Post({ doc }: PostProps) {
       <ReadingBarIndicator />
 
       <div className="relative flex max-w-full gap-2">
-        <AsidePostIndex doc={doc} />
+        <ArticleMenu doc={doc} />
+        <AsidePostIndex doc={doc} className='hidden md:block' />
         <ArticlePost doc={doc} />
-        <AsidePost doc={doc} />
+        <AsidePost doc={doc} className='hidden lg:block' />
       </div>
     </div>
   )
