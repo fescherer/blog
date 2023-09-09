@@ -1,8 +1,8 @@
 'use client'
 
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { Article } from 'phosphor-react'
 import { HiddenItems } from './components'
+import { Dropdown } from '@/components/Primitives'
 import type { Doc } from 'contentlayer/generated'
 
 interface MenuProps {
@@ -11,18 +11,15 @@ interface MenuProps {
 
 export function Menu({ doc }: MenuProps) {
   return (
-    <DropdownMenu.Root>
-      <DropdownMenu.Trigger asChild>
-        <button type="button" className='block transition-all hover:text-primary-hover lg:hidden'>
-          <Article weight='fill' size={48} />
-        </button>
-      </DropdownMenu.Trigger>
-      <DropdownMenu.Portal>
+    <Dropdown>
+      <Dropdown.Trigger className='block transition-all hover:text-primary-hover lg:hidden'>
+        <Article weight='fill' size={48} />
 
-        <DropdownMenu.Content>
-          <HiddenItems doc={doc} />
-        </DropdownMenu.Content>
-      </DropdownMenu.Portal>
-    </DropdownMenu.Root>
+      </Dropdown.Trigger>
+
+      <Dropdown.Content>
+        <HiddenItems doc={doc} />
+      </Dropdown.Content>
+    </Dropdown>
   )
 }
