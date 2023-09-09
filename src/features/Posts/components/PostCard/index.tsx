@@ -15,7 +15,7 @@ export function PostCard({ data }: PostCardProps) {
   const articleTime = Math.ceil(readingTime(data.body.raw).minutes)
 
   return (
-    <div className='flex h-60 w-80 flex-col gap-2 rounded bg-[#ffffff0a] p-4 '>
+    <div className='flex h-60 w-80 flex-col gap-2 rounded bg-background-card p-4 '>
       <div className='flex justify-between'>
 
         <div className='flex flex-col gap-1 text-xs'>

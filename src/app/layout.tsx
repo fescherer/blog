@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className='flex min-h-screen scroll-smooth'>
+    <html lang="en" className='flex min-h-screen scroll-smooth' data-theme="dark">
 
       <head>
 

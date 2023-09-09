@@ -13,6 +13,7 @@ const config: Config = {
       'title': 'var(--title)',
       'foreground': 'var(--foreground)',
       'background': 'var(--background)',
+      'background-card': 'var(--background-card)',
       'text-on-primary': 'var(--text-on-primary)',
       'text-hover': 'var(--text-hover)',
       'primary-hover': 'var(--primary-hover)',
