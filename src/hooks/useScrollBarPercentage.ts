@@ -13,6 +13,7 @@ export function useScrollBarPercentage() {
     }
 
     window.addEventListener('scroll', handleScroll)
+    handleScroll()
   }, [])
 
   return value
