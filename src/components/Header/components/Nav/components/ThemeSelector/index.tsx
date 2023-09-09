@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
+import { themes } from '@/themes/themes.theme'
 import { Dropdown } from '@/components/Primitives'
-import { themes } from '@/themes'
 
 export function ThemeSelector() {
   const [currentTheme, setCurrentTheme] = useState('')
@@ -11,6 +11,11 @@ export function ThemeSelector() {
   function changeTheme(theme: string) {
     document.getElementsByTagName('html')[0].setAttribute('data-theme', theme)
     setCurrentTheme(theme)
+
+    const colors = themes[theme as keyof typeof themes]
+
+    for (const [property, value] of Object.entries(colors))
+      document.documentElement.style.setProperty(property, value)
   }
 
   useEffect(() => {
@@ -24,7 +29,7 @@ export function ThemeSelector() {
       <Dropdown.Content>
         <ul>
           {
-            themes.map(item => (
+            Object.keys(themes).map(item => (
               <li key={item}>
                 <button
                     className={clsx('capitalize', {

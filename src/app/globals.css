@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '../themes/index.css';
-
 :root {
   --primary: #51C28A;
   --secondary: #74DFAA;

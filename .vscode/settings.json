@@ -24,5 +24,6 @@
   "cSpell.enableFiletypes": [
     "mdx"
   ],
+  "colorize.languages": ["typescript", "javascript", "css", "scss"]
 
 }
