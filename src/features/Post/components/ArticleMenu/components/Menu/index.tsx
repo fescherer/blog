@@ -1,3 +1,5 @@
+'use client'
+
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { Article } from 'phosphor-react'
 import { HiddenItems } from './components'
