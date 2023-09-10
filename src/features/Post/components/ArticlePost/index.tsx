@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArticleHeader } from './components'
 import { RecommendedArticles } from './components/RecommendedArticles'
+import { SourcesRef } from './components/SourcesRef'
 import { type Doc } from 'contentlayer/generated'
 import { Mdx } from '@/components/Lib/MdxComponents'
 import { Separator } from '@/components/Lib'
@@ -31,6 +32,9 @@ export function ArticlePost({ doc }: ArticlePostProps) {
       <div className='text-justify text-base'>
         <Mdx code={doc.body.code } />
       </div>
+
+      <Separator dataOrientation='horizontal' />
+      <SourcesRef doc={doc} />
 
       {/* <section className='flex flex-col gap-4'>
         <Rating />
