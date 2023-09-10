@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { CookieMessage } from '@/components/CookieMessage'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Header />
         <main className="m-auto flex w-full max-w-screen-2xl flex-1 px-4 pt-24">
           {children}
+          <CookieMessage />
         </main>
         <Footer />
       </body>
