@@ -33,9 +33,6 @@ export function CookieMessage() {
   const saveCookies = () =>
     setCookies(false)
 
-  if (window === undefined)
-    return <></>
-
   return (
     <div className='fixed bottom-3 left-3 w-[250px]'>
       <Popover.Root open={showCookies}>

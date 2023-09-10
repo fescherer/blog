@@ -27,7 +27,7 @@ export default function RootLayout({
         <Header />
         <main className="m-auto flex w-full max-w-screen-2xl flex-1 px-4 pt-24">
           {children}
-          <CookieMessage />
+          {typeof window !== 'undefined' && <CookieMessage />}
         </main>
         <Footer />
       </body>
