@@ -41,7 +41,7 @@ export function CookieMessage() {
       <Popover.Root open={showCookies}>
         <Popover.Anchor />
         <Popover.Portal>
-          <Popover.Content className='flex max-w-[250px] cursor-pointer flex-col items-center gap-3 rounded p-5 backdrop-blur hover:text-text-hover' onClick={saveCookies}>
+          <Popover.Content className='flex max-w-[250px] cursor-pointer flex-col items-center gap-3 rounded border border-primary p-5 backdrop-blur hover:text-text-hover' onClick={saveCookies}>
             <h2 className='text-sm'>
               🍪 We use cookies 🍪
             </h2>
