@@ -9,6 +9,7 @@
   --title: #EAEAEA;
   --foreground: #282929;
   --background: #131313;
+  --background-card: #ffffff0a;
   --text-on-primary: #FFFFFF;
   --text-hover: #888888;
   --primary-hover: #409c6e;
@@ -24,6 +25,7 @@
       --title: #EAEAEA;
       --foreground: #282929;
       --background: #131313;
+      --background-card: #ffffff0a;
       --text-on-primary: #FFFFFF;
       --text-hover: #888888;
       --primary-hover: #409c6e;
@@ -52,6 +54,11 @@
   body{
     @apply font-switzer
   }
+
+  * {
+    transition: background-color 0.6s ease,filter 0.3s ease;
+  }
+
 }
 
 code > [data-line]::before {

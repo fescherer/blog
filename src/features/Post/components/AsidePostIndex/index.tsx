@@ -7,6 +7,7 @@ import { Card } from '@/components/Lib/Card'
 
 interface AsidePostIndexProps {
   doc: Doc
+  className?: string
 }
 export interface DocHeading { level: 1 | 2 | 3; title: string }
 
@@ -32,7 +33,7 @@ export function getNodeText(node: React.ReactNode): string {
   return ''
 }
 
-export function AsidePostIndex({ doc }: AsidePostIndexProps) {
+export function AsidePostIndex({ doc, className }: AsidePostIndexProps) {
   const headings = doc.headings as DocHeading[]
 
   const [activeHeading, setActiveHeading] = useState<string>('')
@@ -61,7 +62,7 @@ export function AsidePostIndex({ doc }: AsidePostIndexProps) {
     return null
 
   return (
-    <aside className='hidden md:block'>
+    <aside className={`${className}`}>
       <Card className='sticky top-[70px] max-w-[260px]'>
         <h4>On this article</h4>
         <ul className="space-y-2">

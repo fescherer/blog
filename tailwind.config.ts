@@ -13,12 +13,12 @@ const config: Config = {
       'title': 'var(--title)',
       'foreground': 'var(--foreground)',
       'background': 'var(--background)',
+      'background-card': 'var(--background-card)',
       'text-on-primary': 'var(--text-on-primary)',
       'text-hover': 'var(--text-hover)',
       'primary-hover': 'var(--primary-hover)',
 
       'code-header': 'var(--code-header)',
-
       'transparent': 'transparent',
     },
     fontSize: {
@@ -49,7 +49,22 @@ const config: Config = {
       gambarino: ['Gambarino', 'serif', ...defaultTheme.fontFamily.sans],
 
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        overlayShow: {
+          from: { opacity: '0' },
+          to: { opacity: '0.4' },
+        },
+        contentShow: {
+          from: { opacity: '0%', transform: 'translate(-50%, -48%) scale(0.96)' },
+          to: { opacity: '100%', transform: 'translate(-50%, -50%) scale(1)' },
+        },
+      },
+      animation: {
+        overlayShow: 'overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+        contentShow: 'contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+    },
   },
   plugins: [],
 }

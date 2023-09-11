@@ -1,0 +1,81 @@
+---
+title: Tailwind Strategies for themes
+description: Many strategies that could use to implement themes on Tailwind
+published_date: 2023-09-10T10:00:00
+image: https://github.com/fescherer/blog/assets/62115215/08a878bc-58d0-46c2-b7f7-b74599587948
+author: fescherer
+video_url:
+project_url:
+figma_url:
+github_url:
+tags:
+  - vscode
+  - configuration
+  - eslint
+related_articles:
+  - vscode
+  - configuration
+  - eslint
+sources:
+  - 2023-09-10T10:00:00$Tailwind doc$https://tailwindcss.com/docs/installation
+  - 2023-09-10T10:00:00$Indie Hackers - Adam Wathan$https://www.indiehackers.com/post/im-adam-wathan-i-created-tailwind-css-and-built-a-multi-million-dollar-business-around-it-ama-3c0732f724
+  - 2023-09-10T10:00:00$OfferZen Origins - Adam Wathan$https://www.youtube.com/watch?v=1x7HlvSfW6s
+---
+
+## Introduction
+
+[Tailwind CSS](https://tailwindcss.com) as the docs says:
+
+> A utility-first CSS framework packed with classes like `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup.
+
+### What is Tailwind CSS
+
+To understand Tailwind CSS is good to know how it was created. Well, the framework was created by [Adam Wathan](https://twitter.com/adamwathan) because he wanted to use a [Bootstrap](https://getbootstrap.com) kinda syntax with [Less processor](https://lesscss.org), as you may know Bootstrap has build in classes for `buttons`, `forms`, etc. Tailwind in other hand has just utility classes, like `flex`, `backgrounds`, `paddings`, `margins`, etc. That's why in the first versions of Tailwind, it has some of the classes like Bootstrap, but from time on Adam switched to more generic classes. He also needed to change the processor to PostCSS, but you can find the whole history at [OfferZen Origins's channel](https://www.youtube.com/watch?v=1x7HlvSfW6s).
+
+For me, frameworks that's uses utility classes are the best ones, it can be strange at first but the productivity grows so much using this strategy that I cannot stop using.
+
+### Popularity
+
+For popularity Tailwind is one of the favorite CSS Framework out there. You can see this in [State of CSS Survey](https://2023.stateofcss.com/en-US/css-frameworks):
+![image](https://github.com/fescherer/blog/assets/62115215/23055cb4-026e-4f25-b287-e3556251faf3)
+
+They have a lot of interesting data. I suggest you to take look and see for yourself.
+
+### How to use
+
+As said before, Tailwind uses utility classes, so you will add them into your html as so:
+
+```html
+<div className="m-4 flex items-center justify-center">
+  <span>Item 1</span>
+  <span>Item 2</span>
+</div>
+```
+
+When I started coding, the company used [Angular](https://angular.io) with kinda of utility classes. We a had a big style sheet containing all the most used classes like `padding` or `margin` and them, if we would need some more specific style, we create a class just for it. I grow up and for my experience, don't do that, try to stay just with utility classes, it way more easy to maintain.
+
+You can find the list of utility classes available [in the docs](https://tailwindcss.com/docs/utility-first).
+
+## What is theme
+
+Theme is a set of characteristics that build an idea. I can be applied to an environment to give the feeling of that characteristics. So you can made a party using a Halloween theme, so everyone and the party probably will have characteristics from Halloween.
+
+In design is the same thing, we can made certain rules that build in a theme, like font sizes, spaces, images and colors. This can be used for accessibility advantages or just to made a design some unique like a special version for christmas.
+
+It became very popular for all designs to have at least a version called `dark` with more darker colors and a `light` with, of course, lighter colors. So it is very important to know how you can handle this.
+
+## Strategies for theming in Tailwind
+
+In this tutorial, I will show only themes that change colors, that's because I think changing the font-size or spaces can be tricky and not so great in the final product.
+
+Tailwind already has a [theme build in support](https://tailwindcss.com/docs/dark-mode) but I think is not ideal mostly if you want to add more than just dark and light theme.
+
+### Theme :dark
+
+The first strategy I will show is very similar to native Tailwind strategy, most likely because it uses packages to help with it.
+
+### CSS Variables
+
+## Toggle theme
+
+## User preferences - prefers-color-scheme, prefers-reduced-motion, etc
