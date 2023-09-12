@@ -20,6 +20,7 @@ const config: Config = {
 
       'code-header': 'var(--code-header)',
       'transparent': 'transparent',
+      'current': 'currentColor',
     },
     fontSize: {
       xxs: ['10px', {}],

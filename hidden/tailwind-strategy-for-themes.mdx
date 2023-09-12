@@ -68,13 +68,175 @@ It became very popular for all designs to have at least a version called `dark` 
 
 In this tutorial, I will show only themes that change colors, that's because I think changing the font-size or spaces can be tricky and not so great in the final product.
 
-Tailwind already has a [theme build in support](https://tailwindcss.com/docs/dark-mode) but I think is not ideal mostly if you want to add more than just dark and light theme.
+Tailwind already has a [theme build in support](https://tailwindcss.com/docs/dark-mode) but I think is not ideal mostly if you want to add more than just dark and light theme. So that's why I gonna show you some strategies you can use to add more themes for Tailwind CSS.
 
-### Theme :dark
+### Using external libraries
 
-The first strategy I will show is very similar to native Tailwind strategy, most likely because it uses packages to help with it.
+There a lot of libs created by the community to solve the problem of multiple themes in Tailwind. Some examples would be:
+
+- [Tailwind CSS Theme Variants](https://github.com/JNavith/tailwindcss-theme-variants);
+- [Tailwind Themer](https://github.com/RyanClementsHax/tailwindcss-themer);
+- [TW Colors](https://github.com/L-Blondy/tw-colors);
+- Many more...
+
+All have a very similar concept and way to solve this by enable to create themes on `Tailwind.config.ts`, as an example of configuring three themes dark, light and forest using [TW Colors](https://github.com/L-Blondy/tw-colors#add-more-themes):
+
+```typescript
+const { createThemes } = require('tw-colors');
+
+module.exports = {
+  content: ['./src/**/*.{html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  plugins: [
+      createThemes({
+        light: {
+            'primary': 'steelblue',
+            'secondary': 'darkblue',
+            'brand': '#F3F3F3',
+        },
+      dark: {
+        'primary': 'turquoise',
+        'secondary': 'tomato',
+        'brand': '#4A4A4A',
+      },
+      forest: {
+        'primary': '#2A9D8F',
+        'secondary': '#E9C46A',
+        'brand': '#264653',
+      },
+      })
+  ],
+};
+```
+
+It is a great improve on my point of view and you can certainly use it, but for me I would like to make my own code in my own way.
 
 ### CSS Variables
+
+TW Colors uses CSS variables to make the themes, so I thought I could use too as I already made a theme logic using them when working with Angular 2 years ago.
+
+Then I started thinking what are my needs and how can I solve them. The first thing was that I want as many themes as possible- So I would need to provide to every theme into different files as I wanted a lot of them, staying at the same file would not be very scalable. Second thing I wanted is to control the theme based on a html attribute `data-theme` as:
+
+```html
+<html data-theme="dark"></html>
+```
+
+With this in mind, I thought on a simple solution: Use CSS variables, and change the value of them using Javascript. To start this I overwrite [Tailwind default colors](https://tailwindcss.com/docs/customizing-colors) with my colors in `Tailwind.config.ts` using CSS variables syntax as:
+
+```typescript
+import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
+
+const config: Config = {
+  content: [
+    './src/**/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    colors: {
+      'primary': 'var(--primary)',
+      'secondary': 'var(--secondary)',
+      'text': 'var(--text)',
+      'title': 'var(--title)',
+      'foreground': 'var(--foreground)',
+      'background': 'var(--background)',
+      'background-card': 'var(--background-card)',
+      'text-on-primary': 'var(--text-on-primary)',
+      'text-hover': 'var(--text-hover)',
+      'primary-hover': 'var(--primary-hover)',
+
+      'code-header': 'var(--code-header)',
+      'transparent': 'transparent',
+      'current': 'currentColor',
+    },
+  }
+}
+export default config
+```
+
+A little observation about two colors `transparent` and `current` that are been used as const and not variables values, because I do not want to change them when the theme is changed.
+
+Continuing after colors configuration, I need to declare these variables into some place so I went to `global.css` where [Tailwind is init](https://tailwindcss.com/docs/installation/using-postcss) and then declare the variables into a root [pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:root):
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #51C28A;
+  --secondary: #74DFAA;
+  --text: #DDDDDD;
+  --title: #EAEAEA;
+  --foreground: #282929;
+  --background: #131313;
+  --background-card: #ffffff0a;
+  --text-on-primary: #FFFFFF;
+  --text-hover: #888888;
+  --primary-hover: #409c6e;
+
+  --code-header: #21222C;
+}
+```
+
+If you want, you can add a accessible [medias prefers color scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
+
+That almost it, now you just need to change the values using Javascript. But before this I want to make a file for each theme and make them available. To do that I created a folder called `themes` on root project
+
+![Image showing themes folder structure](https://github.com/fescherer/blog/assets/62115215/478706ed-609c-41c4-a186-0acc1549dd1a)
+
+```typescript
+// themes.theme.ts
+import { darkTheme } from './variant/dark'
+import { lightTheme } from './variant/light'
+
+export const themes = {
+  dark: darkTheme,
+  light: lightTheme,
+}
+```
+
+```typescript
+// variant/light.ts
+export const lightTheme = {
+  '--primary': '#359967',
+  '--secondary': '#4d9470',
+  '--text': '#090a0a',
+  '--title': '#191b1a',
+  '--foreground': '#dfdfdf',
+  '--background': '#ffffff',
+  '--background-card': '#0000000a',
+  '--text-on-primary': '#FFFFFF',
+  '--text-hover': '#888888',
+  '--primary-hover': '#409c6e',
+  '--code-header': '#21222C',
+}
+```
+
+```typescript
+// variant/dark.ts
+export const darkTheme = {
+  '--primary': '#51C28A',
+  '--secondary': '#74DFAA',
+  '--text': '#DDDDDD',
+  '--title': '#EAEAEA',
+  '--foreground': '#282929',
+  '--background': '#131313',
+  '--background-card': '#ffffff0a',
+  '--text-on-primary': '#FFFFFF',
+  '--text-hover': '#888888',
+  '--primary-hover': '#409c6e',
+  '--code-header': '#21222C',
+}
+```
+
+Now you can play as you want changing the values mapping though these objects
+
+```javascript
+for (const [property, value] of Object.entries(themes.dark)){
+  document.documentElement.style.setProperty(property, value)
+}
+```
+
+Why I did not use `data-theme`- to not leave so much varaibles created on inspecting the themes
 
 ## Toggle theme
 

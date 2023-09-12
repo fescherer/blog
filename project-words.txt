@@ -1,3 +1,5 @@
 Contentful
 fescherer
+tailwindcss
+Themer
 Wathan
