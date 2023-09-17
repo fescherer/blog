@@ -1,5 +1,6 @@
 import { AsideAllTagsAndCategories } from '@/components/AsideAllTagsAndCategories'
 import { Link } from '@/components/Lib/Link'
+import { MobileMenuArticle } from '@/components/MobileMenuArticle'
 import { Posts } from '@/features/Posts'
 import { allDocs } from 'contentlayer/generated'
 
@@ -21,6 +22,13 @@ export default function PostsByTag({ params: { tag } }: PostsByTagProps) {
       </div>
       <aside className='hidden flex-col gap-2 lg:flex'>
         <AsideAllTagsAndCategories selectedTag={tag} />
+      </aside>
+      <aside className='block lg:hidden'>
+        <MobileMenuArticle>
+          <div className='flex flex-col gap-2 '>
+            <AsideAllTagsAndCategories selectedTag={tag} />
+          </div>
+        </MobileMenuArticle>
       </aside>
     </>
 
