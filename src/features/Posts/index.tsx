@@ -1,11 +1,15 @@
 import { PostCard } from './components'
-import { allDocs } from 'contentlayer/generated'
+import type { Doc } from 'contentlayer/generated'
 
-export function Posts() {
+interface PostsProps {
+  docs: Doc[]
+}
+
+export function Posts({ docs }: PostsProps) {
   return (
     <div className='grid w-full grid-cols-[repeat(auto-fit,minmax(320px,max-content))] justify-center gap-6'>
       {
-        allDocs.map(item => <PostCard key={item._id} data={item} />)
+        docs.map(item => <PostCard key={item._id} data={item} />)
       }
     </div>
   )

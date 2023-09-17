@@ -7,7 +7,6 @@ import { Card } from '@/components/Lib/Card'
 
 interface AsidePostIndexProps {
   doc: Doc
-  className?: string
 }
 export interface DocHeading { level: 1 | 2 | 3; title: string }
 
@@ -33,7 +32,7 @@ export function getNodeText(node: React.ReactNode): string {
   return ''
 }
 
-export function AsidePostIndex({ doc, className }: AsidePostIndexProps) {
+export function AsidePostIndex({ doc }: AsidePostIndexProps) {
   const headings = doc.headings as DocHeading[]
 
   const [activeHeading, setActiveHeading] = useState<string>('')
@@ -62,35 +61,33 @@ export function AsidePostIndex({ doc, className }: AsidePostIndexProps) {
     return null
 
   return (
-    <aside className={`${className}`}>
-      <Card className='sticky top-[70px] max-w-[260px]'>
-        <h4>On this article</h4>
-        <ul className="space-y-2">
-          {headingsToRender.map(({ title, level }) => (
-            <li key={`${title}-${level}`}>
-              <a
-                  href={`#${sluggifyTitle(getNodeText(title))}`}
-                  style={{ marginLeft: (level - 2) * 16 }}
-                  className={`flex text-sm text-text ${
+    <Card title="On this article">
+      <ul className="space-y-2">
+        {headingsToRender.map(({ title, level }) => (
+          <li key={`${title}-${level}`}>
+            <a
+                href={`#${sluggifyTitle(getNodeText(title))}`}
+                style={{ marginLeft: (level - 2) * 16 }}
+                className={`flex text-sm text-text ${
                 sluggifyTitle(getNodeText(title)) === activeHeading
                   ? 'text-primary'
                   : 'hover:text-secondary'
               }`}
-              >
-                <span className="mr-2 mt-[5px] block w-1.5 shrink-0">
-                  <CaretRight />
-                </span>
-                <span
+            >
+              <span className="mr-2 mt-[5px] block w-1.5 shrink-0">
+                <CaretRight />
+              </span>
+              <span
                   // eslint-disable-next-line react/no-danger
-                    dangerouslySetInnerHTML={{
-                      __html: title.replace('`', '<code style="font-size: 0.75rem;">').replace('`', '</code>'),
-                    }}
-                />
-              </a>
-            </li>
-          ))}
-        </ul>
-      </Card>
-    </aside>
+                  dangerouslySetInnerHTML={{
+                    __html: title.replace('`', '<code style="font-size: 0.75rem;">').replace('`', '</code>'),
+                  }}
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </Card>
+
   )
 }

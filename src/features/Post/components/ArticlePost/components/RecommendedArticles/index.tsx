@@ -2,14 +2,14 @@
 
 import { RecommendedArticle } from './components'
 import { getRecommendedArticles } from '@/utils/functions'
-import { type Doc, allDocs } from 'contentlayer/generated'
+import { type Doc } from 'contentlayer/generated'
 
 interface RecommendedArticlesProps {
   doc: Doc
 }
 
 export function RecommendedArticles({ doc }: RecommendedArticlesProps) {
-  const recommendedArticles = getRecommendedArticles(allDocs, doc)
+  const recommendedArticles = getRecommendedArticles(doc)
 
   return (
     <section>

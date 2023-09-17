@@ -13,8 +13,7 @@ export function ArticleDetails({ doc }: ArticleDetailsProps) {
   const publishedDate = getTimeFormated(doc.published_date)
 
   return (
-    <Card className='flex flex-col gap-2'>
-      <h2>Article Details</h2>
+    <Card className='flex flex-col gap-2' title="Article Details">
 
       <div>
         <h3>Date:</h3>

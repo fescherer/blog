@@ -1,4 +1,5 @@
-import { AdContainer, ArticleDetails, Profile } from './components'
+import { AdContainer, ArticleLinkCard, AsidePostIndex, Profile } from './components'
+import { AllCategories, AllTags } from '@/components/AsideAllTagsAndCategories/components'
 import type { Doc } from 'contentlayer/generated'
 
 interface AsidePostProps {
@@ -9,11 +10,16 @@ interface AsidePostProps {
 export function AsidePost({ doc, className }: AsidePostProps) {
   return (
     <div className={`${className}`}>
-      <aside className="sticky top-[70px] flex h-max w-[320px] flex-col gap-2">
+      <aside className="relative flex h-full w-[320px] flex-col gap-2">
+
         <AdContainer />
-        <ArticleDetails doc={doc} />
+        <AsidePostIndex doc={doc} />
+        <ArticleLinkCard doc={doc} />
         <Profile author={doc.author } />
         {/* <Newsletter /> */}
+
+        <AllCategories />
+        <AllTags />
       </aside>
     </div>
   )
