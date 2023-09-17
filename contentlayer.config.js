@@ -113,6 +113,11 @@ export const Doc = defineDocumentType(() => ({
       of: { type: 'string' },
       required: true,
     },
+    categories: {
+      type: 'list',
+      of: { type: 'string' },
+      required: true,
+    },
     sources: {
       type: 'list',
       of: { type: 'string' },

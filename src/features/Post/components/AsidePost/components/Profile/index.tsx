@@ -12,8 +12,7 @@ export function Profile({ author }: ProfileProps) {
     return <></>
 
   return (
-    <Card>
-      <h2 className='mb-2'>Author</h2>
+    <Card title="Author">
       <div className='flex gap-2'>
         <picture>
           <img src={authorData.image} alt="" className='w-64 rounded-md bg-background' />

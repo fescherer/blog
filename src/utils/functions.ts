@@ -1,5 +1,5 @@
 import type { IRecommendedArticle } from '@/@types'
-import type { Doc } from 'contentlayer/generated'
+import { type Doc, allDocs } from 'contentlayer/generated'
 
 export function getTimeFormated(dateString: string) {
   const date = new Date(dateString)
@@ -12,7 +12,7 @@ export function getTimeFormated(dateString: string) {
   return publishedDate
 }
 
-export function getRecommendedArticles(allDocs: Doc[], doc: Doc): IRecommendedArticle[] {
+export function getRecommendedArticles(doc: Doc): IRecommendedArticle[] {
   const recommendedArticles: IRecommendedArticle[] = []
 
   allDocs.forEach((item) => {
@@ -27,4 +27,27 @@ export function getRecommendedArticles(allDocs: Doc[], doc: Doc): IRecommendedAr
   const sorted = recommendedArticles.sort(({ points: pointsA }, { points: pointsB }) => pointsB - pointsA)
 
   return sorted.slice(0, 3)
+}
+
+export function getAllTags() {
+  const contentField: string[] = []
+  allDocs.forEach((article) => {
+    article.tags.forEach((tag) => {
+      if (!contentField.includes(tag))
+        contentField.push(tag)
+    })
+  })
+  return contentField
+}
+
+export function getAllCategories() {
+  const contentField: string[] = []
+  allDocs.forEach((article) => {
+    article.categories.forEach((tag) => {
+      if (!contentField.includes(tag))
+        contentField.push(tag)
+    })
+  })
+
+  return contentField
 }
