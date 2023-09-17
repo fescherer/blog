@@ -1,0 +1,372 @@
+---
+title: Tailwind Strategies for themes
+description: Many strategies that could use to implement themes on Tailwind
+published_date: 2023-09-18T10:00:00
+image: https://github.com/fescherer/blog/assets/62115215/f1315990-75b1-40f8-8129-3e836d95754c
+author: fescherer
+video_url:
+project_url:
+figma_url:
+github_url:
+tags:
+  - css
+  - themes
+  - tailwind
+sources:
+  - 2023-09-10T10:00:00$Tailwind doc$https://tailwindcss.com/docs/installation
+  - 2023-09-10T10:00:00$Indie Hackers - Adam Wathan$https://www.indiehackers.com/post/im-adam-wathan-i-created-tailwind-css-and-built-a-multi-million-dollar-business-around-it-ama-3c0732f724
+  - 2023-09-10T10:00:00$OfferZen Origins - Adam Wathan$https://www.youtube.com/watch?v=1x7HlvSfW6s
+  - 2023-09-17T10:00:00$Design system theming - UX Pin$https://www.uxpin.com/studio/blog/design-system-theming
+  - 2023-09-17T10:00:00$Mozilla Developer$https://developer.mozilla.org
+---
+
+## Introduction
+
+[Tailwind CSS](https://tailwindcss.com) as the docs says:
+
+> A utility-first CSS framework packed with classes like `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup.
+
+### What is Tailwind CSS
+
+To understand Tailwind CSS is good to know how it was created. Well, the framework was created by [Adam Wathan](https://twitter.com/adamwathan) because he wanted to use a [Bootstrap](https://getbootstrap.com) kinda syntax with [Less processor](https://lesscss.org), as you may know Bootstrap has build in classes for `buttons`, `forms`, etc. Tailwind in other hand has just utility classes, like `flex`, `backgrounds`, `paddings`, `margins`, etc. That's why in the first versions of Tailwind, it has some of the classes like Bootstrap, but from time on Adam switched to more generic classes. He also needed to change the processor to PostCSS, but you can find the whole history at [OfferZen Origins's channel](https://www.youtube.com/watch?v=1x7HlvSfW6s).
+
+For me, frameworks that's uses utility classes are the best ones, it can be strange at first but the productivity grows so much using this strategy that I cannot stop using.
+
+### Popularity
+
+For popularity Tailwind is one of the favorite CSS Framework out there. You can see this in [State of CSS Survey](https://2023.stateofcss.com/en-US/css-frameworks):
+![image](https://github.com/fescherer/blog/assets/62115215/23055cb4-026e-4f25-b287-e3556251faf3)
+
+They have a lot of interesting data. I suggest you to take look and see for yourself.
+
+### How to use
+
+As said before, Tailwind uses utility classes, so you will add them into your html as so:
+
+```html
+<div className="m-4 flex items-center justify-center">
+  <span>Item 1</span>
+  <span>Item 2</span>
+</div>
+```
+
+When I started coding, the company used [Angular](https://angular.io) with kinda of utility classes. We a had a big style sheet containing all the most used classes like `padding` or `margin` and them, if we would need some more specific style, we create a class just for it. I grow up and for my experience, don't do that, try to stay just with utility classes, it way more easy to maintain.
+
+You can find the list of utility classes available [in the docs](https://tailwindcss.com/docs/utility-first).
+
+## What is theme
+
+Theme is a set of characteristics that build an idea. I can be applied to an environment to give the feeling of that characteristics. So you can made a party using a Halloween theme, so everyone and the party probably will have characteristics from Halloween.
+
+In design is the same thing, we can made certain [rules that build in a theme](https://www.uxpin.com/studio/blog/design-system-theming), like font sizes, spaces, images and colors. This can be used for accessibility advantages or just to made a design some unique like a special version for christmas.
+
+It became very popular for all designs to have at least a version called `dark` with more darker colors and a `light` with, of course, lighter colors. So it is very important to know how you can handle this.
+
+## Strategies for theming in Tailwind
+
+In this tutorial, I will show only themes that change colors, that's because I think changing the font-size or spaces can be tricky and not so great in the final product.
+
+Tailwind already has a [theme build in support](https://tailwindcss.com/docs/dark-mode) but I think is not ideal mostly if you want to add more than just dark and light theme. So that's why I gonna show you some strategies you can use to add more themes for Tailwind CSS.
+
+### Using external libraries
+
+There a lot of libs created by the community to solve the problem of multiple themes in Tailwind. Some examples would be:
+
+- [Tailwind CSS Theme Variants](https://github.com/JNavith/tailwindcss-theme-variants);
+- [Tailwind Themer](https://github.com/RyanClementsHax/tailwindcss-themer);
+- [TW Colors](https://github.com/L-Blondy/tw-colors);
+- Many more...
+
+All have a very similar concept and way to solve this by enable to create themes on `Tailwind.config.ts`, as an example of configuring three themes dark, light and forest using [TW Colors](https://github.com/L-Blondy/tw-colors#add-more-themes):
+
+```typescript
+const { createThemes } = require('tw-colors');
+
+module.exports = {
+  content: ['./src/**/*.{html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  plugins: [
+      createThemes({
+        light: {
+            'primary': 'steelblue',
+            'secondary': 'darkblue',
+            'brand': '#F3F3F3',
+        },
+      dark: {
+        'primary': 'turquoise',
+        'secondary': 'tomato',
+        'brand': '#4A4A4A',
+      },
+      forest: {
+        'primary': '#2A9D8F',
+        'secondary': '#E9C46A',
+        'brand': '#264653',
+      },
+      })
+  ],
+};
+```
+
+It is a great improve on my point of view and you can certainly use it, but for me I would like to make my own code in my own way.
+
+### CSS Variables
+
+TW Colors uses CSS variables to make the themes, so I thought I could use too as I already made a theme logic using them when working with Angular 2 years ago.
+
+Then I started thinking what are my needs and how can I solve them. The first thing was that I want as many themes as possible- So I would need to provide to every theme into different files as I wanted a lot of them, staying at the same file would not be very scalable. Second thing I wanted is to control the theme based on a html attribute `data-theme` as:
+
+```html
+<html data-theme="dark"></html>
+```
+
+With this in mind, I thought on a simple solution: Use CSS variables, and change the value of them using Javascript. To start this I overwrite [Tailwind default colors](https://tailwindcss.com/docs/customizing-colors) with my colors in `Tailwind.config.ts` using CSS variables syntax as:
+
+```typescript
+import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
+
+const config: Config = {
+  content: [
+    './src/**/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    colors: {
+      'primary': 'var(--primary)',
+      'secondary': 'var(--secondary)',
+      'text': 'var(--text)',
+      'title': 'var(--title)',
+      'foreground': 'var(--foreground)',
+      'background': 'var(--background)',
+      'background-card': 'var(--background-card)',
+      'text-on-primary': 'var(--text-on-primary)',
+      'text-hover': 'var(--text-hover)',
+      'primary-hover': 'var(--primary-hover)',
+
+      'code-header': 'var(--code-header)',
+      'transparent': 'transparent',
+      'current': 'currentColor',
+    },
+  }
+}
+export default config
+```
+
+A little observation about two colors `transparent` and `current` that are been used as constants and not variables values, because I do not want to change them when the theme is changed.
+
+Continuing after colors configuration, I need to declare these variables and default values for them into some place so I went to `global.css` where [Tailwind is init](https://tailwindcss.com/docs/installation/using-postcss) and then declare the variables into a root [pseudo-class](https://developer.mozilla.org/en-US/docs/Web/CSS/:root):
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #51C28A;
+  --secondary: #74DFAA;
+  --text: #DDDDDD;
+  --title: #EAEAEA;
+  --foreground: #282929;
+  --background: #131313;
+  --background-card: #ffffff0a;
+  --text-on-primary: #FFFFFF;
+  --text-hover: #888888;
+  --primary-hover: #409c6e;
+
+  --code-header: #21222C;
+}
+```
+
+If you want, you can add a accessible [medias prefers color scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
+
+That almost it, now you just need to add in some css file the values for each theme like so:
+
+```css
+:root[data-theme='dark'] {
+  --primary: #51C28A;
+  --secondary: #74DFAA;
+  --text: #DDDDDD;
+  --title: #EAEAEA;
+  --foreground: #282929;
+  --background: #131313;
+  --background-card: #ffffff0a;
+  --text-on-primary: #FFFFFF;
+  --text-hover: #888888;
+  --primary-hover: #409c6e;
+
+  --code-header: #21222C;
+}
+```
+
+To make a better organization I like to make one file for each theme and then export all in one file.
+
+![Folder structure](https://github.com/fescherer/blog/assets/62115215/672b8aae-169a-4028-ace2-0f5482005252)
+
+```css
+/* themes/variants/dark.css */
+:root[data-theme='dark'] {
+  --primary: #51C28A;
+  --secondary: #74DFAA;
+  --text: #DDDDDD;
+  --title: #EAEAEA;
+  --foreground: #282929;
+  --background: #131313;
+  --background-card: #ffffff0a;
+  --text-on-primary: #FFFFFF;
+  --text-hover: #888888;
+  --primary-hover: #409c6e;
+
+  --code-header: #21222C;
+}
+```
+
+```css
+/* themes/variants/light.css */
+:root[data-theme='light'] {
+  --primary: #359967;
+  --secondary: #4d9470;
+  --text: #090a0a;
+  --title: #191b1a;
+  --foreground: #dfdfdf;
+  --background: #ffffff;
+  --background-card: #0000000a;
+  --text-on-primary: #FFFFFF;
+  --text-hover: #888888;
+  --primary-hover: #409c6e;
+
+  --code-header: #21222C;
+}
+```
+
+```css
+/* themes/index.css */
+@import './variants/dark.css';
+@import './variants/light.css';
+```
+
+This way I can import the `index.css` file with all the imports already set up.
+
+The last part, we need to make the logic to change themes. To do this first you need to map all your themes into an array.
+
+```typescript
+/* themes/themes.theme.ts */
+export const themes = [
+  'dark',
+  'light',
+]
+```
+
+Lastly just change the value of the `html` attribute `data-theme` with Javascript and voilà.
+
+```javascript
+document.getElementsByTagName('html')[0].setAttribute('data-theme', 'light')
+```
+
+## SSR Themes preference
+
+If you analyze my blog you would probably noticed that theme preference is storage somewhere and then loaded before even the page. How that's possible? The key word is [`cookies`](https://web.dev/understanding-cookies). These type of data is storage and can be access by the server, not only the browser like [`local storage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage), using this, we can load the theme in server and then bring to browser the storage one as default.
+
+There are many ways to manage cookies and I think that every framework has its own way to do that. In this tutorial I will teach you with [NextJS 13 using app router](https://nextjs.org) because it is what I use and have experience.
+
+First we need to install 1 dependency called [cookies-next](https://www.npmjs.com/package/cookies-next) because with the [new API of app router, we can only use cookies at server components](https://nextjs.org/docs/app/api-reference/functions/cookies) but this solves just one part of the equation the load can be at server components, but every time we use interaction, the component need to be client, so how am I supposed to save a cookie of user theme choice? That's why we use `cookies-next`, to manipulate cookies at client components.
+
+```bash
+npm install cookies-next
+```
+
+Let's start in the root `layout.tsx`.
+
+```jsx
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  const cookieTheme = cookies().get('data-theme')
+  const theme = themes.includes(cookieTheme?.value ?? '') ? cookieTheme?.value : 'dark'
+
+  return (
+    <html lang="en" data-theme={theme}>
+      <body>
+        <main>
+          {children}
+        </main>
+      </body>
+    </html>
+  )
+}
+```
+
+Using the code above you can load the cookie `data-theme` and then pass to `html`. Now to change this just use the code Javascript that I said to you earlier.
+
+```jsx
+
+// Here you can storage these values together with the themes like I showed you earlier.
+const themes = [
+  'dark',
+  'light',
+]
+
+function handleTheme(theme: string) {
+  document.getElementsByTagName('html')[0].setAttribute('data-theme', theme)
+}
+
+export function ThemeSelector() {
+  return (
+    <div>
+      {
+        themes.map((theme) => (
+          <button key={theme} onClick={() => handleTheme(theme)}>
+            {theme}
+          </button>
+        ))
+      }
+    </div>
+  )
+}
+```
+
+## User preferences - prefers-color-scheme, prefers-reduced-motion, etc
+
+One last thing you can do to make your code even better is to add a default theme based on user preference, it is very common to add a option on theme selector saying `default` or `system`, this is a theme based on user's system theme. So that's really import to make our interface looks like the user's on first time accessing our site. To do that is very simple, just add a [CSS query prefers-color-scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme).
+
+```css
+/* themes/variants/system.css */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #51C28A;
+      --secondary: #74DFAA;
+      --text: #DDDDDD;
+      --title: #EAEAEA;
+      --foreground: #282929;
+      --background: #131313;
+      --background-card: #ffffff0a;
+      --text-on-primary: #FFFFFF;
+      --text-hover: #888888;
+      --primary-hover: #409c6e;
+
+      --code-header: #21222C;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary: #359967;
+    --secondary: #4d9470;
+    --text: #090a0a;
+    --title: #191b1a;
+    --foreground: #dfdfdf;
+    --background: #ffffff;
+    --background-card: #0000000a;
+    --text-on-primary: #FFFFFF;
+    --text-hover: #888888;
+    --primary-hover: #409c6e;
+
+    --code-header: #21222C;
+    }
+}
+```
+
+## Conclusion
+
+In this article I told you a little about the history behind Tailwind CSS creation, with the explain about what are themes and how people use them with Tailwind. For last how I would implement themes by myself using Tailwind and NextJS SSR feature to load theme in the server rendering time.
+
+Thank you for your time. Have a nice day. 😎✨✨✨😎

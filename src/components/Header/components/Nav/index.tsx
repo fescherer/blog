@@ -1,10 +1,16 @@
+'use client'
+
 import clsx from 'clsx'
 import { List, X } from 'phosphor-react'
 import { useState } from 'react'
 import { ThemeSelector } from './components'
 import { Link } from '@/components/Lib/Link'
 
-export function Nav() {
+interface NavProps {
+  theme: string
+}
+
+export function Nav({ theme }: NavProps) {
   const [isMenuHidden, setIsMenuHidden] = useState(true)
 
   return (
@@ -21,7 +27,7 @@ export function Nav() {
         <ul className="flex flex-col items-center gap-3 md:flex-row">
           <li><Link href="/" target='_self'>Home</Link></li>
           <li><Link href="https://felipescherer.com" target='_self'>Portifolio</Link></li>
-          <li><ThemeSelector /></li>
+          <li><ThemeSelector theme={theme} /></li>
           {/* <li><Gear size={20} /></li> */}
         </ul>
       </nav>

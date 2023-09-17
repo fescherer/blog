@@ -1,6 +1,6 @@
 {
   "name": "blog-v2",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -16,6 +16,7 @@
     "@radix-ui/react-separator": "^1.0.3",
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
+    "cookies-next": "^4.0.0",
     "eslint-config-next": "^13.4.19",
     "next": "13.4.19",
     "next-contentlayer": "^0.3.4",
