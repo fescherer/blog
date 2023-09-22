@@ -148,7 +148,8 @@ export default makeSource({
       },
       [
         rehypePrettyCode, {
-          theme: 'dracula',
+          theme: { dark: 'dracula', light: 'rose-pine-dawn' },
+
           onVisitLine(node) {
             // Prevent lines from collapsing in display: grid mode, and allow
             // empty lines to be copy/pasted

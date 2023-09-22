@@ -11,4 +11,10 @@
   --primary-hover: #409c6e;
 
   --code-header: #21222C;
+
+  [data-theme='light'] {
+    display: none;
+  };
+
+
 }
