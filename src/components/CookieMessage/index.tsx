@@ -45,7 +45,7 @@ export function CookieMessage() {
             <p className='text-justify text-base'>
               To improve your experience using this product, cookies and other similar technologies are used. By using our products you agree to the use of cookies and other similar technologies.
             </p>
-            <button aria-label="Accept cookies and other tecnologies" type="button" className='rounded bg-primary px-4 py-2 text-base text-text-on-primary hover:bg-primary-hover'>Ok. Thank you</button>
+            <button aria-label="Accept cookies and other tecnologies with Ok. Thank you" type="button" className='rounded bg-primary px-4 py-2 text-base text-text-on-primary hover:bg-primary-hover'>Ok. Thank you</button>
           </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
