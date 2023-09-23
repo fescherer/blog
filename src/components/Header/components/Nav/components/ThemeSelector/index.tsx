@@ -47,7 +47,7 @@ export function ThemeSelector({ theme }: ThemeSelectorProps) {
       </button>
 
       <Dropdown>
-        <Dropdown.Trigger><CaretDown /></Dropdown.Trigger>
+        <Dropdown.Trigger aria-label="Open menu with more themes to choose"><CaretDown /></Dropdown.Trigger>
         <Dropdown.Content>
           <ul>
             {allThemes.map(themeItem => (
