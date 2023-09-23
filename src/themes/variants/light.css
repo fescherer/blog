@@ -10,6 +10,11 @@
   --text-hover: #888888;
   --primary-hover: #409c6e;
 
-  --code-header: #21222C;
+  --code-header: #f3e9de;
+
+  pre[data-theme='dark'],
+  code[data-theme='dark'] {
+    display: none;
+  }
 }
 

@@ -5,7 +5,7 @@ import { cookies } from 'next/headers'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { CookieMessage } from '@/components/CookieMessage'
-import { themes } from '@/themes/themes.theme'
+import { themes } from '@/themes/serverSideThemes'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -22,10 +22,6 @@ export default function RootLayout({
 
   return (
     <html lang="en" className='flex min-h-screen scroll-smooth' data-theme={theme}>
-      <head>
-
-        <link href="https://api.fontshare.com/v2/css?f[]=switzer@300&f[]=gambarino@400&display=swap" rel="stylesheet" />
-      </head>
       <body className="flex w-full flex-col gap-8 bg-background font-switzer text-text">
         <Header />
         <main className="m-auto flex w-full max-w-screen-2xl flex-1 px-4 pt-24">

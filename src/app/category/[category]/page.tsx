@@ -17,7 +17,7 @@ export default function PostsByCategory({ params: { category } }: PostsByCategor
   return (
     <>
       <div className='m-auto flex w-full flex-col gap-4'>
-        <h2 className='text-center text-sm capitalize'><Link target='_self' href="/">Filtered by:{category}</Link></h2>
+        <h2 className='text-center text-sm capitalize'><Link aria-label="Remove Filter" target='_self' href="/">Filtered by:{category}</Link></h2>
         <Posts docs={docs} />
       </div>
       <aside className='hidden flex-col gap-2 lg:flex'>

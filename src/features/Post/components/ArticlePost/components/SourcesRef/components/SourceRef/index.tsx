@@ -13,7 +13,7 @@ export function SourceRef({ item }: SourceRefProps) {
   if (ref.length > 2) {
     return (
       <p>
-        <Link href={ref[2]} target='_blank' className='tracking-wide text-secondary transition-all hover:border-b hover:border-b-primary-hover hover:text-primary-hover'>{`${ref[1]}`}.</Link>
+        <Link aria-label={`Link for source ${ref[1]}`} href={ref[2]} target='_blank' className='tracking-wide text-secondary transition-all hover:border-b hover:border-b-primary-hover hover:text-primary-hover'>{`${ref[1]}`}.</Link>
         <span>{' '}Access at {`${getTimeFormated(ref[0])}`}</span>
       </p>
     )

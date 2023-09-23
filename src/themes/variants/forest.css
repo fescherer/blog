@@ -1,0 +1,19 @@
+:root[data-theme='forest'] {
+  --primary: #117727;
+  --secondary: #206779;
+  --text: #0d1a13;
+  --title: #1fc06d;
+  --foreground: #b1e9aa;
+  --background: #cbfcdaaa;
+  --background-card: #0000000a;
+  --text-on-primary: #FFFFFF;
+  --text-hover: #888888;
+  --primary-hover: #158a2e;
+
+  --code-header: #158a2e;
+
+  pre[data-theme='light'],
+  code[data-theme='light'] {
+    display: none;
+  }
+}

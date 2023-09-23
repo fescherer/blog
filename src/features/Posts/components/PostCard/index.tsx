@@ -25,7 +25,7 @@ export function PostCard({ data }: PostCardProps) {
         <ArrowUpRight size={16} />
       </div>
 
-      <h2><Link href={data.slug} target='_self'>{data.title}</Link></h2>
+      <h2><Link aria-label={`Link to article ${data.title}`} href={data.slug} target='_self'>{data.title}</Link></h2>
 
       <p className='flex-1'>{data.description}</p>
 
