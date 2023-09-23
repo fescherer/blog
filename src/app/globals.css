@@ -28,6 +28,27 @@
     transition: background-color 0.6s ease,filter 0.3s ease;
   }
 
+  /* Switzer */
+  @font-face {
+    font-family: 'Switzer';
+    src: url('//cdn.fontshare.com/wf/EW5HJEX6O4L64XUWQA2XU7Q6BZ3B4JA4/ZWUP4SQYHHMMSS5LFHFFBX6DXL7C3DTU/H5EOHLIZH5K7IZK6SGYJI75L4KV6FUO7.woff2') format('woff2'),
+        url('//cdn.fontshare.com/wf/EW5HJEX6O4L64XUWQA2XU7Q6BZ3B4JA4/ZWUP4SQYHHMMSS5LFHFFBX6DXL7C3DTU/H5EOHLIZH5K7IZK6SGYJI75L4KV6FUO7.woff') format('woff'),
+        url('//cdn.fontshare.com/wf/EW5HJEX6O4L64XUWQA2XU7Q6BZ3B4JA4/ZWUP4SQYHHMMSS5LFHFFBX6DXL7C3DTU/H5EOHLIZH5K7IZK6SGYJI75L4KV6FUO7.ttf') format('truetype');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  /* Gambarino */
+  @font-face {
+    font-family: 'Gambarino';
+    src: url('//cdn.fontshare.com/wf/ZINX7PW4XMYISLZAZKYY4QHYYHYNPKAV/Z54IGKTR4PBLA5KTYL3IDQZHFQPJJVNZ/6KBHT5NXCZVM6GHTPKGIR6DXZLQAYIFK.woff2') format('woff2'),
+        url('//cdn.fontshare.com/wf/ZINX7PW4XMYISLZAZKYY4QHYYHYNPKAV/Z54IGKTR4PBLA5KTYL3IDQZHFQPJJVNZ/6KBHT5NXCZVM6GHTPKGIR6DXZLQAYIFK.woff') format('woff'),
+        url('//cdn.fontshare.com/wf/ZINX7PW4XMYISLZAZKYY4QHYYHYNPKAV/Z54IGKTR4PBLA5KTYL3IDQZHFQPJJVNZ/6KBHT5NXCZVM6GHTPKGIR6DXZLQAYIFK.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
 }
 
 code > [data-line]::before {
