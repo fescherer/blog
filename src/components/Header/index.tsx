@@ -9,7 +9,7 @@ export function Header() {
   return (
     <header className="fixed left-1/2 z-10 flex w-full max-w-screen-2xl -translate-x-1/2 justify-between p-4 backdrop-blur">
 
-      <Link href="/" target="_self" className="text-primary hover:text-primary-hover">
+      <Link aria-label="Go to home page" href="/" target="_self" className="text-primary hover:text-primary-hover">
         <LogoIcon />
       </Link>
 

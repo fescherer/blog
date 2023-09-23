@@ -12,7 +12,7 @@ export function RecommendedArticle({ article }: RecommendedArticleProps) {
   const articleTime = Math.ceil(readingTime(article.doc.body.raw).minutes)
 
   return (
-    <Link target='_self' className=' w-full rounded bg-foreground p-2 lg:w-1/3' href={article.doc.slug}>
+    <Link aria-label={`Go to article ${article.doc.title}`} target='_self' className=' w-full rounded bg-foreground p-2 lg:w-1/3' href={article.doc.slug}>
       <div className='flex flex-col gap-1 text-xs'>
         <time>{publishedDate}</time>
         <small> {`${articleTime} minute${articleTime > 1 ? 's' : ''} read`}</small>

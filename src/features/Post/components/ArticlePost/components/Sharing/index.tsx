@@ -9,19 +9,19 @@ export function Sharing() {
       <h3>Sharing</h3>
 
       <div className='flex gap-2'>
-        <Link href={'gg'}>
+        <Link aria-label="Share this article on Twitter" href={'gg'}>
           <TwitterLogo size={24} />
         </Link>
-        <Link href={'gg'}>
+        <Link aria-label="Share this article on Whatsapp" href={'gg'}>
           <WhatsappLogo size={24} />
         </Link>
-        <Link href={'gg'}>
+        <Link aria-label="Share this article on Linkedin" href={'gg'}>
           <LinkedinLogo size={24} />
         </Link>
-        <Link href={'gg'}>
+        <Link aria-label="Share this article on Facebook" href={'gg'}>
           <FacebookLogo size={24} />
         </Link>
-        <Link href={'ddsad'}>
+        <Link aria-label="Share this article" href={'ddsad'}>
           <Plus size={20} />
         </Link>
       </div>

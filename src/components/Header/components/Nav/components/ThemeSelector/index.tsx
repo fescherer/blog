@@ -42,7 +42,7 @@ export function ThemeSelector({ theme }: ThemeSelectorProps) {
 
   return (
     <div className='flex items-center gap-1'>
-      <button type="button" className='text-primary' onClick={() => changeTheme(themeSelected)}>
+      <button aria-label="Change current theme" type="button" className='text-primary' onClick={() => changeTheme(themeSelected)}>
         {themes[themeSelected as keyof typeof themes].icon}
       </button>
 
@@ -52,7 +52,7 @@ export function ThemeSelector({ theme }: ThemeSelectorProps) {
           <ul>
             {allThemes.map(themeItem => (
               <li key={themeItem} className={clsx({ 'text-primary': themeSelected === themeItem })}>
-                <button type='button' className='capitalize' onClick={() => setTheme(themeItem)}>
+                <button aria-label={`Change theme to ${themeItem}`} type='button' className='capitalize' onClick={() => setTheme(themeItem)}>
                   {themeItem}
                 </button>
               </li>

@@ -14,13 +14,13 @@ export function NavigationHeader({ doc }: NavigationHeaderProps) {
       <small className='text-xs'>Home - Category - Article</small>
 
       <div className='flex gap-2'>
-        <Link href={''}>
+        <Link aria-label="Go to project's deploy" href={''}>
           <Laptop size={24} />
         </Link>
-        <Link href={''}>
+        <Link aria-label="Go to Figma's page" href={''}>
           <FigmaLogo size={24} />
         </Link>
-        <Link href={''}>
+        <Link aria-label="Go to source code in Github" href={''}>
           <GithubLogo size={24} />
         </Link>
       </div>

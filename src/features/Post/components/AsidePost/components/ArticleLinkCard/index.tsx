@@ -16,7 +16,7 @@ export function ArticleLinkCard({ doc }: ArticleLinkCardProps) {
           {
             doc.project_url
               ? (
-                <Link href={doc.project_url} className='flex items-center gap-1'>
+                <Link aria-label="Link to article's project deploy" href={doc.project_url} className='flex items-center gap-1'>
                   <Browser weight='fill' size={20} />
                   Deploy
                 </Link>
@@ -27,7 +27,7 @@ export function ArticleLinkCard({ doc }: ArticleLinkCardProps) {
           {
             doc.figma_url
               ? (
-                <Link href={doc.figma_url} className='flex items-center gap-1'>
+                <Link aria-label="Link to article's project Figma page" href={doc.figma_url} className='flex items-center gap-1'>
                   <FigmaLogo weight='fill' size={20} />
                   Figma
                 </Link>
@@ -38,7 +38,7 @@ export function ArticleLinkCard({ doc }: ArticleLinkCardProps) {
           {
             doc.github_url
               ? (
-                <Link href={doc.github_url} className='flex items-center gap-1'>
+                <Link aria-label="Link to article's source code on Github" href={doc.github_url} className='flex items-center gap-1'>
                   <GithubLogo weight='fill' size={20} />
                   Github
                 </Link>
@@ -49,7 +49,7 @@ export function ArticleLinkCard({ doc }: ArticleLinkCardProps) {
           {
             doc.video_url
               ? (
-                <Link href={doc.video_url} className='flex items-center gap-1'>
+                <Link aria-label="Link to article's video on Youtube" href={doc.video_url} className='flex items-center gap-1'>
                   <YoutubeLogo weight='fill' size={20} />
                   Video
                 </Link>

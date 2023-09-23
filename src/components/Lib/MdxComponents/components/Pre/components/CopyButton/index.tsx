@@ -23,7 +23,7 @@ export function CopyButton({ text }: CopyButtonProps) {
   }
 
   return (
-    <button type='button' disabled={isCopied} onClick={copy}>
+    <button aria-label="Copy code" type='button' disabled={isCopied} onClick={copy}>
       <Copy size={20} weight={isCopied ? 'fill' : 'regular'} />
     </button>
   )

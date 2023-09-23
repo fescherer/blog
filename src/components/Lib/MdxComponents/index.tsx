@@ -39,7 +39,7 @@ const components = {
   pre: ({ ...props }: any) => (<Pre {...props} />),
 
   a: ({ children, ...props }: any) => (
-    <Link {...props} target='_blank' className='tracking-wide text-secondary transition-all hover:border-b hover:border-b-primary-hover hover:text-primary-hover'>{children}</Link>
+    <Link aria-label={`Go to ${children}`} {...props} target='_blank' className='tracking-wide text-secondary transition-all hover:border-b hover:border-b-primary-hover hover:text-primary-hover'>{children}</Link>
   ),
   p: ({ children, ...props }: any) => (
     <p className='my-10 leading-normal tracking-wide' {...props}>

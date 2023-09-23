@@ -13,23 +13,23 @@ export function PersonalSkills() {
 
       <p className='max-w-prose text-sm'>{ownerConfigs.description}</p>
 
-      <div className='flex gap-2'>
-        <Link href={ownerConfigs.linkedinLink}>
-          <LinkedinLogo size={20} />
+      <div className='flex gap-4'>
+        <Link aria-label="Go to Linkedin's author" href={ownerConfigs.linkedinLink}>
+          <LinkedinLogo size={24} />
         </Link>
-        <Link href={ownerConfigs.githubLink}>
-          <GithubLogo size={20} />
+        <Link aria-label="Go to Github's author" href={ownerConfigs.githubLink}>
+          <GithubLogo size={24} />
         </Link>
-        {/* <Link href={ownerConfigs.figmaLink}>
+        {/* <Link aria-label="Go to Figma's author" href={ownerConfigs.figmaLink}>
           <FigmaLogo size={20} />
         </Link>
-        <Link href={ownerConfigs.youtubeLink}>
+        <Link aria-label="Go to Youtube's author" href={ownerConfigs.youtubeLink}>
           <YoutubeLogo size={20} />
         </Link>
-        <Link href={ownerConfigs.twitterLink}>
+        <Link aria-label="Go to Twitter's author" href={ownerConfigs.twitterLink}>
           <TwitterLogo size={20} />
         </Link>
-        <Link href={ownerConfigs.tiktokLink}>
+        <Link aria-label="Go to Tiktok's author" href={ownerConfigs.tiktokLink}>
           <TiktokLogo size={20} />
         </Link> */}
       </div>

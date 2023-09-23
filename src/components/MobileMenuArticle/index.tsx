@@ -21,17 +21,18 @@ export function MobileMenuArticle({ children }: MobileMenuArticleProps) {
               <div className="absolute right-0 z-50 flex h-[calc(100vh-70px)] max-w-full flex-col overflow-scroll bg-background px-2 pb-10 pt-2">
                 {children}
               </div>
-              <button type="button" onClick={() => setIsOpen(prev => !prev)} className='h-full w-screen bg-foreground opacity-50' />
+              <button aria-label="Overlay to cancel menu" type="button" onClick={() => setIsOpen(prev => !prev)} className='h-full w-screen bg-foreground opacity-50' />
             </>
             )
           : null
       }
-      <button type='button' onClick={() => setIsOpen(prev => !prev)} className='h-full w-2 bg-primary' />
+      <button type='button' aria-label="Open menu" onClick={() => setIsOpen(prev => !prev)} className='h-full w-2 bg-primary' />
       <button
           onClick={() => setIsOpen(prev => !prev)}
           className={clsx('absolute top-1/2 -translate-y-1/2 rounded bg-primary py-2 text-text-on-primary', {
             '-left-3': !isOpen,
           })}
+          aria-label="Close menu"
           type='button'
       >
         {

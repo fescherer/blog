@@ -14,7 +14,14 @@ export function AllTags({ selectedTag }: AllTagsProps) {
     <Card title='All tags'>
       <div className='flex flex-wrap gap-1 text-xs uppercase'>
         {alltags.map((tag, index) => (
-          <Link className={clsx({ 'text-primary': selectedTag === tag })} target='_self' href={selectedTag === tag ? '/' : `/tag/${tag}`} key={tag}>{tag}{index !== alltags.length - 1 ? ' /' : ''}</Link>
+          <Link
+              aria-label="Remove tag selection filter"
+              className={clsx({ 'text-primary': selectedTag === tag })}
+              target='_self'
+              href={selectedTag === tag ? '/' : `/tag/${tag}`}
+              key={tag}
+          >{tag}{index !== alltags.length - 1 ? ' /' : ''}
+          </Link>
         ))}
       </div>
     </Card>
