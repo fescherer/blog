@@ -12,9 +12,8 @@
 
   --code-header: #21222C;
 
-  [data-theme='light'] {
+  pre[data-theme='light'],
+  code[data-theme='light'] {
     display: none;
-  };
-
-
+  }
 }

@@ -12,7 +12,8 @@
 
   --code-header: #f3e9de;
 
-  [data-theme='dark'] {
+  pre[data-theme='dark'],
+  code[data-theme='dark'] {
     display: none;
   }
 }

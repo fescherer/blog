@@ -5,7 +5,7 @@ import { cookies } from 'next/headers'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { CookieMessage } from '@/components/CookieMessage'
-import { themes } from '@/themes/themes.theme'
+import { themes } from '@/themes/serverSideThemes'
 
 export const metadata: Metadata = {
   title: 'Blog',
