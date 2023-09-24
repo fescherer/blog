@@ -14,7 +14,7 @@ export function RecommendedArticle({ article }: RecommendedArticleProps) {
   return (
     <Link aria-label={`Go to article ${article.doc.title}`} target='_self' className=' w-full rounded bg-foreground p-2 lg:w-1/3' href={article.doc.slug}>
       <div className='flex flex-col gap-1 text-xs'>
-        <time>{publishedDate}</time>
+        <time dateTime={publishedDate}>{publishedDate}</time>
         <small> {`${articleTime} minute${articleTime > 1 ? 's' : ''} read`}</small>
       </div>
       <h3>{article.doc.title}</h3>
