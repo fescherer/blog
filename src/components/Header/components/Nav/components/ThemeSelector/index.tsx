@@ -42,12 +42,12 @@ export function ThemeSelector({ theme }: ThemeSelectorProps) {
 
   return (
     <div className='flex items-center gap-1'>
-      <button aria-label="Change current theme" type="button" className='text-primary' onClick={() => changeTheme(themeSelected)}>
+      <button aria-label={`Change current theme ${themes[themeSelected as keyof typeof themes].name} to the next one`} type="button" className='text-primary' onClick={() => changeTheme(themeSelected)}>
         {themes[themeSelected as keyof typeof themes].icon}
       </button>
 
       <Dropdown>
-        <Dropdown.Trigger><CaretDown /></Dropdown.Trigger>
+        <Dropdown.Trigger aria-label="Open menu with more themes to choose"><CaretDown /></Dropdown.Trigger>
         <Dropdown.Content>
           <ul>
             {allThemes.map(themeItem => (

@@ -15,7 +15,7 @@ export function AllTags({ selectedTag }: AllTagsProps) {
       <div className='flex flex-wrap gap-1 text-xs uppercase'>
         {alltags.map((tag, index) => (
           <Link
-              aria-label="Remove tag selection filter"
+              aria-label={`Remove tag selection filter for ${tag}`}
               className={clsx({ 'text-primary': selectedTag === tag })}
               target='_self'
               href={selectedTag === tag ? '/' : `/tag/${tag}`}

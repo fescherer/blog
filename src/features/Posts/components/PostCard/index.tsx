@@ -19,7 +19,7 @@ export function PostCard({ data }: PostCardProps) {
       <div className='flex justify-between'>
 
         <div className='flex flex-col gap-1 text-xs'>
-          <time>{publishedDate}</time>
+          <time dateTime={publishedDate}>{publishedDate}</time>
           <small> {`${articleTime} minute${articleTime > 1 ? 's' : ''} read`}</small>
         </div>
         <ArrowUpRight size={16} />

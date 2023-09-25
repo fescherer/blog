@@ -23,7 +23,7 @@ export function ArticleHeader({ doc }: ArticleHeaderProps) {
         </div>
         <h1 className='font-gambarino text-h1'>{doc.title}</h1>
         <div className='text-sm'>
-          <small><time>{publishedDate}</time>{` 🞄  ${Math.ceil(readingTime(doc.body.raw).minutes)} minutes read`}</small>
+          <small><time dateTime={publishedDate}>{publishedDate}</time>{` 🞄  ${Math.ceil(readingTime(doc.body.raw).minutes)} minutes read`}</small>
         </div>
       </div>
 
