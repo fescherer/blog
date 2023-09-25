@@ -9,6 +9,19 @@ interface PageProps {
   }
 }
 
+export function generateMetadata(
+  { params: { slug, type } }: PageProps,
+) {
+  const data = getDocFromParams(type, slug)
+
+  return {
+    title: data.title,
+    openGraph: {
+      images: [data.image],
+    },
+  }
+}
+
 function getDocFromParams(type: string, slug: string) {
   const doc = allDocs.find(doc => doc.slug === `/${type}/${slug}`)
 

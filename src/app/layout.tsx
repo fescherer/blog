@@ -8,8 +8,8 @@ import { CookieMessage } from '@/components/CookieMessage'
 import { themes } from '@/themes/serverSideThemes'
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'A personal Blog',
+  title: 'Felipe Scherer\'s Blog',
+  description: 'A blog of tecnology, design, coding and gaming. Here you will find how to learn to code.',
 }
 
 export default function RootLayout({
