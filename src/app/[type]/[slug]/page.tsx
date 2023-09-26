@@ -16,9 +16,30 @@ export function generateMetadata(
 
   return {
     title: data.title,
-    openGraph: {
-      images: [data.image],
+    alternates: {
+      canonical: `https://blog.felipescherer.com/${type}/${slug}`,
     },
+
+    openGraph: {
+      title: `${data.title} | Felipe Scherer\'s Blog`,
+      description: data.description,
+      url: `https://blog.felipescherer.com/${type}/${slug}`,
+      siteName: 'Felipe Scherer\'s blog',
+      images: [
+        {
+          url: data.image,
+          alt: data.alt,
+          width: 1300,
+          height: 630,
+        },
+      ],
+      locale: 'en',
+      type: 'article',
+    },
+
+    authors: [
+      { name: 'Felipe Scherer', url: 'https://github.com/fescherer.com' },
+    ],
   }
 }
 
