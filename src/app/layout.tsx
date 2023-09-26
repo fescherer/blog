@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: metaConst.title,
     description: metaConst.description,
-    url: '/',
-    siteName: '/',
+    url: metaConst.url,
+    siteName: metaConst.url,
     images: [
       {
         url: '/thumb.png',
@@ -76,9 +76,9 @@ export const metadata: Metadata = {
   generator: 'Next.js',
 
   alternates: {
-    canonical: '/',
+    canonical: metaConst.url,
     languages: {
-      'en-US': '/',
+      'en-US': metaConst.url,
     },
   },
 
