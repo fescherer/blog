@@ -1,4 +1,7 @@
+import type { WebSite } from 'schema-dts'
 import { AsideAllTagsAndCategories } from '@/components/AsideAllTagsAndCategories'
+import { JSONLD } from '@/components/JSONLD'
+import { websiteJSONLD } from '@/components/JSONLD/data/website'
 import { Link } from '@/components/Lib/Link'
 import { MobileMenuArticle } from '@/components/MobileMenuArticle'
 import { Posts } from '@/features/Posts'
@@ -16,6 +19,7 @@ export default function PostsByTag({ params: { tag } }: PostsByTagProps) {
 
   return (
     <>
+      {JSONLD<WebSite>(websiteJSONLD)}
       <div className='m-auto flex w-full flex-col gap-4'>
         <h2 className='text-center text-sm capitalize'><Link aria-label="Remove filtered by:" target='_self' href="/">Filtered by: {tag}</Link></h2>
         <Posts docs={docs} />

@@ -10,3 +10,15 @@ export const ownerConfigs = {
   tiktokLink: '',
   twitterLink: '',
 }
+
+export const ownerMetaData = {
+  title: 'Felipe Scherer\'s blog',
+  description: 'A blog made with passion of tecnlogy, design and gaming. Feel free to contribute on Github\'s page',
+  url: 'https://blog.felipescherer.com',
+  image: {
+    url: '/thumb.png',
+    alt: 'Logo of Felipe Scherer',
+    width: 1300,
+    height: 630,
+  },
+}
