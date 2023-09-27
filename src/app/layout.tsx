@@ -6,17 +6,12 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { CookieMessage } from '@/components/CookieMessage'
 import { themes } from '@/themes/serverSideThemes'
-
-const metaConst = {
-  title: 'Felipe Scherer\'s blog',
-  description: 'A blog made with passion of tecnlogy, design and gaming. Feel free to contribute on Github\'s page',
-  url: 'https://blog.felipescherer.com',
-}
+import { ownerMetaData } from '@/utils/ownerConfigs'
 
 export const metadata: Metadata = {
-  title: metaConst.title,
-  description: metaConst.description,
-  metadataBase: new URL(metaConst.url),
+  title: ownerMetaData.title,
+  description: ownerMetaData.description,
+  metadataBase: new URL(ownerMetaData.url),
 
   verification: {
     google: 'google',
@@ -28,18 +23,11 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: metaConst.title,
-    description: metaConst.description,
-    url: metaConst.url,
-    siteName: metaConst.url,
-    images: [
-      {
-        url: '/thumb.png',
-        alt: 'Logo of Felipe Scherer',
-        width: 1300,
-        height: 630,
-      },
-    ],
+    title: ownerMetaData.title,
+    description: ownerMetaData.description,
+    url: ownerMetaData.url,
+    siteName: ownerMetaData.url,
+    images: [ownerMetaData.image],
     locale: 'en',
     type: 'website',
   },
@@ -50,15 +38,12 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'app',
-    title: metaConst.title,
-    description: metaConst.description,
+    title: ownerMetaData.title,
+    description: ownerMetaData.description,
     siteId: '1467726470533754880',
     creator: '@fescherer',
     creatorId: '1467726470533754880',
-    images: {
-      url: '/thumb.png',
-      alt: 'Logo of Felipe Scherer',
-    },
+    images: ownerMetaData.image,
     app: {
       name: 'twitter_app',
       id: {
@@ -76,9 +61,9 @@ export const metadata: Metadata = {
   generator: 'Next.js',
 
   alternates: {
-    canonical: metaConst.url,
+    canonical: ownerMetaData.url,
     languages: {
-      'en-US': metaConst.url,
+      'en-US': ownerMetaData.url,
     },
   },
 
@@ -120,6 +105,7 @@ export default function RootLayout({
           {typeof window !== 'undefined' && <CookieMessage />}
         </main>
         <Footer />
+
       </body>
     </html>
   )
