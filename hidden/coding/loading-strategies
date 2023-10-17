@@ -1,0 +1,1 @@
+Trick to make a loading screen: In the start of the request start a counter that goes to 100%, if the sites loads at 70% for example, make the counter go really fast
