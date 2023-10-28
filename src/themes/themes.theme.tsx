@@ -1,6 +1,6 @@
 'use client'
 
-import { Moon, Sun, TreeEvergreen } from 'phosphor-react'
+import { Moon, Sun } from 'phosphor-react'
 
 export const themes = {
   dark: {
@@ -11,8 +11,8 @@ export const themes = {
     name: 'light',
     icon: <Sun size={16} weight='fill' />,
   },
-  forest: {
-    name: 'forest',
-    icon: <TreeEvergreen size={16} weight='fill' />,
-  },
+  // forest: {
+  //   name: 'forest',
+  //   icon: <TreeEvergreen size={16} weight='fill' />,
+  // },
 }

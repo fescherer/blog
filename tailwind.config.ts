@@ -46,8 +46,8 @@ const config: Config = {
 
     },
     fontFamily: {
-      switzer: ['Switzer', 'sans-serif', ...defaultTheme.fontFamily.sans],
-      gambarino: ['Gambarino', 'serif', ...defaultTheme.fontFamily.sans],
+      satoshi: ['Satoshi', 'sans-serif', ...defaultTheme.fontFamily.sans],
+      cabinetGrotesk: ['Cabinet Grotesk', 'serif', ...defaultTheme.fontFamily.sans],
 
     },
     extend: {
