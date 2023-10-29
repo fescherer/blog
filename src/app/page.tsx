@@ -13,7 +13,7 @@ export default function Home() {
         <AsideAllTagsAndCategories />
       </aside>
       <Posts docs={allDocs} />
-      <aside>
+      <aside className='hidden flex-col gap-2 lg:flex'>
         <div className='h-[600px] w-[300px] bg-foreground' />
       </aside>
     </div>

@@ -14,7 +14,10 @@ export function ArticleCard({ data }: PostCardProps) {
 
   return (
     <Link aria-label={`Link to article ${data.title}`} href={data.slug} target='_self' className='group max-w-[500px] overflow-hidden rounded group-hover:text-primary'>
-      <div className="overflow-hidden rounded">
+      <div className="relative overflow-hidden rounded">
+        <div className='absolute bottom-0 left-0 z-10 flex w-full gap-2 p-2 backdrop-blur-sm'>
+          {data.tags.map(item => <span key={item} className='rounded bg-background px-2 text-xxs '>{item}</span>)}
+        </div>
         <Image
             className='w-full transition-all group-hover:scale-110'
             src={data.image}
@@ -29,9 +32,7 @@ export function ArticleCard({ data }: PostCardProps) {
           ·
           <p> {`${articleTime} minute${articleTime > 1 ? 's' : ''} read`}</p>
         </small>
-        <div className='flex gap-2'>
-          {data.tags.map(item => <span key={item} className='rounded bg-background px-2 text-xxs'>{item}</span>)}
-        </div>
+
       </div>
 
       <h2 className='transition-all group-hover:text-primary'>{data.title}</h2>

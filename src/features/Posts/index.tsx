@@ -7,16 +7,18 @@ interface PostsProps {
 
 export function Posts({ docs }: PostsProps) {
   return (
-    // <div className='grid w-full grid-cols-[repeat(auto-fit,minmax(320px,max-content))] justify-center gap-6'>
-    //   {
-    //     docs.map(item => <PostCard key={item._id} data={item} />)
-    //   }
-    // </div>
     <div className='flex flex-col gap-4'>
-      <h4>Latest Post</h4>
+      <p className='text-h1 font-bold'>Latest Post</p>
       {
-         docs.map(item => <ArticleCard key={item._id} data={item} />)
+         docs.map((item, index) => (
+           <div key={item._id}>
+             <ArticleCard data={item} />
+             {index !== docs.length - 1 && <div className='my-2 h-px w-full rounded-full bg-text opacity-25' />}
+           </div>
+         ))
       }
     </div>
   )
 }
+
+// divide-x divide-solid divide-primary
