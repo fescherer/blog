@@ -88,6 +88,9 @@ export const Doc = defineDocumentType(() => ({
       type: 'string',
       default: true,
     },
+    updated_at: {
+      type: 'string',
+    },
     image: {
       type: 'string',
       required: true,

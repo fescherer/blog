@@ -1,3 +1,4 @@
+import { SearchInput } from '../Primitives/SearchInput'
 import { AllCategories, AllTags } from './components'
 
 interface AsideAllTagsAndCategoriesProps {
@@ -8,6 +9,7 @@ interface AsideAllTagsAndCategoriesProps {
 export function AsideAllTagsAndCategories({ selectedTag, selectedCategory }: AsideAllTagsAndCategoriesProps) {
   return (
     <>
+      <SearchInput />
       <AllCategories selectedCategory={selectedCategory} />
       <AllTags selectedTag={selectedTag} />
     </>
