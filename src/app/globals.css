@@ -28,6 +28,23 @@
     transition: background-color 0.6s ease,filter 0.3s ease;
   }
 
+  input:focus, textarea:focus{
+    @apply border-transparent
+  }
+
+  input[type=button]:active:not(:disabled),
+  input[type=reset]:active:not(:disabled),
+  input[type=submit]:active:not(:disabled),
+  input[type=image]:active:not(:disabled),
+  button:active:not(:disabled),
+  a:active:not(:disabled),
+  input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):focus,
+  textarea:focus,
+  button:focus,
+  a:focus {
+    @apply ring-2 ring-primary-hover border-transparent outline-none
+  }
+
 /* Satoshi */
 @font-face {
   font-family: 'Satoshi';
