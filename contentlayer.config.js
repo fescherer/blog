@@ -80,10 +80,6 @@ export const Doc = defineDocumentType(() => ({
       type: 'string',
       required: true,
     },
-    description: {
-      type: 'string',
-      required: true,
-    },
     published_date: {
       type: 'string',
       default: true,
