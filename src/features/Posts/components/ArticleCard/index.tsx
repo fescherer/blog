@@ -9,7 +9,7 @@ interface PostCardProps {
 }
 
 export function ArticleCard({ data }: PostCardProps) {
-  const publishedDate = getTimeFormated(data.published_date)
+  const publishedDate = getTimeFormated(data.updated_at ? data.updated_at : data.published_date)
   const articleTime = Math.ceil(readingTime(data.body.raw).minutes)
 
   return (

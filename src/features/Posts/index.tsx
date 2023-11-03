@@ -2,6 +2,7 @@
 
 import { ArticleCard } from './components'
 import { useSearchContext } from '@/contexts/search.context'
+import { getArticlesSortedByDate } from '@/utils/functions'
 import type { Doc } from 'contentlayer/generated'
 
 interface PostsProps {
@@ -14,7 +15,9 @@ export function Posts({ docs }: PostsProps) {
   const safeFilter = search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   const rg = new RegExp(`^(?=.*\\b${safeFilter}).*$`, 'gmi')
 
-  const filteredDocs = search ? docs.filter(item => item.slugAsParams.match(rg)) : docs
+  const filteredDocs = search
+    ? docs.filter(item => item.slugAsParams.match(rg)).sort(getArticlesSortedByDate)
+    : docs.sort(getArticlesSortedByDate)
 
   return (
     <div className='mx-2 flex w-full flex-col gap-4'>
