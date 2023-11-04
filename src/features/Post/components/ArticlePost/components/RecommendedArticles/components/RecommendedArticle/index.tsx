@@ -19,8 +19,8 @@ export function RecommendedArticle({ article }: RecommendedArticleProps) {
       </div>
       <h3>{article.doc.title}</h3>
 
-      <p>
-        {article.doc.description}
+      <p className='line-clamp-2 px-2 text-justify text-xs transition-all group-hover:text-primary lg:px-0'>
+        {article.doc.body.raw}
       </p>
     </Link>
   )
