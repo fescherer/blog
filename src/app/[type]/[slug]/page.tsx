@@ -27,7 +27,7 @@ export function generateMetadata(
 
     openGraph: {
       title: `${data.title} | Felipe Scherer\'s Blog`,
-      description: data.description,
+      description: data.body.raw.slice(0, 90),
       url: `https://blog.felipescherer.com/${type}/${slug}`,
       siteName: 'Felipe Scherer\'s blog',
       images: [
@@ -71,7 +71,7 @@ function getJSONLD(doc: Doc, type: string, slug: string) {
       'height': `${ownerMetaData.image.height}px`,
     },
     'keywords': doc.tags,
-    'description': doc.description,
+    'description': doc.body.raw.slice(0, 90),
     'mainEntityOfPage': {
       '@type': 'WebPage',
       '@id': 'https://blog.felipescherer.com',

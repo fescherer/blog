@@ -1,14 +1,9 @@
 'use client'
 
 import { FigmaLogo, GithubLogo, Laptop } from 'phosphor-react'
-import type { Doc } from 'contentlayer/generated'
 import { Link } from '@/components/Lib/Link'
 
-interface NavigationHeaderProps {
-  doc: Doc
-}
-
-export function NavigationHeader({ doc }: NavigationHeaderProps) {
+export function NavigationHeader() {
   return (
     <div className='flex justify-between'>
       <small className='text-xs'>Home - Category - Article</small>
