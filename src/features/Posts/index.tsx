@@ -33,7 +33,7 @@ export function Posts({ docs }: PostsProps) {
         filteredDocs.length === 0 && (
           <div className='flex flex-col items-center'>
             <span>ᕙ(⇀‸↼‶)ᕗ</span>
-            <span>None articles were found</span>
+            <span>No articles were found</span>
           </div>
         )
       }

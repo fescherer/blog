@@ -6,7 +6,7 @@ interface CardProps {
 
 export function Card({ children, className, title }: CardProps) {
   return (
-    <section className={`rounded bg-foreground p-2 ${className}`}>
+    <section className={`rounded bg-background-card p-2 shadow-md ${className}`}>
       <h2 className="mb-3">{title}</h2>
       {children}
     </section>
