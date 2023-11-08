@@ -29,6 +29,7 @@
     "rehype-pretty-code": "^0.10.0",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
+    "rss": "^1.2.2",
     "shiki": "^0.14.3",
     "tailwind-merge": "^1.14.0",
     "unist-util-visit": "^5.0.0"
@@ -38,6 +39,7 @@
     "@types/node": "^20.5.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
+    "@types/rss": "^0.0.32",
     "autoprefixer": "^10.4.15",
     "cspell": "^7.2.0",
     "eslint": "^8.47.0",

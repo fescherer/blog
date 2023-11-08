@@ -1,6 +1,6 @@
 'use client'
 
-import { GithubLogo, LinkedinLogo } from 'phosphor-react'
+import { GithubLogo, LinkedinLogo, Rss } from 'phosphor-react'
 import { Link } from '@/components/Lib/Link'
 import { LogoIcon } from '@/Icons'
 import { ownerConfigs } from '@/utils/ownerConfigs'
@@ -14,6 +14,9 @@ export function PersonalSkills() {
       <p className='max-w-prose text-sm'>{ownerConfigs.description}</p>
 
       <div className='flex gap-4'>
+        <Link aria-label="Go to Linkedin's author" href={ownerConfigs.rss}>
+          <Rss size={24} />
+        </Link>
         <Link aria-label="Go to Linkedin's author" href={ownerConfigs.linkedinLink}>
           <LinkedinLogo size={24} />
         </Link>
