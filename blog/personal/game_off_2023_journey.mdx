@@ -1,7 +1,7 @@
 ---
 title: Game Off 2023 Journey
 published_date: 2023-11-01T10:00:00
-updated_at: 2023-11-04T10:00:00
+updated_at: 2023-11-07T23:36:00
 image: https://github.com/fescherer/blog/assets/62115215/2449217e-9356-4815-a86c-bec219ba7630
 alt: Image containing the game off 2023 logo. It's an arcade machine most pinky colored and with a text below.
 author: fescherer
@@ -110,3 +110,42 @@ Terrains for now is just used to create roads, that using assets Godot can autom
 The map has still really poor flora and I want to trees like terrains, to  be more efficient in creating forests (If you pay attention, there are some tiles with bugged trees). In general was a very productive game. If I hope I can keep up this rithm.
 
 ![image](https://github.com/fescherer/blog/assets/62115215/ab6f4c7a-500f-4dc3-9e87-d8a05bb2f66c)
+
+## Day 06
+
+This day I was busy with some stuff and could not make any progress 🥲🥲🥲
+
+## Day 07
+
+I know I should give more attention to the map, but everything seems kind weird. The scale doesn't seems right. That's because I need to confirm that the scale is right to create the map based on. So I decided to create the first tower of the game, thinking mostly in adapt the scale (Spoiler *I did not have the time to play with the scale*).
+
+Anyways, I started with `node2D` and then put the sprite inside, I don't know if this is the best practice, but for me, giving a wrapper of `node2D` makes me feel more organized. The sprite for now will be the idle:
+
+![Idle](https://github.com/fescherer/blog/assets/62115215/3a8c84b0-8d1d-4ccc-995f-cce346e14ada)
+
+One thing is that it has right, left, bottom and top sides, which gives me the necessity to turn the sprite as the enemy changes it's direction. I started trying the sprite to follow my mouse, after many tries, I came with a simple code, but I happy that I can undestand everthing from this code. 😁
+
+```python
+extends Node2D
+
+var direction = Vector2(0, 0)
+
+func _physics_process(delta):
+  turn()
+
+func turn():
+  var target_position = get_global_mouse_position()
+  var character_position = global_position
+  direction = (target_position - character_position).normalized()
+
+  if(direction.x > abs(direction.y)):
+    get_node("Knight").set_frame(3)
+  elif direction.x < -abs(direction.y):
+    get_node("Knight").set_frame(2)
+  elif direction.y > abs(direction.x):
+    get_node("Knight").set_frame(0)
+  else:
+    get_node("Knight").set_frame(1)
+```
+
+![gif](https://github.com/fescherer/blog/assets/62115215/ca045152-c4bb-4d7a-947f-a29860f2eee7)
