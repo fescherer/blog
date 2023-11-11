@@ -1,7 +1,9 @@
+/* eslint-disable n/prefer-global/process */
 import React from 'react'
 import './globals.css'
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
+import Script from 'next/script'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { CookieMessage } from '@/components/CookieMessage'
@@ -99,12 +101,24 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" sizes="any" />
       </head>
       <body className="flex w-full flex-col gap-8 bg-background font-satoshi text-text">
+
         <Header />
         <main className="m-auto flex w-full max-w-screen-2xl flex-1 pt-24 sm:px-4">
           {children}
           {typeof window !== 'undefined' && <CookieMessage />}
         </main>
         <Footer />
+
+        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_KEY}`} />
+        <Script id="google-analytics">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.NEXT_PUBLIC_GA4_KEY}');
+        `}
+        </Script>
 
       </body>
     </html>
