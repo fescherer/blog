@@ -42,7 +42,7 @@ export function ArticleHeader({ doc }: ArticleHeaderProps) {
                 />
                 )
               : null
-            }
+          }
           {updatedDate ? <ItemSeparator /> : null}
           <ItemHeader
               icon={<Coffee size={12} />}

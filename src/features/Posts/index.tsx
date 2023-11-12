@@ -24,9 +24,9 @@ export function Posts({ docs }: PostsProps) {
       <p className='text-h1 font-bold'>Latest Post</p>
       <div className='grid max-w-full grid-cols-1 gap-4 lg:grid-cols-2'>
         {
-        filteredDocs.map(item => (
-          <ArticleCard key={item._id} data={item} />
-        ))
+          filteredDocs.map(item => (
+            <ArticleCard key={item._id} data={item} />
+          ))
         }
       </div>
       {

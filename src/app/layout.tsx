@@ -9,6 +9,7 @@ import { Footer } from '@/components/Footer'
 import { CookieMessage } from '@/components/CookieMessage'
 import { themes } from '@/themes/serverSideThemes'
 import { ownerMetaData } from '@/utils/ownerConfigs'
+import { generateRss } from '@/utils/generateRSS'
 
 export const metadata: Metadata = {
   title: ownerMetaData.title,
@@ -69,10 +70,10 @@ export const metadata: Metadata = {
     },
   },
 
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#359967' },
-    { media: '(prefers-color-scheme: dark)', color: '#51C28A' },
-  ],
+  // themeColor: [
+  //   { media: '(prefers-color-scheme: light)', color: '#359967' },
+  //   { media: '(prefers-color-scheme: dark)', color: '#51C28A' },
+  // ],
 
   icons: {
     icon: '/favicon.svg',
@@ -92,6 +93,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  generateRss()
   const cookieTheme = cookies().get('data-theme')
   const theme = themes.includes(cookieTheme?.value ?? '') ? cookieTheme?.value : ''
 

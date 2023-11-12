@@ -78,7 +78,7 @@ export function AsidePostIndex({ doc }: AsidePostIndexProps) {
                 <CaretRight />
               </span>
               <span
-                  // eslint-disable-next-line react/no-danger
+                // eslint-disable-next-line react/no-danger
                   dangerouslySetInnerHTML={{
                     __html: title.replace('`', '<code style="font-size: 0.75rem;">').replace('`', '</code>'),
                   }}
