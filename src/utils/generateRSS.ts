@@ -50,3 +50,5 @@ export function generateRss() {
   fs.writeFileSync('./public/atom.xml', feed.atom1())
   fs.writeFileSync('./public/feed.json', feed.json1())
 }
+
+generateRss()
