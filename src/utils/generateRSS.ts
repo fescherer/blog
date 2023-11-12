@@ -1,9 +1,11 @@
+/* eslint-disable no-console */
 import fs from 'node:fs'
+import path from 'node:path'
 import { Feed } from 'feed'
 import { allDocs } from 'contentlayer/generated'
 import { ownerConfigs, ownerMetaData } from '@/utils/ownerConfigs'
 
-export function generateRss() {
+export async function generateRss() {
   const feed = new Feed({
     title: ownerConfigs.name,
     description: ownerMetaData.description,
@@ -46,9 +48,25 @@ export function generateRss() {
   //   json: feed.json1(),
   // }
 
-  fs.writeFileSync('./public/feed.xml', feed.rss2())
-  fs.writeFileSync('./public/atom.xml', feed.atom1())
-  fs.writeFileSync('./public/feed.json', feed.json1())
+  await writeFeed(feed.rss2(), 'feed.xml')
+  await writeFeed(feed.atom1(), 'atom.xml')
+  await writeFeed(feed.json1(), 'feed.json')
 }
 
-generateRss()
+async function writeFeed(feed: string, name: string) {
+  // eslint-disable-next-line n/prefer-global/process
+  const fullFilePath = path.join(process.cwd(), 'public', name)
+  // remove the old file
+  if (fs.existsSync(fullFilePath))
+    await fs.promises.unlink(fullFilePath)
+
+  fs.writeFile(fullFilePath, feed, (err) => {
+    if (err)
+      console.log('Error: ', err)
+
+    console.log('RSS feed generation: all good')
+  })
+  // fs.writeFileSync('./public/feed.xml', feed.rss2())
+  // fs.writeFileSync('./public/atom.xml', feed.atom1())
+  // fs.writeFileSync('./public/feed.json', feed.json1())
+}

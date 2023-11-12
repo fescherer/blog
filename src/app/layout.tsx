@@ -9,6 +9,7 @@ import { Footer } from '@/components/Footer'
 import { CookieMessage } from '@/components/CookieMessage'
 import { themes } from '@/themes/serverSideThemes'
 import { ownerMetaData } from '@/utils/ownerConfigs'
+import { generateRss } from '@/utils/generateRSS'
 
 export const metadata: Metadata = {
   title: ownerMetaData.title,
@@ -87,12 +88,12 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  // generateRss()
+  await generateRss()
 
   const cookieTheme = cookies().get('data-theme')
   const theme = themes.includes(cookieTheme?.value ?? '') ? cookieTheme?.value : ''
@@ -101,6 +102,7 @@ export default function RootLayout({
     <html lang="en" className='flex min-h-screen scroll-smooth' data-theme={theme}>
       <head>
         <link rel="icon" href="/favicon.svg" sizes="any" />
+        <link rel="alternate" type="application/rss+xml" title="Our great RSS feed" href="/feed.xml" />
       </head>
       <body className="flex w-full flex-col gap-8 bg-background font-satoshi text-text">
 
