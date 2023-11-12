@@ -1,4 +1,3 @@
-import fs from 'node:fs'
 import { Feed } from 'feed'
 import { allDocs } from 'contentlayer/generated'
 import { ownerConfigs, ownerMetaData } from '@/utils/ownerConfigs'
@@ -40,7 +39,9 @@ export function generateRss() {
     })
   })
 
-  fs.writeFileSync('./public/feed.xml', feed.rss2())
-  fs.writeFileSync('./public/atom.xml', feed.atom1())
-  fs.writeFileSync('./public/feed.json', feed.json1())
+  return {
+    rss: feed.rss2(),
+    atom: feed.atom1(),
+    json: feed.json1(),
+  }
 }
