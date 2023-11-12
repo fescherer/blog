@@ -5,7 +5,7 @@ export function GET() {
 
   return new Response(rss, {
     headers: {
-      'Content-Type': 'application/atom+xml; charset=utf-8',
+      'Content-Type': 'application/xml; charset=utf-8',
     },
   })
 }
