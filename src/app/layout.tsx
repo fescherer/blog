@@ -9,7 +9,6 @@ import { Footer } from '@/components/Footer'
 import { CookieMessage } from '@/components/CookieMessage'
 import { themes } from '@/themes/serverSideThemes'
 import { ownerMetaData } from '@/utils/ownerConfigs'
-import { generateRss } from '@/utils/generateRSS'
 
 export const metadata: Metadata = {
   title: ownerMetaData.title,
@@ -93,7 +92,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  generateRss()
+  // generateRss()
 
   const cookieTheme = cookies().get('data-theme')
   const theme = themes.includes(cookieTheme?.value ?? '') ? cookieTheme?.value : ''
