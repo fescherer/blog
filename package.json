@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && esno ./scripts/rss.ts",
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install"
@@ -47,6 +47,7 @@
     "eslint-plugin-mdx": "^2.2.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-tailwindcss": "^3.13.0",
+    "esno": "^4.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "postcss": "^8.4.28",
