@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# public RSS
+/public/atom.xml
+/public/feed.xml
+/public/feed.json
+
 # testing
 /coverage
 

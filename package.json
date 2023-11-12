@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next sta rt",
+    "start": "next start",
     "lint": "next lint",
     "prepare": "husky install"
   },
@@ -19,6 +19,7 @@
     "contentlayer": "^0.3.4",
     "cookies-next": "^4.0.0",
     "eslint-config-next": "^13.4.19",
+    "feed": "^4.2.2",
     "next": "13.4.19",
     "next-contentlayer": "^0.3.4",
     "phosphor-react": "^1.4.1",
