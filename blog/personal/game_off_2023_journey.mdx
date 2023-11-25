@@ -228,4 +228,39 @@ Now I can see a game under construction. This day I make a range indicator to to
 
 ## Day 24
 
-spawning enemies
+It has finally come, the day I built the enemies. A enemy in a tower defence game should not be a problem, because it's IA is just- "Follow the path", and so I just need to configure the path and make the enemy follow it. Can easy be done using [Godot's Path2D](https://docs.godotengine.org/en/stable/classes/class_path2d.html).
+
+My problem was not configure this path, but configure enemy's animation, well the [Game Development Center's tutorial #6](https://www.youtube.com/watch?v=JBQgmy3Oiw4&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=7) uses a top down view asset, as [Ninja's Adventure' assets](https://pixel-boy.itch.io/ninja-adventure-asset-pack) uses side view assets, so just rotating the sprite will not work in my case.
+
+I did by calculating how the position is different from the last frame and give the right animation. Solving this made my day 😊😊😊. So Happy 😁.
+
+```GDScript
+extends PathFollow2D
+
+@onready var _animated_sprite = get_node("CharacterBody2D").get_node('AnimatedSprite2D')
+
+var speed = 0.5
+var last_position = Vector2(0, 0)
+
+func _physics_process(delta):
+  move(delta)
+
+func move(delta):
+  set_progress(get_progress() + speed + delta)
+  var current_position = position
+
+  if(last_position != current_position):
+    if(abs(last_position.x) < abs(current_position.x)): # Going Right
+      _animated_sprite.play('east')
+    if(abs(last_position.x) > abs(current_position.x)): # Going Left
+      _animated_sprite.play('west')
+
+    if(abs(last_position.y) < abs(current_position.y)): # Going down
+      _animated_sprite.play('south')
+    if(abs(last_position.y) > abs(current_position.y)): # Going up
+      _animated_sprite.play('north')
+
+    last_position = current_position
+```
+
+![enemy](https://github.com/fescherer/blog/assets/62115215/36af2dec-a5e7-44f3-a92d-e881252e0c74)
