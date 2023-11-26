@@ -1,7 +1,7 @@
 ---
 title: Game Off 2023 Journey
 published_date: 2023-11-01T10:00:00.500Z
-updated_at: 2023-11-24T22:53:00.500Z
+updated_at: 2023-11-25T23:53:00.500Z
 image: https://github.com/fescherer/blog/assets/62115215/2449217e-9356-4815-a86c-bec219ba7630
 alt: Image containing the game off 2023 logo. It's an arcade machine most pinky colored and with a text below.
 author: fescherer
@@ -264,3 +264,21 @@ func move(delta):
 ```
 
 ![enemy](https://github.com/fescherer/blog/assets/62115215/36af2dec-a5e7-44f3-a92d-e881252e0c74)
+
+## Day 25
+
+As I solve a lot of problems in the last days, I lost my track of progressing the game creation, so this day I finally had the sense of progression. I did a lot of things.
+First of all, I make a start/pause/fastfoward system. Very simple, just followed [Game Development Center's tutorial #7](https://www.youtube.com/watch?v=T1auCC-PT4k&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=8) and make some simple pixelart 16x16 sprites, because [Ninja's Adventure](https://pixel-boy.itch.io/ninja-adventure-asset-pack) didn't have sprites for arrow, double arrow and pause.
+
+Second, the tower need to look at enemy and not my mouse 😅 I followed the most part of the [Game Development Center's tutorial #8](https://www.youtube.com/watch?v=ugNRDsl33OI&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=9), but seeing the comments, we could improve the tower tracking.
+
+In the video, Stefan select the enemy with most progress in the path (Which is very good, because more progress in the path, means more likely to complete the path), but this gets a problem when using more than one path. Think with me, if we have two paths and enemies in both that crossed the same amount of pixels, the tower will get confused with enemy is the right to pick. The best choice will be get the enemy with the largest progression and in the shortest path.
+
+For example if we have two paths, one having 450px size and other having 200px size, there are enemies in both paths and the enemies have crossed the same amount of pixels, like 30. The progress of the first path will be 450 - 30 = 420, and the second will be 200 - 30 = 170, if we get the largest number, the enemy on path1 will be choosen, but can agree that is more likely to enemy on path two finish the path, because only need to cross more 170 insted of 420 in the first path. So that's why we need to get the minimum value.
+
+After this though I made the damage system. It was very simple, the only thing I did different from the tutorial was that there, Stefan put a heath bar above the enemy. In my case, I changed the enemy color based on heath percentage like: heath > 70% = Normal Color; heath > 50% = Yellowish; heath > 20% = Orangish; else = Redish.
+
+The last thing I did was a shooting mechanic. In the tutorial, the towers shoot the same projectile, but in my game, it needs to be different so I abstracted the code and make a muzzle and impact animation for each tower, so thats in the future I can add a projectile to certain towers, like the Mage one, and for the Knight it does not need this. I will think more about this tomorrow.
+
+The result:
+![power](https://github.com/fescherer/blog/assets/62115215/2b8b60d8-c0c1-4d93-817a-9c8a1835c1b7)
