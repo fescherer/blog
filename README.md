@@ -45,6 +45,9 @@ A blog
 
 ## 📕 About 📕
 
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
 This project of Felipe Scherer's Blog
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
