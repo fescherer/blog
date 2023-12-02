@@ -1,7 +1,7 @@
 ---
 title: Game Off 2023 Journey
 published_date: 2023-11-01T10:00:00.500Z
-updated_at: 2023-11-25T23:53:00.500Z
+updated_at: 2023-12-02T23:53:00.500Z
 image: https://github.com/fescherer/blog/assets/62115215/2449217e-9356-4815-a86c-bec219ba7630
 alt: Image containing the game off 2023 logo. It's an arcade machine most pinky colored and with a text below.
 author: fescherer
@@ -282,3 +282,39 @@ The last thing I did was a shooting mechanic. In the tutorial, the towers shoot 
 
 The result:
 ![power](https://github.com/fescherer/blog/assets/62115215/2b8b60d8-c0c1-4d93-817a-9c8a1835c1b7)
+
+## Day 26
+
+This was a very simple day I just make the system of health and coin, there is no much to say. I just make some signals that are emit when enemy is killed or its complete the map's path.
+
+![coin-health](https://github.com/fescherer/blog/assets/62115215/f11b65d3-b434-434a-a861-0b161788ab7f)
+
+## Day 27, 28, 29 and 30
+
+As the voting day is coming, I decided to focus in finish the main mechanics insted of adding new stuff, so I decided to make the last updated in this article grouping all the stuff made in the last 4 days.😶‍🌫️
+
+Well, first of all, as usual I went through the game and noticed 4 things to do: The game need waves counter, more enemies, about page (Where the credits of me and Ninja's Adventure will be), and for last, there are some bugs to take care.
+
+The first thing I did was about the waves. This time I would finally make the balance between towers and enemies (I can say to that I though would be easy, but not, this is a very crucial part that can make your game look good or terrible). Was very hard to do that, but I made. I add a simple wave counter, and made the waves into an `GameData` dictionary so I could easialy modify. I add two more screens, one for `Game over` and other for `Game Win`. And of course, more enemies. They are just an extension of the main enemy's script, with some values and sprites changed (In the future, I want to make this less manual, to add even more enemies, creating a scene in usual way is no good). In the meantime I noticed that the game was very short, so I add a `Infinity mode` that would spawn random enemies (In the end, this was supposed to be a very challenging mode, but proved to be not so difficult, in the future I will change that).
+
+The about page was very easy to make. It's just a simple new scene. The more complicated part was to create a `Game over` and `Game win` because these two scenes need to be over `game's scene` and not in root. But it was ok, and simple to do.😊
+
+In the bug's part, there were a lot linked to the wave system. I don't know, but making all that logic in just one script just made it very confusing. This is one more thing to change in the future, a better `game's script`, I don't know, maybe just separate the logic of spawing enemies, controlling the waves, building towers and enemies path in a separate script would make so much better.
+
+It had a bug in the fast foward too, but I could not had time to fix this, so it will be a future issue 😅.
+
+You can play the game at [Itch.io](https://drafonf.itch.io/enchanted-towers-realm-defenders). Leave a message to me. I will be very happy to talk to you 😊.
+
+![final version](https://github.com/fescherer/blog/assets/62115215/2f68d076-42f7-459e-b723-6ac36d7ceb98)
+
+![image](https://github.com/fescherer/blog/assets/62115215/d9dc2485-144c-4e6f-9b9d-08e23b67b1af)
+
+## Final thoughts
+
+Well, what I learned with all this?
+
+This was my first experience making a game in a professional way (In some pro engine), so because of this there was many days that I was unmotivated, even if I came from web programming, coding in game, it's harder (Maybe that's because I did not knew the language) and that made me a little frustated, but as I was going, never giving up, I saw a light in end of the tunnel. Some stuff that was hard to undestand like what is a scene, became very easy and I could make all the changes that my imagination could have. I really like the experience.
+
+Well, there was many thing I could not had time to develop. If you see the first days of this article, you will undestand that, I planned a lot of things, the scope was too big for a first project that needed to be made in just a month, but that's ok, I plan to add these things later, I will finish the game as was proposed back there.
+
+For last, thanks everyone who read this article. It was a very difficult month, but I could say that I very happy and proud about the results. I see you in the next article. Have a nice day. 😎✨✨✨😎
