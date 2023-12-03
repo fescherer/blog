@@ -8,6 +8,7 @@ module.exports = {
   extends: ['@antfu', 'next/core-web-vitals', 'plugin:tailwindcss/recommended'],
   plugins: ['react'],
   rules: {
+    '@typescript-eslint/brace-style': 'off',
     'react/jsx-indent': ['error', 2],
     'react/jsx-indent-props': ['error', { tab: 2 }],
     'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
