@@ -35,7 +35,7 @@ export function ArticleCard({ data }: PostCardProps) {
 
       </div>
 
-      <h2 className='px-2 transition-all group-hover:text-primary lg:px-0'>{data.title}</h2>
+      <h2 className='px-2 text-title transition-all group-hover:text-primary lg:px-0'>{data.title}</h2>
 
       <p className='line-clamp-3 px-2 text-justify transition-all group-hover:text-primary lg:px-0'>{data.body.raw}</p>
     </Link>

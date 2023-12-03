@@ -21,7 +21,7 @@ export function Posts({ docs }: PostsProps) {
 
   return (
     <div className='mx-2 flex w-full flex-col gap-4'>
-      <p className='text-h1 font-bold'>Latest Post</p>
+      <p className='text-h1 font-bold text-title'>Latest Post</p>
       <div className='grid max-w-full grid-cols-1 gap-4 lg:grid-cols-2'>
         {
         filteredDocs.map(item => (

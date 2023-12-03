@@ -1,10 +1,10 @@
 :root[data-theme='dark'] {
   --primary: #51C28A;
   --secondary: #74DFAA;
-  --text: #DDDDDD;
-  --title: #EAEAEA;
+  --text: #AEB2BE;
+  --title: #e4e6f5;
   --foreground: #282929;
-  --background: #131313;
+  --background: #121216;
   --background-card: #282929;
   --text-on-primary: #FFFFFF;
   --text-hover: #888888;
