@@ -16,12 +16,14 @@ export function getRecommendedArticles(doc: Doc): IRecommendedArticle[] {
   const recommendedArticles: IRecommendedArticle[] = []
 
   allDocs.forEach((item) => {
-    let points = 0
-    item.tags.forEach((tag) => {
-      if (doc.tags.includes(tag))
-        points += 1
-    })
-    recommendedArticles.push({ id: item._id, points, doc: item })
+    if (item._id !== doc._id) {
+      let points = 0
+      item.tags.forEach((tag) => {
+        if (doc.tags.includes(tag))
+          points += 1
+      })
+      recommendedArticles.push({ id: item._id, points, doc: item })
+    }
   })
 
   const sorted = recommendedArticles.sort(({ points: pointsA }, { points: pointsB }) => pointsB - pointsA)

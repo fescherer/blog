@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArticleHeader } from './components'
+import { ArticleHeader, Author } from './components'
 import { RecommendedArticles } from './components/RecommendedArticles'
 import { SourcesRef } from './components/SourcesRef'
 import { type Doc } from 'contentlayer/generated'
@@ -57,6 +57,10 @@ export function ArticlePost({ doc }: ArticlePostProps) {
             )
           : null
       } */}
+
+      <Author doc={doc} />
+
+      <Separator dataOrientation='horizontal' />
 
       <RecommendedArticles doc={doc} />
 

@@ -1,4 +1,4 @@
-import { AdContainer, ArticleLinkCard, AsidePostIndex, Profile } from './components'
+import { AdContainer, ArticleLinkCard, AsidePostIndex } from './components'
 import { AllCategories, AllTags } from '@/components/AsideAllTagsAndCategories/components'
 import type { Doc } from 'contentlayer/generated'
 
@@ -15,7 +15,6 @@ export function AsidePost({ doc, className }: AsidePostProps) {
         <AdContainer />
         <AsidePostIndex doc={doc} />
         <ArticleLinkCard doc={doc} />
-        <Profile author={doc.author } />
         {/* <Newsletter /> */}
 
         <AllCategories />
