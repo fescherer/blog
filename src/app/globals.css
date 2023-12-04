@@ -5,8 +5,9 @@
 
 @layer base{
   h1{
-    @apply text-h1 font-cabinetGrotesk
+    @apply  font-cabinetGrotesk
   }
+  /* text-h1 */
 
   h2{
     @apply text-h2 font-cabinetGrotesk

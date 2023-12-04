@@ -24,7 +24,7 @@ export function ArticleHeader({ doc }: ArticleHeaderProps) {
             </small>
           ))}
         </div>
-        <h1 className='font-cabinetGrotesk text-h1'>{doc.title}</h1>
+        <h1 className='font-cabinetGrotesk text-clamp '>{doc.title}</h1>
         <small className='flex flex-wrap gap-4 text-xs'>
           <ItemHeader
               icon={<CalendarBlank size={12} />}

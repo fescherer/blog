@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config: Config = {
+  mode: 'jit',
   content: [
     './src/**/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -43,6 +44,8 @@ const config: Config = {
         letterSpacing: '0.01em',
         fontWeight: '800',
       }],
+
+      clamp: 'clamp(1rem, 5vw, 3rem)',
 
     },
     fontFamily: {

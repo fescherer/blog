@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { ArticleHeader, Author } from './components'
 import { RecommendedArticles } from './components/RecommendedArticles'
 import { SourcesRef } from './components/SourcesRef'
@@ -12,22 +11,13 @@ interface ArticlePostProps {
 
 export function ArticlePost({ doc }: ArticlePostProps) {
   return (
-    <article className="flex min-w-0 flex-1 flex-col gap-4 p-2 lg:px-8">
+    <article className="flex min-w-0 flex-1 flex-col gap-4 bg-background p-2 lg:px-8">
 
       <div>
         {/* <NavigationHeader doc={doc} /> */}
 
         <ArticleHeader doc={doc} />
       </div>
-
-      <Image
-          alt=""
-          height={568}
-          width={853}
-          src={doc.image}
-          quality={100}
-          className='mx-auto rounded-lg border border-background bg-foreground'
-      />
 
       <div className='text-justify text-base'>
         <Mdx code={doc.body.code } />
