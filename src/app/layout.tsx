@@ -1,4 +1,3 @@
-/* eslint-disable n/prefer-global/process */
 import React from 'react'
 import './globals.css'
 import type { Metadata } from 'next'
@@ -106,20 +105,20 @@ export default function RootLayout({
       <body className="flex w-full flex-col gap-8 bg-background font-satoshi text-text">
 
         <Header />
-        <main className="m-auto flex w-full max-w-screen-2xl flex-1 pt-24 sm:px-4">
+        <main className="m-auto flex w-full max-w-screen-lg flex-1 pt-24 sm:px-4">
           {children}
           {typeof window !== 'undefined' && <CookieMessage />}
         </main>
         <Footer />
 
-        <Script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_KEY}`} />
+        <Script async src={'https://www.googletagmanager.com/gtag/js?id=G-4BVC96WBH7'} />
         <Script id="google-analytics">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', '${process.env.NEXT_PUBLIC_GA4_KEY}');
+          gtag('config', 'G-4BVC96WBH7');
         `}
         </Script>
 

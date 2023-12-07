@@ -7,6 +7,6 @@ interface SeparatorProps {
 
 export function Separator({ dataOrientation = 'horizontal' }: SeparatorProps) {
   return (
-    <SeparatorPrimitive.Root className="my-[15px] bg-text data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px" orientation={dataOrientation} />
+    <SeparatorPrimitive.Root className="my-[15px] bg-background-card data-[orientation=horizontal]:h-px data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-px" orientation={dataOrientation} />
   )
 }

@@ -20,10 +20,10 @@ export function Post({ doc }: PostProps) {
         <AsidePost doc={doc} />
       </MobileMenuArticle>
 
-      <div className="relative flex max-w-full gap-2">
+      <div className="relative flex max-w-full  items-start gap-2">
         <ArticleMenu />
         <ArticlePost doc={doc} />
-        <AsidePost doc={doc} className='hidden lg:block' />
+        <AsidePost doc={doc} className=' hidden lg:block' />
       </div>
 
     </div>

@@ -4,6 +4,7 @@ import type { Doc } from 'contentlayer/generated'
 import { authors } from '@/utils/authors'
 import { SocialIcon } from '@/Icons/Social/Social'
 import { GithubIcon } from '@/Icons/Social'
+import { Card } from '@/components/Lib/Card'
 
 interface AuthorProps {
   doc: Doc
@@ -17,8 +18,7 @@ export function Author({ doc }: AuthorProps) {
     const githubSocial = author.socials.find(social => social.id === 'github')
 
     return (
-      <section className='relative rounded-sm border border-text p-5'>
-        <h2 className='absolute -top-4 bg-background px-2'>About the author</h2>
+      <Card title='About the author' className='p-5'>
         <div className='flex flex-col items-start gap-2 md:flex-row'>
           <Image
               className='rounded-full border-2 border-primary'
@@ -61,7 +61,7 @@ export function Author({ doc }: AuthorProps) {
             }
           </div>
         </div>
-      </section>
+      </Card>
     )
   }
 }
