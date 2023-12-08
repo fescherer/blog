@@ -13,12 +13,12 @@ export function MobileMenuArticle({ children }: MobileMenuArticleProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className='fixed right-0 top-[70px] z-50 block h-full lg:hidden'>
+    <div className='fixed right-0 top-[70px]  z-50  block h-full lg:hidden'>
       {
         isOpen
           ? (
             <>
-              <div className="absolute right-0 z-50 flex h-[calc(100vh-70px)] max-w-full flex-col overflow-scroll bg-background px-2 pb-10 pt-2">
+              <div className="absolute right-0  z-50 flex h-[calc(100vh-70px)] max-w-[18rem] flex-col overflow-scroll bg-background px-2 pb-10 pt-2">
                 {children}
               </div>
               <button aria-label="Overlay to cancel menu" type="button" onClick={() => setIsOpen(prev => !prev)} className='h-full w-screen bg-foreground opacity-50' />

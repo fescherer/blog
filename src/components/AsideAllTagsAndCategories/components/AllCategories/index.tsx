@@ -15,7 +15,7 @@ export function AllCategories({ selectedCategory }: AllCategoriesProps) {
       <ul className='flex list-disc flex-col gap-1 pl-4 capitalize'>
         {allcategories.map(category => (
           <li key={category} className={clsx({ 'text-primary': selectedCategory === category })}>
-            <Link aria-label={`Remove category filter for ${category}`} target='_self' href={category === selectedCategory ? '/' : `/category/${category}`}>{category}</Link>
+            <Link aria-label={`Remove category filter for ${category}`} target='_self' href={category === selectedCategory ? '/' : `/${category}`}>{category}</Link>
           </li>
         ))}
       </ul>
