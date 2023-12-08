@@ -55,6 +55,12 @@ export function AsidePostIndex({ doc }: AsidePostIndexProps) {
     }
   }, [headings])
 
+  const [open, setOpen] = useState(false)
+
+  function toggleExpansion() {
+    setOpen(prev => !prev)
+  }
+
   const headingsToRender = headings.filter(_ => _.level > 1)
 
   if ((headingsToRender ?? []).length === 0)
@@ -62,7 +68,8 @@ export function AsidePostIndex({ doc }: AsidePostIndexProps) {
 
   return (
     <Card title="On this article">
-      <ul className="space-y-2">
+      <ul className="flex flex-col space-y-2 overflow-hidden transition-all data-[state=false]:max-h-[20rem] data-[state=true]:max-h-full" data-state={open}>
+        <button className='mx-2 my-1 self-end' onClick={toggleExpansion} type="button">{open ? 'Collapse' : 'Expand all'}</button>
         {headingsToRender.map(({ title, level }) => (
           <li key={`${title}-${level}`}>
             <a

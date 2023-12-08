@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import '../themes/index.css';
+@import 'animate.css';
 
 @layer base{
   h1{

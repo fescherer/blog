@@ -1,6 +1,8 @@
 import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
+import plugin from 'tailwindcss/plugin'
+
 const config: Config = {
   content: [
     './src/**/**/*.{js,ts,jsx,tsx,mdx}',
@@ -67,6 +69,24 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities, addComponents }) => {
+      addUtilities({
+        '.will-translate': {
+          '@apply will-change-transform': {},
+          'transform': 'translateZ(0)',
+        },
+      })
+      addComponents({
+        '.btn': {
+          padding: '.5rem 1rem',
+          borderRadius: '.25rem',
+          fontWeight: '600',
+        },
+      })
+    },
+    ),
+  ],
 }
+
 export default config
