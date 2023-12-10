@@ -1,6 +1,5 @@
-:root[data-theme='dark'] {
+/* :root[data-theme='dark'] {
   --primary: #51C28A;
-  --secondary: #74DFAA;
   --text: #AEB2BE;
   --title: #e4e6f5;
   --foreground: #1c1c20;
@@ -14,6 +13,50 @@
 
   pre[data-theme='light'],
   code[data-theme='light'] {
+    display: none;
+  }
+} */
+
+:root[data-theme='dark'] {
+  /* --primary: #51C28A;
+  --text: #AEB2BE;
+  --title: #e4e6f5;
+  --foreground: #1c1c20;
+  --background: #18181a;
+  --background-card: #282929;
+  --text-on-primary: #FFFFFF;
+  --text-hover: #888888;
+  --primary-hover: #409c6e;
+
+  --code-header: #21222C;
+
+  pre[data-theme='light'],
+  code[data-theme='light'] {
+    display: none;
+  } */
+
+  /* Brand */
+  --brand-primary: #03a1a1;
+  --brand-primary-hover: #026e6e;
+  --brand-secondary: #D9CE6A;
+  --brand-on-primary: #FFFFFF;
+  --brand-on-secondary: #1A1A1E;
+
+  /* Backgrounds */
+  --bg-background: #1a1919;
+  --bg-foreground: #47484b;
+  --bg-background-secondary: #E9EAF5;
+  --bg-foreground-secondary: #9DBCBC;
+  --bg-on-background: #cfcfda;
+  --bg-on-foreground: #000000;
+  --bg-on-background-secondary: #000000;
+  --bg-on-foreground-secondary: #000000;
+
+  /* Code Header */
+  --code-header: #f3e9de;
+
+  pre[data-theme='dark'],
+  code[data-theme='dark'] {
     display: none;
   }
 }

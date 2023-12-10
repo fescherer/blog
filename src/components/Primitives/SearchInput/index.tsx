@@ -17,7 +17,7 @@ export function SearchInput() {
           value={search}
           onChange={e => handleSearch(e)}
           type="search"
-          className="rounded bg-background p-2 text-title [&:not(:placeholder-shown)]:border-primary"
+          className="rounded bg-bg-background p-2 text-bg-on-background [&:not(:placeholder-shown)]:border-brand-primary"
           placeholder="Search for article..."
       />
     </Card>

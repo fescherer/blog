@@ -26,7 +26,7 @@ export function ArticlePost({ doc }: ArticlePostProps) {
           width={853}
           src={doc.image}
           quality={100}
-          className='mx-auto rounded-lg border border-background bg-foreground'
+          className='animate__zoomIn animate__animated mx-auto rounded-lg border border-bg-background bg-bg-foreground'
       />
 
       <div className='text-justify text-base'>

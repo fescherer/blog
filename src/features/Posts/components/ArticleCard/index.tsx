@@ -13,10 +13,10 @@ export function ArticleCard({ data }: PostCardProps) {
   const articleTime = Math.ceil(readingTime(data.body.raw).minutes)
 
   return (
-    <Link aria-label={`Link to article ${data.title}`} href={data.slug} target='_self' className='group overflow-hidden rounded border border-foreground group-hover:text-primary lg:border-none'>
+    <Link aria-label={`Link to article ${data.title}`} href={data.slug} target='_self' className='animate__zoomIn animate__animated group overflow-hidden rounded border border-bg-foreground group-hover:text-brand-primary-hover lg:border-none'>
       <div className="relative overflow-hidden rounded">
         <div className='absolute bottom-0 left-0 z-10 flex w-full gap-2 p-2 backdrop-blur-sm'>
-          {data.tags.map(item => <span key={item} className='rounded bg-background px-2 text-xxs '>{item}</span>)}
+          {data.tags.map(item => <span key={item} className='rounded bg-bg-background px-2 text-xxs '>{item}</span>)}
         </div>
         <Image
             className='w-full transition-all group-hover:scale-110'
@@ -26,7 +26,7 @@ export function ArticleCard({ data }: PostCardProps) {
             height={568}
         />
       </div>
-      <div className='mt-2 flex justify-between px-2 transition-all group-hover:text-primary lg:px-0'>
+      <div className='mt-2 flex justify-between px-2 transition-all group-hover:text-brand-primary-hover lg:px-0'>
         <small className='flex flex-col items-center font-bold sm:flex-row sm:gap-2'>
           <time dateTime={publishedDate}>{publishedDate}</time>
           <span className='hidden sm:block'>·</span>
@@ -35,9 +35,9 @@ export function ArticleCard({ data }: PostCardProps) {
 
       </div>
 
-      <h2 className='px-2 text-title transition-all group-hover:text-primary lg:px-0'>{data.title}</h2>
+      <h2 className='px-2 text-bg-on-background transition-all group-hover:text-brand-primary lg:px-0'>{data.title}</h2>
 
-      <p className='line-clamp-3 px-2 text-justify transition-all group-hover:text-primary lg:px-0'>{data.body.raw}</p>
+      <p className='line-clamp-3 px-2 text-justify transition-all group-hover:text-brand-primary lg:px-0'>{data.body.raw}</p>
     </Link>
   )
 }

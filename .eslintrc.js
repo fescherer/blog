@@ -8,6 +8,10 @@ module.exports = {
   extends: ['@antfu', 'next/core-web-vitals', 'plugin:tailwindcss/recommended'],
   plugins: ['react'],
   rules: {
+    'tailwindcss/no-custom-classname': ['error', {
+      whitelist: ['animate__.*'],
+    }],
+
     '@typescript-eslint/brace-style': 'off',
     'react/jsx-indent': ['error', 2],
     'react/jsx-indent-props': ['error', { tab: 2 }],

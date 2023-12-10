@@ -1,10 +1,36 @@
 :root[data-theme='light'] {
-  --primary: #359967;
-  --secondary: #4d9470;
-  --text: #090a0a;
-  --title: #191b1a;
+  /* Brand */
+  --brand-primary: #006666;
+  --brand-primary-hover: #013f3f;
+  --brand-secondary: #D9CE6A;
+  --brand-on-primary: #FFFFFF;
+  --brand-on-secondary: #1A1A1E;
+
+  /* Backgrounds */
+  --bg-background: #e6e9ee;
+  --bg-foreground: #BFC0C6;
+  --bg-background-secondary: #E9EAF5;
+  --bg-foreground-secondary: #9DBCBC;
+  --bg-on-background: #343437;
+  --bg-on-foreground: #000000;
+  --bg-on-background-secondary: #000000;
+  --bg-on-foreground-secondary: #000000;
+
+  /* Code Header */
+  --code-header: #f3e9de;
+
+  pre[data-theme='dark'],
+  code[data-theme='dark'] {
+    display: none;
+  }
+}
+
+/*:root[data-theme='light'] {
+   --primary: #359967;
+  --text: #737373;
+  --title: #2B2B2B;
   --foreground: #dfdfdf;
-  --background: #ffffff;
+  --background: #F6F6F6;
   --background-card: #ffffff;
   --text-on-primary: #FFFFFF;
   --text-hover: #888888;
@@ -16,5 +42,4 @@
   code[data-theme='dark'] {
     display: none;
   }
-}
-
+} */

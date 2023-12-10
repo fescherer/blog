@@ -16,7 +16,7 @@ export function Nav({ theme }: NavProps) {
   return (
     <div className='my-auto flex flex-col items-end gap-2'>
 
-      <button aria-label={isMenuHidden ? 'Open menu' : 'Close menu'} className='transition-all hover:text-text-hover md:hidden' type='button' onClick={() => setIsMenuHidden(prev => !prev)}>
+      <button aria-label={isMenuHidden ? 'Open menu' : 'Close menu'} className='transition-all hover:text-bg-on-background md:hidden' type='button' onClick={() => setIsMenuHidden(prev => !prev)}>
         {isMenuHidden ? <List size={24} /> : <X size={24} />}
       </button>
 

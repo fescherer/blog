@@ -1,23 +1,35 @@
 import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
 
+import plugin from 'tailwindcss/plugin'
+
 const config: Config = {
   content: [
     './src/**/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     colors: {
-      'primary': 'var(--primary)',
-      'secondary': 'var(--secondary)',
-      'text': 'var(--text)',
-      'title': 'var(--title)',
-      'foreground': 'var(--foreground)',
-      'background': 'var(--background)',
-      'background-card': 'var(--background-card)',
-      'text-on-primary': 'var(--text-on-primary)',
-      'text-hover': 'var(--text-hover)',
-      'primary-hover': 'var(--primary-hover)',
-
+      'brand': {
+        'primary': 'var(--brand-primary)',
+        'primary-hover': 'var(--brand-primary-hover)',
+        'secondary': 'var(--brand-secondary)',
+        'on': {
+          primary: 'var(--brand-on-primary)',
+          secondary: 'var(--brand-on-secondary)',
+        },
+      },
+      'bg': {
+        'background': 'var(--bg-background)',
+        'foreground': 'var(--bg-foreground)',
+        'background-secondary': 'var(--bg-background-secondary)',
+        'foreground-secondary': 'var(--bg-foreground-secondary)',
+        'on': {
+          'background': 'var(--bg-on-background)',
+          'foreground': 'var(--bg-on-foreground)',
+          'background-secondary': 'var(--bg-on-background-secondary)',
+          'foreground-secondary': 'var(--bg-on-foreground-secondary)',
+        },
+      },
       'code-header': 'var(--code-header)',
       'transparent': 'transparent',
       'current': 'currentColor',
@@ -67,6 +79,24 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities, addComponents }) => {
+      addUtilities({
+        '.will-translate': {
+          '@apply will-change-transform': {},
+          'transform': 'translateZ(0)',
+        },
+      })
+      addComponents({
+        '.btn': {
+          padding: '.5rem 1rem',
+          borderRadius: '.25rem',
+          fontWeight: '600',
+        },
+      })
+    },
+    ),
+  ],
 }
+
 export default config

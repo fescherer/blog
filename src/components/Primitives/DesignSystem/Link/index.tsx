@@ -5,5 +5,5 @@ import type { AnchorHTMLAttributes, PropsWithChildren } from 'react'
 type LinkType = LinkProps & AnchorHTMLAttributes<any>
 
 export function Link({ children, href, ...props }: PropsWithChildren<LinkType>) {
-  return <NextLink className='text-primary underline transition-all hover:text-primary-hover' href={href} {...props}>{children}</NextLink>
+  return <NextLink className='text-brand-primary underline transition-all hover:text-brand-primary-hover' href={href} {...props}>{children}</NextLink>
 }

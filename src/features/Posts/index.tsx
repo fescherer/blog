@@ -20,8 +20,8 @@ export function Posts({ docs }: PostsProps) {
     : docs.sort(getArticlesSortedByDate)
 
   return (
-    <div className='mx-2 flex w-full flex-col gap-4'>
-      <p className='text-h1 font-bold text-title'>Latest Post</p>
+    <div className='mx-2 flex flex-col gap-4'>
+      <p className='text-h1 font-bold text-bg-on-background'>Latest Post</p>
       <div className='grid max-w-full grid-cols-1 gap-4 lg:grid-cols-2'>
         {
         filteredDocs.map(item => (
@@ -37,6 +37,7 @@ export function Posts({ docs }: PostsProps) {
           </div>
         )
       }
+
     </div>
   )
 }
