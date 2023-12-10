@@ -13,7 +13,7 @@ export function ArticleCard({ data }: PostCardProps) {
   const articleTime = Math.ceil(readingTime(data.body.raw).minutes)
 
   return (
-    <Link aria-label={`Link to article ${data.title}`} href={data.slug} target='_self' className='group overflow-hidden rounded border border-foreground group-hover:text-primary lg:border-none'>
+    <Link aria-label={`Link to article ${data.title}`} href={data.slug} target='_self' className='animate__zoomIn animate__animated group overflow-hidden rounded border border-foreground group-hover:text-primary lg:border-none'>
       <div className="relative overflow-hidden rounded">
         <div className='absolute bottom-0 left-0 z-10 flex w-full gap-2 p-2 backdrop-blur-sm'>
           {data.tags.map(item => <span key={item} className='rounded bg-background px-2 text-xxs '>{item}</span>)}

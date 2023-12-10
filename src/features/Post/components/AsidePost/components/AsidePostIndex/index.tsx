@@ -68,8 +68,8 @@ export function AsidePostIndex({ doc }: AsidePostIndexProps) {
 
   return (
     <Card title="On this article">
-      <ul className="flex flex-col space-y-2 overflow-hidden transition-all data-[state=false]:max-h-[20rem] data-[state=true]:max-h-full" data-state={open}>
-        <button className='mx-2 my-1 self-end' onClick={toggleExpansion} type="button">{open ? 'Collapse' : 'Expand all'}</button>
+      <ul className="flex flex-col space-y-2 overflow-hidden transition-all data-[state=false]:max-h-[5rem] data-[state=true]:max-h-full lg:data-[state=false]:max-h-[20rem]" data-state={open}>
+        <button className='mx-2 my-1 self-end text-sm' onClick={toggleExpansion} type="button">{open ? 'Collapse' : 'Expand all'}</button>
         {headingsToRender.map(({ title, level }) => (
           <li key={`${title}-${level}`}>
             <a

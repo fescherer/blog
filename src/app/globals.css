@@ -4,6 +4,10 @@
 @import '../themes/index.css';
 @import 'animate.css';
 
+:root {
+  --animate-delay: 0.5s;
+}
+
 @layer base{
   h1{
     @apply text-h1 font-cabinetGrotesk
