@@ -102,7 +102,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" sizes="any" />
       </head>
-      <body className="flex w-full flex-col gap-8 bg-background font-satoshi text-text">
+      <body className="flex w-full flex-col gap-8 bg-bg-background font-satoshi text-bg-on-background">
 
         <Header />
         <main className="m-auto flex w-full max-w-screen-lg flex-1 pt-24 sm:px-4">

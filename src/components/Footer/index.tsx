@@ -16,8 +16,8 @@ export function Footer() {
 
       <div className='flex flex-col gap-2 p-4'>
         <div className='flex justify-center gap-4 text-center text-sm'>
-          <Link className='transition-all hover:text-text-hover' href="/privacy-policy">Privacy Policy</Link>
-          <Link className='transition-all hover:text-text-hover' href="/terms-of-use">Terms of use</Link>
+          <Link className='transition-all hover:text-brand-primary-hover' href="/privacy-policy">Privacy Policy</Link>
+          <Link className='transition-all hover:text-brand-primary-hover' href="/terms-of-use">Terms of use</Link>
         </div>
 
         <Copyright />

@@ -47,7 +47,7 @@
   textarea:focus,
   button:focus,
   a:focus {
-    @apply ring-2 ring-primary-hover border-transparent outline-none
+    @apply ring-2 ring-brand-primary-hover border-transparent outline-none
   }
 
 /* Satoshi */

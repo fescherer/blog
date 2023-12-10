@@ -75,10 +75,10 @@ export function AsidePostIndex({ doc }: AsidePostIndexProps) {
             <a
                 href={`#${sluggifyTitle(getNodeText(title))}`}
                 style={{ marginLeft: (level - 2) * 16 }}
-                className={`flex text-sm text-text ${
+                className={`flex text-sm text-bg-on-background ${
                 sluggifyTitle(getNodeText(title)) === activeHeading
-                  ? 'text-primary'
-                  : 'hover:text-secondary'
+                  ? 'text-brand-primary'
+                  : 'hover:text-brand-primary-hover'
               }`}
             >
               <span className="mr-2 mt-[5px] block w-1.5 shrink-0">
