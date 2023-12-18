@@ -53,19 +53,11 @@ export function ThemeSelector({ theme }: ThemeSelectorProps) {
           <ul>
             {allThemes.map((themeItem, index) => (
               <li key={themeItem} className={clsx({ 'text-primary': themeSelected === themeItem })}>
-                {/* <button
-                    aria-label={`Change theme to ${themeItem}`}
-                    type='button'
-                    className={`capitalize ${themeSelected === themeItem ? 'text-brand-primary' : ''}`}
-                    onClick={() => setTheme(themeItem)}
-                >
-                  {themeItem}
-                </button> */}
                 <button
                     data-theme={themeItem}
                     aria-label={`Change theme to ${themeItem}`}
                     type='button'
-                    className={`flex flex-col gap-2 rounded-sm border border-transparent bg-bg-background text-xxs capitalize ${themeSelected === themeItem ? 'border-brand-primary' : ''}`}
+                    className={`flex flex-col gap-2 rounded border-2 bg-bg-background p-2 text-xxs capitalize ${themeSelected === themeItem ? 'border-brand-primary' : 'border-transparent'}`}
                     onClick={() => setTheme(themeItem)}
                 >
                   <div>
@@ -85,10 +77,6 @@ export function ThemeSelector({ theme }: ThemeSelectorProps) {
                     </div>
                   </div>
                 </button>
-                {/* <div className='flex h-2 w-10 bg-bg-foreground'>
-                  <div />
-                </div> */}
-
                 {index % 2 === 0 && <Separator />}
               </li>
             ))}
