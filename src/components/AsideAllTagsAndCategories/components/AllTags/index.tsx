@@ -16,7 +16,7 @@ export function AllTags({ selectedTag }: AllTagsProps) {
         {alltags.map((tag, index) => (
           <Link
               aria-label={`Remove tag selection filter for ${tag}`}
-              className={clsx({ 'text-primary': selectedTag === tag })}
+              className={clsx({ 'text-brand-primary font-bold': selectedTag === tag })}
               target='_self'
               href={selectedTag === tag ? '/' : `/tag/${tag}`}
               key={tag}

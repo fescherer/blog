@@ -1,4 +1,4 @@
-:root[data-theme='light'] {
+[data-theme='light'] {
   /* Brand */
   --brand-primary: #006666;
   --brand-primary-hover: #013f3f;

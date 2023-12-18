@@ -17,7 +17,7 @@
   }
 } */
 
-:root[data-theme='dark'] {
+[data-theme='dark'] {
   /* --primary: #51C28A;
   --text: #AEB2BE;
   --title: #e4e6f5;

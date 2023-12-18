@@ -45,9 +45,9 @@
   a:active:not(:disabled),
   input:not([type=button]):not([type=reset]):not([type=submit]):not([type=image]):focus,
   textarea:focus,
-  button:focus,
-  a:focus {
-    @apply ring-2 ring-brand-primary-hover border-transparent outline-none
+  button:focus-visible,
+  a:focus-visible {
+    @apply ring-2 ring-brand-primary-hover border-transparent outline-none rounded-sm
   }
 
 /* Satoshi */

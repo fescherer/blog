@@ -1,11 +1,6 @@
-import type { WebSite } from 'schema-dts'
-import { AsideAllTagsAndCategories } from '@/components/AsideAllTagsAndCategories'
-import { JSONLD } from '@/components/JSONLD'
-import { websiteJSONLD } from '@/components/JSONLD/data/website'
 import { Link } from '@/components/Lib/Link'
-import { MobileMenuArticle } from '@/components/MobileMenuArticle'
-import { Posts } from '@/features/Posts'
 import { allDocs } from 'contentlayer/generated'
+import { PostList } from '@/features/PostList'
 
 interface PostsByTagProps {
   params: {
@@ -18,23 +13,17 @@ export default function PostsByTag({ params: { tag } }: PostsByTagProps) {
   const docs = allDocs.filter(doc => doc.tags.includes(tag))
 
   return (
-    <>
-      {JSONLD<WebSite>(websiteJSONLD)}
-      <div className='m-auto flex w-full flex-col gap-4'>
-        <h2 className='text-center text-sm capitalize'><Link aria-label="Remove filtered by:" target='_self' href="/">Filtered by: {tag}</Link></h2>
-        <Posts docs={docs} />
-      </div>
-      <aside className='hidden flex-col gap-2 lg:flex'>
-        <AsideAllTagsAndCategories selectedTag={tag} />
-      </aside>
-      <aside className='block lg:hidden'>
-        <MobileMenuArticle>
-          <div className='flex flex-col gap-2 '>
-            <AsideAllTagsAndCategories selectedTag={tag} />
-          </div>
-        </MobileMenuArticle>
-      </aside>
-    </>
+    <div className='flex flex-col items-baseline'>
+      <h2 className='text-center text-sm capitalize'>
+        <Link
+            aria-label="Remove filtered by:"
+            target='_self'
+            href="/"
+        >Filtered by tag: {tag}
+        </Link>
+      </h2>
+      <PostList posts={docs} selectedTag={tag} />
+    </div>
 
   )
 }
