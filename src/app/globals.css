@@ -114,3 +114,10 @@ code > [data-line]::before {
   text-align: right;
   color: gray;
   }
+
+
+@layer components {
+  .design-link {
+    @apply text-brand-primary hover:text-brand-primary-hover transition-all hover:underline
+  }
+}

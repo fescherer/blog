@@ -2,35 +2,36 @@ import * as React from 'react'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Link from 'next/link'
 import { Pre } from './components'
+import { slugyfy } from '@/utils/slugfy'
 
 const components = {
   h1: ({ children, ...props }: any | undefined) => (
-    <h1 className='scroll-m-24 text-bg-on-background' {...props}>
+    <h1 id={slugyfy(JSON.stringify(children))} className='scroll-m-24 text-bg-on-background' {...props}>
       {children}
     </h1>
   ),
   h2: ({ children, ...props }: any) => (
-    <h2 className='scroll-m-24 text-bg-on-background' {...props}>
+    <h2 id={slugyfy(JSON.stringify(children))} className='scroll-m-24 text-bg-on-background' {...props}>
       {children}
     </h2>
   ),
   h3: ({ children, ...props }: any) => (
-    <h3 className='scroll-m-24 text-bg-on-background' {...props}>
+    <h3 id={slugyfy(JSON.stringify(children))} className='scroll-m-24 text-bg-on-background' {...props}>
       {children}
     </h3>
   ),
   h4: ({ children, ...props }: any) => (
-    <h4 className='scroll-m-24 text-bg-on-background' {...props}>
+    <h4 id={slugyfy(JSON.stringify(children))} className='scroll-m-24 text-bg-on-background' {...props}>
       {children}
     </h4>
   ),
   h5: ({ children, ...props }: any) => (
-    <h5 className='scroll-m-24 text-bg-on-background' {...props}>
+    <h5 id={slugyfy(JSON.stringify(children))} className='scroll-m-24 text-bg-on-background' {...props}>
       {children}
     </h5>
   ),
   h6: ({ children, ...props }: any) => (
-    <h6 className='scroll-m-24 text-bg-on-background' {...props}>
+    <h6 id={slugyfy(JSON.stringify(children))} className='scroll-m-24 text-bg-on-background' {...props}>
       {children}
     </h6>
   ),
