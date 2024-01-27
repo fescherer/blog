@@ -1,15 +1,15 @@
-'use client'
-
 import { RecommendedArticle } from './components'
+import type { IArticle } from '@/@types/Article'
+import { getPostsData } from '@/utils/functions/getPostsData'
 import { getRecommendedArticles } from '@/utils/functions'
-import { type Doc } from 'contentlayer/generated'
 
 interface RecommendedArticlesProps {
-  doc: Doc
+  article: IArticle
 }
 
-export function RecommendedArticles({ doc }: RecommendedArticlesProps) {
-  const recommendedArticles = getRecommendedArticles(doc)
+export async function RecommendedArticles({ article }: RecommendedArticlesProps) {
+  const allArticles = await getPostsData()
+  const recommendedArticles = getRecommendedArticles(article, allArticles)
 
   return (
     <section>

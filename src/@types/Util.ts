@@ -1,11 +1,3 @@
-import type { Doc } from 'contentlayer/generated'
-
-export interface IRecommendedArticle {
-  id: string
-  points: number
-  doc: Doc
-}
-
 export type AvailableSocialMedias = 'github' | 'linkedin' | 'youtube' | 'tiktok' | 'pinterest' | 'twitter' | 'facebook' | 'reddit' | 'discord' | 'email'
 
 export interface ISocialMedias {

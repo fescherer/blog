@@ -2,21 +2,21 @@
 import { Browser, FigmaLogo, GithubLogo, YoutubeLogo } from 'phosphor-react'
 import { Card } from '@/components/Lib/Card'
 import { Link } from '@/components/Lib/Link'
-import type { Doc } from 'contentlayer/generated'
+import type { IArticle } from '@/@types/Article'
 
 interface ArticleLinkCardProps {
-  doc: Doc
+  article: IArticle
 }
 
-export function ArticleLinkCard({ doc }: ArticleLinkCardProps) {
-  if (doc.project_url || doc.figma_url || doc.github_url || doc.video_url) {
+export function ArticleLinkCard({ article }: ArticleLinkCardProps) {
+  if (article.project_url || article.figma_url || article.github_url || article.video_url) {
     return (
       <Card title="Links">
         <div className='flex list-disc flex-col gap-1 pl-4'>
           {
-            doc.project_url
+            article.project_url
               ? (
-                <Link aria-label="Link to article's project deploy" href={doc.project_url} className='flex items-center gap-1'>
+                <Link aria-label="Link to article's project deploy" href={article.project_url} className='flex items-center gap-1'>
                   <Browser weight='fill' size={20} />
                   Deploy
                 </Link>
@@ -25,9 +25,9 @@ export function ArticleLinkCard({ doc }: ArticleLinkCardProps) {
           }
 
           {
-            doc.figma_url
+            article.figma_url
               ? (
-                <Link aria-label="Link to article's project Figma page" href={doc.figma_url} className='flex items-center gap-1'>
+                <Link aria-label="Link to article's project Figma page" href={article.figma_url} className='flex items-center gap-1'>
                   <FigmaLogo weight='fill' size={20} />
                   Figma
                 </Link>
@@ -36,9 +36,9 @@ export function ArticleLinkCard({ doc }: ArticleLinkCardProps) {
           }
 
           {
-            doc.github_url
+            article.github_url
               ? (
-                <Link aria-label="Link to article's source code on Github" href={doc.github_url} className='flex items-center gap-1'>
+                <Link aria-label="Link to article's source code on Github" href={article.github_url} className='flex items-center gap-1'>
                   <GithubLogo weight='fill' size={20} />
                   Github
                 </Link>
@@ -47,9 +47,9 @@ export function ArticleLinkCard({ doc }: ArticleLinkCardProps) {
           }
 
           {
-            doc.video_url
+            article.video_url
               ? (
-                <Link aria-label="Link to article's video on Youtube" href={doc.video_url} className='flex items-center gap-1'>
+                <Link aria-label="Link to article's video on Youtube" href={article.video_url} className='flex items-center gap-1'>
                   <YoutubeLogo weight='fill' size={20} />
                   Video
                 </Link>

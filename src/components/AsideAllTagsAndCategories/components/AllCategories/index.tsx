@@ -1,14 +1,16 @@
 import clsx from 'clsx'
 import { Card } from '@/components/Lib/Card'
 import { Link } from '@/components/Lib/Link'
+import { getPostsData } from '@/utils/functions/getPostsData'
 import { getAllCategories } from '@/utils/functions'
 
 interface AllCategoriesProps {
   selectedCategory?: string
 }
 
-export function AllCategories({ selectedCategory }: AllCategoriesProps) {
-  const allcategories = getAllCategories()
+export async function AllCategories({ selectedCategory }: AllCategoriesProps) {
+  const articles = await getPostsData()
+  const allcategories = getAllCategories(articles)
 
   return (
     <Card title='All categories'>

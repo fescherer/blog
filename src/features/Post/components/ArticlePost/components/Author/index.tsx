@@ -1,17 +1,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import type { Doc } from 'contentlayer/generated'
+
+// import type { Doc } from 'contentlayer/generated'
 import { authors } from '@/utils/authors'
 import { SocialIcon } from '@/Icons/Social/Social'
 import { GithubIcon } from '@/Icons/Social'
 import { Card } from '@/components/Lib/Card'
+import type { IArticle } from '@/@types/Article'
 
 interface AuthorProps {
-  doc: Doc
+  article: IArticle
 }
 
-export function Author({ doc }: AuthorProps) {
-  const author = authors.find(item => item.id === doc.author)
+export function Author({ article }: AuthorProps) {
+  const author = authors.find(item => item.id === article.author)
   if (!author) {
     return <></>
   } else {

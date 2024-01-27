@@ -1,27 +1,43 @@
----
-title: Tailwind Strategies for themes
-published_date: 2023-09-18T10:00:00.500Z
-updated_at: 2023-11-03T10:00:00.500Z
-image: https://github.com/fescherer/blog/assets/62115215/f1315990-75b1-40f8-8129-3e836d95754c
-alt: Image containing a Tailwind icon on center, a moon at left and a sun at right with gradients respectively blue and yellow symbolizing dark and light theme.
-author: fescherer
-video_url:
-project_url:
-figma_url:
-github_url:
-tags:
-  - css
-  - themes
-  - tailwind
-categories:
-  - coding
-sources:
-  - 2023-09-10T10:00:00$Tailwind doc$https://tailwindcss.com/docs/installation
-  - 2023-09-10T10:00:00$Indie Hackers - Adam Wathan$https://www.indiehackers.com/post/im-adam-wathan-i-created-tailwind-css-and-built-a-multi-million-dollar-business-around-it-ama-3c0732f724
-  - 2023-09-10T10:00:00$OfferZen Origins - Adam Wathan$https://www.youtube.com/watch?v=1x7HlvSfW6s
-  - 2023-09-17T10:00:00$Design system theming - UX Pin$https://www.uxpin.com/studio/blog/design-system-theming
-  - 2023-09-17T10:00:00$Mozilla Developer$https://developer.mozilla.org
----
+export const metadata = {
+title: 'Tailwind Strategies for themes',
+published_date: '2023-09-18T10:00:00.500Z',
+updated_at: '2023-11-03T10:00:00.500Z',
+image: 'https://github.com/fescherer/blog/assets/62115215/f1315990-75b1-40f8-8129-3e836d95754c',
+alt: 'Image containing a Tailwind icon on center, a moon at left and a sun at right with gradients respectively blue and yellow symbolizing dark and light theme.',
+author: 'fescherer',
+video_url:'',
+project_url:'',
+figma_url:'',
+github_url:'',
+tags:['css', 'themes', 'tailwind'],
+sources: [
+    {
+      date: '2023-09-10T10:00:00',
+      title: 'Tailwind doc',
+      link: 'https://tailwindcss.com/docs/installation',
+    },
+    {
+      date: '2023-09-10T10:00:00',
+      title: 'Indie Hackers - Adam Wathan',
+      link: 'https://www.indiehackers.com/post/im-adam-wathan-i-created-tailwind-css-and-built-a-multi-million-dollar-business-around-it-ama-3c0732f724',
+    },
+    {
+      date: '2023-09-10T10:00:00',
+      title: 'OfferZen Origins - Adam Wathan',
+      link: 'https://www.youtube.com/watch?v=1x7HlvSfW6s',
+    },
+    {
+      date: '2023-09-17T10:00:00',
+      title: 'Design system theming - UX Pin',
+      link: 'https://www.uxpin.com/studio/blog/design-system-theming',
+    },
+    {
+      date: '2023-09-17T10:00:00',
+      title: 'Mozilla Developer',
+      link: 'https://developer.mozilla.org',
+    }
+  ],
+}
 
 In this article I will talk about some strategies you can use to create themes on Tailwind, a way to write CSS in utility classes, like if you want to say `display: flex`, you can just give a classname of `flex`. Of course this is a very simple example, but you can do so much more and everything is customizable.
 
@@ -46,7 +62,7 @@ They have a lot of interesting data. I suggest you to take look and see for your
 
 As said before, Tailwind uses utility classes, so you will add them into your html as so:
 
-```html
+```html {1-2}
 <div className="m-4 flex items-center justify-center">
   <span>Item 1</span>
   <span>Item 2</span>

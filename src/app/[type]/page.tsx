@@ -1,6 +1,6 @@
 import { Link } from '@/components/Lib/Link'
-import { allDocs } from 'contentlayer/generated'
 import { PostList } from '@/features/PostList'
+import { getPostsData } from '@/utils/functions/getPostsData'
 
 interface PostsByCategoryProps {
   params: {
@@ -8,8 +8,8 @@ interface PostsByCategoryProps {
   }
 }
 
-export default function PostsByCategory({ params: { type } }: PostsByCategoryProps) {
-  const docs = allDocs.filter(doc => doc.categories.includes(type))
+export default async function PostsByCategory({ params: { type } }: PostsByCategoryProps) {
+  const articles = (await getPostsData()).filter(article => article.category === type)
 
   return (
     <div className='flex flex-col items-baseline'>
@@ -22,7 +22,7 @@ export default function PostsByCategory({ params: { type } }: PostsByCategoryPro
         </Link>
       </h2>
 
-      <PostList selectedCategory={type} posts={docs} />
+      <PostList selectedCategory={type} posts={articles} />
     </div>
 
   )

@@ -1,5 +1,6 @@
 import { Feed } from 'feed'
-import { allDocs } from 'contentlayer/generated'
+
+// import { allDocs } from 'contentlayer/generated'
 import { ownerConfigs, ownerMetaData } from '@/utils/ownerConfigs'
 
 export function generateRss() {
@@ -25,19 +26,19 @@ export function generateRss() {
     },
   })
 
-  allDocs.map((post) => {
-    return feed.addItem({
-      title: post.title,
-      id: `${ownerMetaData.url}${post.slug}`,
-      guid: `${ownerMetaData.url}${post.slug}`,
-      link: `${ownerMetaData.url}${post.slug}`,
-      date: new Date(post.published_date),
-      description: post.body.raw.slice(0, 300),
-      author: [{ name: post.author, link: ownerConfigs.githubLink, email: ownerConfigs.githubLink }],
-      content: post.body.raw,
-      image: post.image,
-    })
-  })
+  // allDocs.map((post) => {
+  //   return feed.addItem({
+  //     title: post.title,
+  //     id: `${ownerMetaData.url}${post.slug}`,
+  //     guid: `${ownerMetaData.url}${post.slug}`,
+  //     link: `${ownerMetaData.url}${post.slug}`,
+  //     date: new Date(post.published_date),
+  //     description: post.body.raw.slice(0, 300),
+  //     author: [{ name: post.author, link: ownerConfigs.githubLink, email: ownerConfigs.githubLink }],
+  //     content: post.body.raw,
+  //     image: post.image,
+  //   })
+  // })
 
   return {
     rss: feed.rss2(),

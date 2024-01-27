@@ -5,30 +5,32 @@ import {
   ReadingBarIndicator,
 } from './components'
 import { AsidePostIndex } from './components/AsidePost/components'
-import type { Doc } from 'contentlayer/generated'
+import type { IArticle } from '@/@types/Article'
+
+// import type { Doc } from 'contentlayer/generated'
 
 interface PostProps {
-  doc: Doc
+  article: IArticle
 }
 
-export function Post({ doc }: PostProps) {
+export function Post({ article }: PostProps) {
   return (
     <div className='relative'>
       <ReadingBarIndicator />
 
       {/* <MobileMenuArticle>
-        <AsidePost doc={doc} />
+        <AsidePost article={article} />
       </MobileMenuArticle> */}
 
       <div className='block lg:hidden'>
-        <AsidePostIndex doc={doc} />
+        <AsidePostIndex article={article} />
       </div>
 
       <div className="relative flex max-w-full items-start gap-2">
         <ArticleMenu />
-        <ArticlePost doc={doc} />
+        <ArticlePost article={article} />
         {/* hidden lg:block */}
-        <AsidePost doc={doc} className='hidden lg:block' />
+        <AsidePost article={article} className='hidden lg:block' />
       </div>
 
     </div>

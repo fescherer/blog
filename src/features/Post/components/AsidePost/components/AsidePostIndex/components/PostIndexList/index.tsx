@@ -1,9 +1,9 @@
-import type { DocHeading } from '@/@types/Article'
+import type { IArticleHeading } from '@/@types/Article'
 import { Link } from '@/components/Lib/Link'
 import { slugyfy } from '@/utils/slugfy'
 
 interface PostIndexListProps {
-  list: DocHeading[]
+  list: IArticleHeading[]
 }
 
 export function getStyleForHeading(level: number) {
