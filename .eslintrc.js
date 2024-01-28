@@ -17,6 +17,7 @@ module.exports = {
     'react/jsx-indent-props': ['error', { tab: 2 }],
     'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
     'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always', beforeClosing: 'never' }],
+    'no-restricted-globals': 'off',
 
     'react/button-has-type': 'error',
     'react/default-props-match-prop-types': 'error',
