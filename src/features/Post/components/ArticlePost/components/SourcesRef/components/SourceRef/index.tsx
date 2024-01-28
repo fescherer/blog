@@ -2,22 +2,19 @@
 
 import Link from 'next/link'
 import { getTimeFormated } from '@/utils/functions'
+import type { ISourceReference } from '@/@types/Article'
 
 interface SourceRefProps {
-  item: string
+  item: ISourceReference
 }
 
 export function SourceRef({ item }: SourceRefProps) {
-  const ref = item.split('$')
-  const dateTime = getTimeFormated(ref[0])
+  const dateTime = getTimeFormated(item.date)
 
-  if (ref.length > 2) {
-    return (
-      <p>
-        <Link aria-label={`Link for source ${ref[1]}`} href={ref[2]} target='_blank' className='tracking-wide text-brand-primary transition-all hover:border-b hover:border-b-brand-primary-hover hover:text-brand-primary-hover'>{`${ref[1]}`}.</Link>
-        <span>{' '}Access at <time dateTime={dateTime}>{dateTime}</time></span>
-      </p>
-    )
-  }
-  else { return <></> }
+  return (
+    <p>
+      <Link aria-label={`Link for source ${item.title}`} href={item.link} target='_blank' className='tracking-wide text-brand-primary transition-all hover:border-b hover:border-b-brand-primary-hover hover:text-brand-primary-hover'>{`${item.title}`}.</Link>
+      <span>{' '}Access at <time dateTime={dateTime}>{dateTime}</time></span>
+    </p>
+  )
 }

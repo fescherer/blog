@@ -2,17 +2,25 @@
 
 import { useState } from 'react'
 import { PostIndexList } from './components'
-import type { Doc } from 'contentlayer/generated'
 import { Card } from '@/components/Lib/Card'
-import type { DocHeading } from '@/@types/Article'
+import type { IArticle, IArticleHeading } from '@/@types/Article'
 
 interface AsidePostIndexProps {
-  doc: Doc
+  article: IArticle
 }
 
-export function AsidePostIndex({ doc }: AsidePostIndexProps) {
+export function AsidePostIndex({ article }: AsidePostIndexProps) {
   const [isHeadingExpanded, setIsHeadingExpanded] = useState(false)
-  const headings = doc.headings as DocHeading[]
+  // Use regular expression to find all headings
+  const headingsMatch = article.content.match(/(#+)\s+(.+)/g) || []
+
+  // Convert the matches into an array of objects
+  const headings = headingsMatch.map((match) => {
+    const levelMatch = match.match(/#+/)
+    const level = levelMatch ? levelMatch[0].length : 0
+    const title = match.replace(/#+\s+/, '')
+    return { level, title } as IArticleHeading
+  })
 
   const firstHeadings = headings.slice(0, 5)
   const hiddenHeadings = headings.slice(5, headings.length)

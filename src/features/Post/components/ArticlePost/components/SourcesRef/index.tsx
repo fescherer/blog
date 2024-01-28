@@ -1,19 +1,17 @@
 import { SourceRef } from './components'
-import type { Doc } from 'contentlayer/generated'
+import type { IArticle } from '@/@types/Article'
 
 interface SourcesRefProps {
-  doc: Doc
+  article: IArticle
 }
 
-export function SourcesRef({ doc }: SourcesRefProps) {
-  // const { refDate, refLink } = doc
-
+export function SourcesRef({ article }: SourcesRefProps) {
   return (
     <div>
       <h2>References</h2>
 
       {
-        doc.sources.map(item => (<SourceRef key={item} item={item} />))
+        article.sources.map(item => (<SourceRef key={item.title} item={item} />))
       }
     </div>
   )

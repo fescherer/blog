@@ -1,8 +1,10 @@
 import { PostList } from '@/features/PostList'
-import { allDocs } from 'contentlayer/generated'
+import { getPostsData } from '@/utils/functions/getPostsData'
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getPostsData()
+
   return (
-    <PostList posts={allDocs} />
+    <PostList posts={posts} />
   )
 }
