@@ -26,7 +26,7 @@ export async function generateMetadata(
 
     openGraph: {
       title: `${data.title} | ${ownerMetaData.title}`,
-      description: 'data.body.raw.slice(0, 90)', // TODO solve this
+      description: data.content.slice(0, 90),
       url: `${ownerMetaData.url}/${type}/${slug}`,
       siteName: ownerMetaData.title,
       images: [
@@ -61,7 +61,7 @@ function getJSONLD(doc: IArticle, type: string, slug: string) {
     'headline': doc.title,
     'url': `${ownerMetaData.url}/${type}/${slug}`,
     'datePublished': doc.published_date,
-    'dateModified': doc.published_date,
+    'dateModified': doc.updated_at,
     'image': {
       '@type': 'ImageObject',
       'url': doc.image,
@@ -69,10 +69,22 @@ function getJSONLD(doc: IArticle, type: string, slug: string) {
       'height': `${ownerMetaData.image.height}px`,
     },
     'keywords': doc.tags,
-    'description': 'doc.body.raw.slice(0, 90)', // TODO solve this
+    'description': doc.content.slice(0, 90),
     'mainEntityOfPage': {
       '@type': 'WebPage',
-      '@id': ownerMetaData.url,
+      '@id': `${ownerMetaData.url}/${type}/${slug}`,
+    },
+    'author': {
+      '@type': 'Person',
+      'name': ownerConfigs.name,
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': ownerMetaData.title,
+      'logo': {
+        '@type': 'ImageObject',
+        'url': '/favicon.svg',
+      },
     },
   })
 }

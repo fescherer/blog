@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { getTimeFormated } from '@/utils/functions'
 import type { ISourceReference } from '@/@types/Article'
