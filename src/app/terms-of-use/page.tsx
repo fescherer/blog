@@ -11,35 +11,86 @@ export default function Page() {
       <Text>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</Text>
       <h3>Definitions</h3>
       <Text>For the purposes of these Terms and Conditions:</Text>
+
       <ListUnorganized>
         <ListItem>
-          <Text><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</Text>
+          <Text>
+            <strong>Affiliate</strong>
+            {' '}
+            means an entity that controls, is controlled by or is under common control with a party, where &quot;control&quot; means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.
+          </Text>
         </ListItem>
+
         <ListItem>
-          <Text><strong>Country</strong> refers to: Brazil</Text>
+          <Text>
+            <strong>Country</strong>
+            {' '}
+            refers to: Brazil
+          </Text>
         </ListItem>
+
         <ListItem>
-          <Text><strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Felipe Scherer&apos;s Blog.</Text>
+          <Text>
+            <strong>Company</strong>
+            {' '}
+            (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Felipe Scherer&apos;s Blog.
+          </Text>
         </ListItem>
+
         <ListItem>
-          <Text><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</Text>
+          <Text>
+            <strong>Device</strong>
+            {' '}
+            means any device that can access the Service such as a computer, a cellphone or a digital tablet.
+          </Text>
         </ListItem>
+
         <ListItem>
-          <Text><strong>Service</strong> refers to the Website.</Text>
+          <Text>
+            <strong>Service</strong>
+            {' '}
+            refers to the Website.
+          </Text>
         </ListItem>
+
         <ListItem>
-          <Text><strong>Terms and Conditions</strong> (also referred as &quot;Terms&quot;) mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the <Link href="https://www.freeprivacypolicy.com/free-terms-and-conditions-generator/" target="_blank" rel="noreferrer">Free Terms and Conditions Generator</Link>.</Text>
+          <Text>
+            <strong>Terms and Conditions</strong>
+            {' '}
+            (also referred as &quot;Terms&quot;) mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement has been created with the help of the
+            {' '}
+            <Link href="https://www.freeprivacypolicy.com/free-terms-and-conditions-generator/" target="_blank" rel="noreferrer">Free Terms and Conditions Generator</Link>
+            .
+          </Text>
         </ListItem>
+
         <ListItem>
-          <Text><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</Text>
+          <Text>
+            <strong>Third-party Social Media Service</strong>
+            {' '}
+            means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
+          </Text>
         </ListItem>
+
         <ListItem>
-          <Text><strong>Website</strong> refers to Felipe Scherer&apos;s Blog, accessible from <Link href="blog.felipescherer.com" rel="external nofollow noopener" target="_blank">blog.felipescherer.com</Link></Text>
+          <Text>
+            <strong>Website</strong>
+            {' '}
+            refers to Felipe Scherer&apos;s Blog, accessible from
+            {' '}
+            <Link href="blog.felipescherer.com" rel="external nofollow noopener" target="_blank">blog.felipescherer.com</Link>
+          </Text>
         </ListItem>
+
         <ListItem>
-          <Text><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</Text>
+          <Text>
+            <strong>You</strong>
+            {' '}
+            means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+          </Text>
         </ListItem>
       </ListUnorganized>
+
       <h2>Acknowledgment</h2>
       <Text>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.</Text>
       <Text>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.</Text>
@@ -75,16 +126,23 @@ export default function Page() {
       <h3>Waiver</h3>
       <Text>Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party&apos;s ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.</Text>
       <h2>Translation Interpretation</h2>
-      <Text>These Terms and Conditions may have been translated if We have made them available to You on our Service.
+
+      <Text>
+        These Terms and Conditions may have been translated if We have made them available to You on our Service.
         You agree that the original English text shall prevail in the case of a dispute.
       </Text>
+
       <h2>Changes to These Terms and Conditions</h2>
       <Text>We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days&apos; notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.</Text>
       <Text>By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.</Text>
       <h2>Contact Us</h2>
       <Text>If you have any questions about these Terms and Conditions, You can contact us:</Text>
+
       <ListUnorganized>
-        <ListItem>By linkedin: <Link href="https://www.linkedin.com/in/fescherer" rel="external nofollow noopener" target="_blank">Linkedin</Link></ListItem>
+        <ListItem>
+          By linkedin:
+          <Link href="https://www.linkedin.com/in/fescherer" rel="external nofollow noopener" target="_blank">Linkedin</Link>
+        </ListItem>
       </ListUnorganized>
     </div>
 

@@ -1,7 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-
 import { getPostContent } from './getPostContent'
 import type { IArticle } from '@/@types/Article'
 
@@ -16,14 +12,14 @@ export async function getPostData(blogType: string, blogSlug: string): Promise<I
     const file = await import(`@/blog/${blogType}/${blogSlug}.mdx`)
     const postContent = await getPostContent(blogType, blogSlug)
 
-    if (file?.metadata)
-    { return {
-      ...file.metadata,
-      slug: blogSlug,
-      category: blogType,
-      content: postContent,
-    } }
-    else {
+    if (file?.metadata) {
+      return {
+        ...file.metadata,
+        slug: blogSlug,
+        category: blogType,
+        content: postContent,
+      }
+    } else {
       throw new Error(`Unable to find metadata in file ${blogSlug}.mdx`)
     }
   } catch (error: any) {

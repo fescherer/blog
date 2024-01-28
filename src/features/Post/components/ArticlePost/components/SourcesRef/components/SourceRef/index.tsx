@@ -13,8 +13,17 @@ export function SourceRef({ item }: SourceRefProps) {
 
   return (
     <p>
-      <Link aria-label={`Link for source ${item.title}`} href={item.link} target='_blank' className='tracking-wide text-brand-primary transition-all hover:border-b hover:border-b-brand-primary-hover hover:text-brand-primary-hover'>{`${item.title}`}.</Link>
-      <span>{' '}Access at <time dateTime={dateTime}>{dateTime}</time></span>
+      <Link aria-label={`Link for source ${item.title}`} href={item.link} target="_blank" className="tracking-wide text-brand-primary transition-all hover:border-b hover:border-b-brand-primary-hover hover:text-brand-primary-hover">
+        {`${item.title}`}
+        .
+      </Link>
+
+      <span>
+        {' '}
+        Access at
+        {' '}
+        <time dateTime={dateTime}>{dateTime}</time>
+      </span>
     </p>
   )
 }

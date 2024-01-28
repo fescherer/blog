@@ -18,17 +18,20 @@ interface PostlistProps {
 export function PostList({ posts, selectedTag, selectedCategory }: PostlistProps) {
   return (
     <SearchProvider>
-      <div className='m-auto flex w-full flex-col-reverse justify-between lg:flex-row'>
+      <div className="m-auto flex w-full flex-col-reverse justify-between lg:flex-row">
         {JSONLD<WebSite>(websiteJSONLD)}
-        <aside className='m-1 flex flex-col gap-2 lg:min-w-[16rem] lg:max-w-[16rem]'>
-          <div className='hidden lg:flex'>
+
+        <aside className="m-1 flex flex-col gap-2 lg:min-w-[16rem] lg:max-w-[16rem]">
+          <div className="hidden lg:flex">
             <SearchInput />
           </div>
+
           <AsideAllTagsAndCategories selectedTag={selectedTag} selectedCategory={selectedCategory} />
         </aside>
+
         <Posts posts={posts} />
 
-        <div className='m-2 flex lg:hidden'>
+        <div className="m-2 flex lg:hidden">
           <SearchInput />
         </div>
       </div>

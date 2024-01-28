@@ -12,13 +12,15 @@ export default async function PostsByCategory({ params: { type } }: PostsByCateg
   const articles = (await getPostsData()).filter(article => article.category === type)
 
   return (
-    <div className='flex flex-col items-baseline'>
-      <h2 className='text-center text-sm capitalize'>
+    <div className="flex flex-col items-baseline">
+      <h2 className="text-center text-sm capitalize">
         <Link
-            aria-label="Remove filtered by:"
-            target='_self'
-            href="/"
-        >Filtered by category: {type}
+          aria-label="Remove filtered by:"
+          target="_self"
+          href="/"
+        >
+          Filtered by category:
+          {type}
         </Link>
       </h2>
 

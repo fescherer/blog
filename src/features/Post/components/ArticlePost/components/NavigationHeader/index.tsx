@@ -10,8 +10,8 @@ interface NavigationHeaderProps {
 
 export function NavigationHeader({ article }: NavigationHeaderProps) {
   return (
-    <div className='flex justify-between'>
-      <div className='flex gap-2 text-xs capitalize'>
+    <div className="flex justify-between">
+      <div className="flex gap-2 text-xs capitalize">
         <Link href="/">Home</Link>
         <span>/</span>
         <Link href={`/${article.category}`}>{article.category}</Link>
@@ -19,7 +19,7 @@ export function NavigationHeader({ article }: NavigationHeaderProps) {
         <Link href={`/${article.category}/${article.slug}`}>{article.slug}</Link>
       </div>
 
-      <div className='flex gap-2'>
+      <div className="flex gap-2">
         {
           article.project_url
             ? (
@@ -29,6 +29,7 @@ export function NavigationHeader({ article }: NavigationHeaderProps) {
               )
             : null
         }
+
         {
           article.figma_url
             ? (
@@ -38,6 +39,7 @@ export function NavigationHeader({ article }: NavigationHeaderProps) {
               )
             : null
         }
+
         {
           article.github_url
             ? (

@@ -27,25 +27,26 @@ export function AsidePostIndex({ article }: AsidePostIndexProps) {
 
   return (
     <Card title="On this article">
-      <div className='flex flex-col'>
-        <div className='relative'>
+      <div className="flex flex-col">
+        <div className="relative">
 
-          <div className='flex flex-col gap-1'>
+          <div className="flex flex-col gap-1">
             <PostIndexList list={firstHeadings} />
           </div>
         </div>
-        <div className='grid transition-all duration-300' style={{ gridTemplateRows: isHeadingExpanded ? '1fr' : '0fr' }}>
-          <div className='overflow-hidden'>
+
+        <div className="grid transition-all duration-300" style={{ gridTemplateRows: isHeadingExpanded ? '1fr' : '0fr' }}>
+          <div className="overflow-hidden">
             <PostIndexList list={hiddenHeadings} />
           </div>
         </div>
+
         {hiddenHeadings.length > 0
-            && (
-            <button type="button" onClick={() => setIsHeadingExpanded(prev => !prev)} className='design-link self-end text-sm'>
-              {isHeadingExpanded ? 'Expand less' : 'Expand more'}
-            </button>
-            )
-          }
+        && (
+          <button type="button" onClick={() => setIsHeadingExpanded(prev => !prev)} className="design-link self-end text-sm">
+            {isHeadingExpanded ? 'Expand less' : 'Expand more'}
+          </button>
+        )}
       </div>
     </Card>
 

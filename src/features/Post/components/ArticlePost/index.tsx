@@ -21,34 +21,31 @@ export function ArticlePost({ article }: ArticlePostProps) {
 
       <div>
         <NavigationHeader article={article} />
-
         <ArticleHeader article={article} />
       </div>
 
       <Image
-          alt=""
-          height={568}
-          width={853}
-          src={article.image}
-          quality={100}
-          className='animate__zoomIn animate__animated mx-auto rounded-lg border border-bg-background bg-bg-foreground'
+        alt=""
+        height={568}
+        width={853}
+        src={article.image}
+        quality={100}
+        className="animate__zoomIn animate__animated mx-auto rounded-lg border border-bg-background bg-bg-foreground"
       />
 
-      <div className='text-justify text-base'>
+      <div className="text-justify text-base">
         <MarkdownContent />
       </div>
 
-      <Separator dataOrientation='horizontal' />
+      <Separator dataOrientation="horizontal" />
       <SourcesRef article={article} />
-
       {/* <section className='flex flex-col gap-4'>
         <Rating />
 
         <Sharing />
       </section> */}
 
-      <Separator dataOrientation='horizontal' />
-
+      <Separator dataOrientation="horizontal" />
       {/* {
         article.related_articles?.length
           ? (
@@ -64,11 +61,8 @@ export function ArticlePost({ article }: ArticlePostProps) {
       } */}
 
       <Author article={article} />
-
-      <Separator dataOrientation='horizontal' />
-
+      <Separator dataOrientation="horizontal" />
       <RecommendedArticles article={article} />
-
     </article>
   )
 }

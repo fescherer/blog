@@ -15,6 +15,6 @@ export function getPostNames(): string[] {
         return file.substring(0, file.lastIndexOf('.')) || file
       })
     }
-  } catch (error) {}
+  } catch (error) { /* empty */ }
   return []
 }
