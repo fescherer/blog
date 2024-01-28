@@ -1,7 +1,7 @@
 import { Post } from '@/features/Post'
 import { JSONLD } from '@/components/JSONLD'
 import { getArticleJSONLD } from '@/components/JSONLD/data/article'
-import { ownerMetaData } from '@/utils/ownerConfigs'
+import { ownerConfigs, ownerMetaData } from '@/utils/ownerConfigs'
 import { getPostNames } from '@/utils/functions/getPostsName'
 import { getPostData } from '@/utils/functions/getPostData'
 import type { IArticle } from '@/@types/Article'
@@ -16,19 +16,19 @@ interface PageProps {
 export async function generateMetadata(
   { params: { slug, type } }: PageProps,
 ) {
-  const data = await getPostData(slug, type)
+  const data = await getPostData(type, slug)
 
   return {
     title: data.title,
     alternates: {
-      canonical: `https://blog.felipescherer.com/${type}/${slug}`,
+      canonical: `${ownerMetaData.url}/${type}/${slug}`,
     },
 
     openGraph: {
-      title: `${data.title} | Felipe Scherer\'s Blog`,
+      title: `${data.title} | ${ownerMetaData.title}`,
       description: 'data.body.raw.slice(0, 90)', // TODO solve this
-      url: `https://blog.felipescherer.com/${type}/${slug}`,
-      siteName: 'Felipe Scherer\'s blog',
+      url: `${ownerMetaData.url}/${type}/${slug}`,
+      siteName: ownerMetaData.title,
       images: [
         {
           url: data.image,
@@ -42,7 +42,7 @@ export async function generateMetadata(
     },
 
     authors: [
-      { name: 'Felipe Scherer', url: 'https://github.com/fescherer.com' },
+      { name: ownerConfigs.name, url: ownerMetaData.url },
     ],
   }
 }
@@ -61,7 +61,7 @@ function getJSONLD(doc: IArticle, type: string, slug: string) {
   return getArticleJSONLD({
     '@type': 'Article',
     'headline': doc.title,
-    'url': `https://blog.felipescherer.com/${type}/${slug}`,
+    'url': `${ownerMetaData.url}/${type}/${slug}`,
     'datePublished': doc.published_date,
     'dateModified': doc.published_date,
     'image': {
@@ -74,7 +74,7 @@ function getJSONLD(doc: IArticle, type: string, slug: string) {
     'description': 'doc.body.raw.slice(0, 90)', // TODO solve this
     'mainEntityOfPage': {
       '@type': 'WebPage',
-      '@id': 'https://blog.felipescherer.com',
+      '@id': ownerMetaData.url,
     },
   })
 }
