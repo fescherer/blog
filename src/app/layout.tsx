@@ -1,6 +1,6 @@
 import React from 'react'
 import './globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { cookies } from 'next/headers'
 import Script from 'next/script'
 import { Header } from '@/components/Header'
@@ -9,6 +9,8 @@ import { CookieMessage } from '@/components/CookieMessage'
 import { themes } from '@/themes/serverSideThemes'
 import { ownerMetaData } from '@/utils/ownerConfigs'
 import { generateRss } from '@/utils/generateRSS'
+
+const APP_DEFAULT_TITLE = 'My Awesome PWA App'
 
 export const metadata: Metadata = {
   title: ownerMetaData.title,
@@ -85,6 +87,20 @@ export const metadata: Metadata = {
       url: '/favicon.svg',
     },
   },
+
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: APP_DEFAULT_TITLE,
+    // startUpImage: [],
+  },
+  formatDetection: {
+    telephone: false,
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#FFFFFF',
 }
 
 export default function RootLayout({
