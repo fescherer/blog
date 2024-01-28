@@ -41,9 +41,7 @@ export async function generateMetadata(
       type: 'article',
     },
 
-    authors: [
-      { name: ownerConfigs.name, url: ownerMetaData.url },
-    ],
+    authors: [{ name: ownerConfigs.name, url: ownerMetaData.url }],
   }
 }
 
@@ -82,7 +80,7 @@ function getJSONLD(doc: IArticle, type: string, slug: string) {
 export default async function PostPage({ params: { type, slug } }: PageProps) {
   const article = await getPostData(type, slug)
   return (
-    <div className='flex w-full max-w-full flex-col'>
+    <div className="flex w-full max-w-full flex-col">
       {JSONLD(getJSONLD(article, type, slug))}
       <Post article={article} />
     </div>

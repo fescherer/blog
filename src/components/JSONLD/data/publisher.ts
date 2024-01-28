@@ -10,7 +10,5 @@ export const felipeschererData: Person = {
     'height': '460px',
   },
   'url': 'https://github.com/fescherer',
-  'sameAs': [
-    'https://www.linkedin.com/in/ofelipescherer/',
-  ],
+  'sameAs': ['https://www.linkedin.com/in/ofelipescherer/'],
 }

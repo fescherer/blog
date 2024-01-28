@@ -28,4 +28,7 @@ export interface IRecommendedArticle {
   article: IArticle
 }
 
-export interface IArticleHeading { level: 1 | 2 | 3; title: string }
+export interface IArticleHeading {
+  level: 1 | 2 | 3
+  title: string
+}

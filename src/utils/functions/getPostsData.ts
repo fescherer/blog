@@ -18,12 +18,13 @@ export async function getPostsData(): Promise<IArticle[]> {
 
         files.forEach((articleName) => {
           const filename = articleName.substring(0, articleName.lastIndexOf('.')) || articleName
-          // eslint-disable-next-line @typescript-eslint/no-floating-promises
           articles = [...articles, getPostData(articleType, filename)]
         })
       })
       return Promise.all(articles)
     }
-  } catch (error) { return [] }
+  } catch (error) {
+    return []
+  }
   return []
 }

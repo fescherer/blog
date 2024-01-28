@@ -36,9 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
 
-  authors: [
-    { name: 'Felipe Scherer', url: 'https://github.com/fescherer.com' },
-  ],
+  authors: [{ name: 'Felipe Scherer', url: 'https://github.com/fescherer.com' }],
 
   twitter: {
     card: 'app',
@@ -114,20 +112,24 @@ export default function RootLayout({
   const theme = themes.includes(cookieTheme?.value ?? '') ? cookieTheme?.value : ''
 
   return (
-    <html lang="en" className='flex min-h-screen scroll-smooth' data-theme={theme}>
+
+    <html lang="en" className="flex min-h-screen scroll-smooth" data-theme={theme}>
       <head>
         <link rel="icon" href="/favicon.svg" sizes="any" />
       </head>
+
       <body className="flex w-full flex-col gap-8 bg-bg-background font-satoshi text-bg-on-background">
 
         <Header />
+
         <main className="m-auto flex w-full max-w-screen-lg flex-1 pt-24 sm:px-4">
           {children}
           {typeof window !== 'undefined' && <CookieMessage />}
         </main>
-        <Footer />
 
-        <Script async src={'https://www.googletagmanager.com/gtag/js?id=G-4BVC96WBH7'} />
+        <Footer />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4BVC96WBH7" />
+
         <Script id="google-analytics">
           {`
           window.dataLayer = window.dataLayer || [];
@@ -137,7 +139,6 @@ export default function RootLayout({
           gtag('config', 'G-4BVC96WBH7');
         `}
         </Script>
-
       </body>
     </html>
   )

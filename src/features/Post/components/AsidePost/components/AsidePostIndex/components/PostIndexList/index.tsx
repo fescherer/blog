@@ -25,13 +25,13 @@ export function getStyleForHeading(level: number) {
 
 export function PostIndexList({ list }: PostIndexListProps) {
   return (
-    <div className='flex flex-col gap-1 '>
+    <div className="flex flex-col gap-1 ">
       {list.map(heading => (
         <Link
-            target='_self'
-            href={`#${slugyfy(heading.title)}`}
-            key={heading.title}
-            className={`${getStyleForHeading(heading.level)}`}
+          target="_self"
+          href={`#${slugyfy(heading.title)}`}
+          key={heading.title}
+          className={`${getStyleForHeading(heading.level)}`}
         >
           {heading.title}
         </Link>

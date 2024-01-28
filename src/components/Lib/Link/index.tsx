@@ -1,3 +1,4 @@
+import React from 'react'
 import LinkNext from 'next/link'
 
 interface LinkProps {

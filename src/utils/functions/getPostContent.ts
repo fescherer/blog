@@ -1,4 +1,3 @@
-/* eslint-disable n/prefer-global/process */
 import path from 'node:path'
 import { access, readFile } from 'node:fs/promises'
 

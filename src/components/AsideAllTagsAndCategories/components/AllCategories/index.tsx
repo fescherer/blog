@@ -13,15 +13,16 @@ export async function AllCategories({ selectedCategory }: AllCategoriesProps) {
   const allcategories = getAllCategories(articles)
 
   return (
-    <Card title='All categories'>
-      <ul className='flex list-disc flex-col gap-1 pl-4 capitalize'>
+    <Card title="All categories">
+      <ul className="flex list-disc flex-col gap-1 pl-4 capitalize">
         {allcategories.map(category => (
           <li key={category} className={clsx({ 'text-brand-primary font-bold': selectedCategory === category })}>
             <Link
-                aria-label={`Remove category filter for ${category}`}
-                target='_self'
-                href={category === selectedCategory ? '/' : `/${category}`}
-            >{category}
+              aria-label={`Remove category filter for ${category}`}
+              target="_self"
+              href={category === selectedCategory ? '/' : `/${category}`}
+            >
+              {category}
             </Link>
           </li>
         ))}
