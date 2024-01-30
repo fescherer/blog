@@ -2,6 +2,7 @@ import { Link } from '@/components/Lib/Link'
 
 // import { allDocs } from 'contentlayer/generated'
 import { PostList } from '@/features/PostList'
+import { getPostsData } from '@/utils/functions/getPostsData'
 
 interface PostsByTagProps {
   params: {
@@ -10,11 +11,11 @@ interface PostsByTagProps {
   }
 }
 
-export default function PostsByTag({ params: { tag } }: PostsByTagProps) {
-  // const docs = allDocs.filter(doc => doc.tags.includes(tag))
+export default async function PostsByTag({ params: { tag } }: PostsByTagProps) {
+  const articles = (await getPostsData()).filter(article => article.tags.includes(tag))
 
   return (
-    <div className="flex flex-col items-baseline">
+    <div className="flex w-full flex-col items-baseline">
       <h2 className="text-center text-sm capitalize">
         <Link
           aria-label="Remove filtered by:"
@@ -26,7 +27,7 @@ export default function PostsByTag({ params: { tag } }: PostsByTagProps) {
         </Link>
       </h2>
 
-      <PostList posts={[]} selectedTag={tag} />
+      <PostList posts={articles} selectedTag={tag} />
     </div>
 
   )
