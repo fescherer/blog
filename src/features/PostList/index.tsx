@@ -4,20 +4,25 @@ import { JSONLD } from '@/components/JSONLD'
 import { websiteJSONLD } from '@/components/JSONLD/data/website'
 import { Posts } from '@/features/Posts'
 import type { IArticle } from '@/@types/Article'
-import { CategoriesFilter, Filter } from './components'
+import { CategoriesFilter, Filter, LatestPost } from './components'
 import { TagsFilter } from './components/TagsFilter'
 
 interface PostlistProps {
   posts: IArticle[]
   selectedTag?: string
   selectedCategory?: string
+  latestPost?: IArticle | null | undefined
 }
 
-export function PostList({ posts, selectedTag, selectedCategory }: PostlistProps) {
+export function PostList({ posts, selectedTag, selectedCategory, latestPost }: PostlistProps) {
   return (
     <SearchProvider>
       <div className="m-auto flex w-full flex-col gap-4 p-2">
         {JSONLD<WebSite>(websiteJSONLD)}
+
+        {
+          !selectedCategory && !selectedTag && latestPost && <LatestPost article={latestPost} />
+        }
 
         <div className="flex w-full flex-col">
 
