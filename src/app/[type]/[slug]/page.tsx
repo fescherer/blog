@@ -2,9 +2,9 @@ import { Post } from '@/features/Post'
 import { JSONLD } from '@/components/JSONLD'
 import { getArticleJSONLD } from '@/components/JSONLD/data/article'
 import { ownerConfigs, ownerMetaData } from '@/utils/ownerConfigs'
-import { getPostNames } from '@/utils/functions/getPostsName'
-import { getPostData } from '@/utils/functions/getPostData'
 import type { IArticle } from '@/@types/Article'
+import { getPostData } from '@/utils/functions/getPostData'
+import { getPostNames } from '@/utils/functions/getPostsName'
 
 interface PageProps {
   params: {
@@ -50,9 +50,7 @@ export async function generateMetadata(
  */
 export function generateStaticParams() {
   const blogPosts = getPostNames()
-  return blogPosts.map(post => ({
-    blogId: post,
-  }))
+  return blogPosts
 }
 
 function getJSONLD(doc: IArticle, type: string, slug: string) {

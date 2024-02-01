@@ -2,7 +2,7 @@ import { getPostContent } from './getPostContent'
 import type { IArticle } from '@/@types/Article'
 
 /**
- * Import an mdx blog post file and return the metadata.
+ * Import an mdx blog post file and return the metadata and content.
  * @param blogType
  * @param blogSlug
  * @returns

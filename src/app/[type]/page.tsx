@@ -1,11 +1,17 @@
 import { Link } from '@/components/Lib/Link'
 import { PostList } from '@/features/PostList'
+import { getCategoriesName } from '@/utils/functions/getCategoriesName'
 import { getPostsData } from '@/utils/functions/getPostsData'
 
 interface PostsByCategoryProps {
   params: {
     type: string
   }
+}
+
+export function generateStaticParams() {
+  const categories = getCategoriesName()
+  return categories.map(category => ({ type: category }))
 }
 
 export default async function PostsByCategory({ params: { type } }: PostsByCategoryProps) {
