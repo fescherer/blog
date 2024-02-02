@@ -25,6 +25,14 @@
     "mdx"
   ],
   "cSpell.enabled": true,
-  "colorize.languages": ["typescript", "javascript", "css", "scss"]
+  "colorize.languages": [
+    "typescript",
+    "javascript",
+    "css",
+    "scss"
+  ],
+  "cSpell.ignoreWords": [
+    "Statcounter"
+  ]
 
 }

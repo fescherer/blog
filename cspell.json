@@ -11,6 +11,7 @@
   "dictionaries": ["project-words"],
   "ignorePaths": [
     "node_modules",
+    "mdx-components.tsx",
     "src/@types/**",
     "src/app/**",
     "src/components/**",

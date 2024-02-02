@@ -15,8 +15,12 @@ export function LatestPost({ article }: PostsProps) {
   return (
     <Link aria-label={`Link to article ${article.title}`} href={`${article.category}/${article.slug}`} target="_self" className="animate__zoomIn animate__animated group mb-4 flex flex-col gap-4 overflow-hidden rounded border border-bg-foreground group-hover:text-brand-primary-hover md:flex-row lg:border-none">
 
-      <div style={{ minWidth: 853 / 2 }} className="overflow-hidden rounded">
-        <Image className="w-full transition-all group-hover:scale-110" src={article.image} width={853 / 2} height={568 / 2} alt="post image" />
+      <div style={{ minWidth: 853 / 2 }} className="relative w-full overflow-hidden rounded ">
+        <div className="absolute z-10 size-full bg-[#000] opacity-10" />
+
+        <div className="overflow-hidden rounded">
+          <Image className="transition-all group-hover:scale-110" src={`/blog-assets/${article.category}/${article.slug}/thumb.png`} width={853 / 2} height={568 / 2} alt="post image" />
+        </div>
       </div>
 
       <div className="flex flex-col items-baseline gap-4 p-2">
