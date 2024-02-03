@@ -19,7 +19,7 @@ export function LatestPost({ article }: PostsProps) {
         <div className="absolute z-10 size-full bg-[#000] opacity-10" />
 
         <div className="overflow-hidden rounded">
-          <Image className="transition-all group-hover:scale-110" src={`/blog-assets/${article.category}/${article.slug}/thumb.png`} width={853 / 2} height={568 / 2} alt="post image" />
+          <Image className="transition-all group-hover:scale-110" src={article.image} width={853 / 2} height={568 / 2} alt={article.alt} />
         </div>
       </div>
 

@@ -1,14 +1,14 @@
 export const metadata = {
   title: 'How to create good looking custom scrollbars',
   published_date: '2024-02-02T21:00:00.500Z',
-  updated_at: '2024-02-02T21:00:00.500Z',
-  image: '/thumb.png',
-  alt: '',
+  updated_at: '2024-03-02T10:00:00.500Z',
+  image: 'https://github.com/fescherer/blog/assets/62115215/eca284c2-ba7a-45b6-8782-e983817cfa8b',
+  alt: 'Image showing the default values of Edge, Firefox and Chrome scrollbars as wrong and a right one for the scrollbar made in this article',
   video_url: '',
   project_url: '',
   figma_url: '',
   github_url: '',
-  tags: ['css', 'tailwind', 'custom-elements'],
+  tags: ['css', 'custom-elements'],
   author: 'fescherer',
   sources: [
     {
@@ -16,7 +16,7 @@ export const metadata = {
       title: 'Two Browsers Walked Into a Scrollbar',
       link: 'https://www.filamentgroup.com/lab/scrollbars/',
     },
-        {
+    {
       date: '2024-02-02T18:00:00.500Z',
       title: 'Reddit',
       link: 'https://www.reddit.com',
@@ -31,7 +31,7 @@ In my opinion one of the most difficult part in frontend is to make the layout l
 At my first year as developer, I always will remember a gaffe committed when introducing some new features I had developed to the CEO's company. Well, I use Mozilla Developer Edition to code, but at that time I forgot users uses Chrome in majority.
 
 <Img
-  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/stat-counter-graph.png"
+  src="https://github.com/fescherer/blog/assets/62115215/8be10ac9-bb0f-47d5-93b7-bed3144ad9fe"
   source="https://gs.statcounter.com"
   name="Browser Market Share Worldwide Dec 2022 - Jan 2024"
   alt="Statcounter graph showing Chrome are used by 70% of the users"
@@ -55,7 +55,7 @@ I personally would prefer that every browser had unobtrusive scrollbars most bec
 Firefox has unobtrusive and really aesthetic scrollbar which is great but I don't like how only "grows" the scrollbar on hover, not the container, but the scrollbar. I think if it has to grow, that should grow on hover the content to be easy accessed and not the scrollbar. Like if I already have reached the scrollbar, it does not need to grow, right? The grow is to make the bar more accessible...
 
 <Img
-  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/firefox-default.gif"
+  src="https://github.com/fescherer/blog/assets/62115215/ad1747c2-699f-492f-9f07-be5b8f2f97aa"
   name="Mozilla Firefox default scrollbar"
   alt="Gif showing that Firefox only grows the scrollbar if hovered IN the scrollbar"
 />
@@ -65,7 +65,7 @@ Firefox has unobtrusive and really aesthetic scrollbar which is great but I don'
 I love chromium browsers specially Chrome and Opera GX, I use them both in different situations, like coding I like Chrome and Mozilla Firefox Developer, but for daily routines I prefer Opera GX. But most of the scrollbars are not that great. First, they are obtrusive which for sole already brings some problems. Second, it is so wider even if user is not hovering the content, which is really ugly...
 
 <Img
-  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/chrome-default.gif"
+  src="https://github.com/fescherer/blog/assets/62115215/d0c6360e-0546-4999-a296-8c11c2f62947"
   name="Chrome default scrollbar"
   alt="Gif showing the default behavior scrollbar in Mozilla Firefox"
 />
@@ -75,7 +75,7 @@ I love chromium browsers specially Chrome and Opera GX, I use them both in diffe
 One scrollbar I really like is from Edge Browser, yes, the successor of Internet Explorer. I think Edge has a lot of similar stuff with Chrome and the scrollbar is no different. Edge still has a wide scrollbar, but the borders are rounded which gives like a Firefox feeling. I really like, but I think could be better if were a little thinner.
 
 <Img
-  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/edge-default.gif"
+  src="https://github.com/fescherer/blog/assets/62115215/64badb1a-3fb8-4174-8c73-ba4222560296"
   name="Edge default scrollbar"
   alt="Gif showing the default behavior scrollbar in Edge"
 />
@@ -147,26 +147,26 @@ To find the browser's support, please look at:
 ## Final results
 
 <Img
-  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/firefox-after.gif"
+  src="https://github.com/fescherer/blog/assets/62115215/4af5a2b1-b06a-444d-a135-3b5f85472089"
   name="Mozilla Firefox"
   alt="Gif showing the result of aesthetic scrollbar in Firefox"
 />
 
 <Img
-  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/chrome-after.gif"
+  src="https://github.com/fescherer/blog/assets/62115215/24d9ca86-69a8-4335-9dea-b68f0278701d"
   name="Chrome"
    alt="Gif showing the result of aesthetic scrollbar in Chrome"
 />
 
 <Img
-  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/edge-after.gif"
+  src="https://github.com/fescherer/blog/assets/62115215/9e114c2b-06ca-459b-aa95-aecc4b02e57d"
   name="Edge"
    alt="Gif showing the result of aesthetic scrollbar in Edge"
 />
 
 ## Additional tips
 
-One very interesting stuff I found by searching content for this article is a solution for components that has a special css for hovering effects, is to use `media query hover` to only enable this on hover support devices. You can checkout the full video at https://www.youtube.com/watch?v=uuluAyw9AI0. I highly recommend this.
+One very interesting stuff I found by searching content for this article is a solution for components that has a special css for hovering effects, is to use `media query hover` to only enable this on hover support devices. You can checkout the [full video by the master of CSS Kevin Powell](https://www.youtube.com/watch?v=uuluAyw9AI0). I highly recommend.
 
 ## Conclusion
 

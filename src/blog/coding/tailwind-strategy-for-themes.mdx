@@ -1,7 +1,7 @@
 export const metadata = {
 title: 'Tailwind Strategies for themes',
 published_date: '2023-09-18T10:00:00.500Z',
-updated_at: '2023-11-03T10:00:00.500Z',
+updated_at: '2024-01-03T11:00:00.500Z',
 image: 'https://github.com/fescherer/blog/assets/62115215/f1315990-75b1-40f8-8129-3e836d95754c',
 alt: 'Image containing a Tailwind icon on center, a moon at left and a sun at right with gradients respectively blue and yellow symbolizing dark and light theme.',
 author: 'fescherer',
@@ -39,11 +39,13 @@ sources: [
   ],
 }
 
-In this article I will talk about some strategies you can use to create themes on Tailwind, a way to write CSS in utility classes, like if you want to say `display: flex`, you can just give a classname of `flex`. Of course this is a very simple example, but you can do so much more and everything is customizable.
+In this article I will talk about some strategies you can use to create themes on Tailwind, a way to write CSS in utility classes, like if you want to say `display: flex`, you can just give a *classname* of `flex`. Of course this is a very simple example, but you can do so much more and everything is customizable.
 
 [Tailwind CSS](https://tailwindcss.com) as the docs says:
 
-> A utility-first CSS framework packed with classes like `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup.
+<Blockquote cite="https://eslint.org/docs/latest/use/getting-started">
+A utility-first CSS framework packed with classes like `flex`, `pt-4`, `text-center` and `rotate-90` that can be composed to build any design, directly in your markup.
+</Blockquote>
 
 ### What is Tailwind CSS
 
@@ -54,7 +56,13 @@ For me, frameworks that's uses utility classes are the best ones, it can be stra
 ### Popularity
 
 For popularity Tailwind is one of the favorite CSS Framework out there. You can see this in [State of CSS Survey](https://2023.stateofcss.com/en-US/css-frameworks):
-![image](https://github.com/fescherer/blog/assets/62115215/23055cb4-026e-4f25-b287-e3556251faf3)
+
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/23055cb4-026e-4f25-b287-e3556251faf3"
+  name="State of CSS"
+  source="https://2023.stateofcss.com/en-US/css-frameworks"
+  alt="Survey from State of CSS showing the is one of most used technologies for styling"
+/>
 
 They have a lot of interesting data. I suggest you to take look and see for yourself.
 
@@ -217,7 +225,11 @@ That almost it, now you just need to add in some css file the values for each th
 
 To make a better organization I like to make one file for each theme and then export all in one file.
 
-![Folder structure](https://github.com/fescherer/blog/assets/62115215/672b8aae-169a-4028-ace2-0f5482005252)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/672b8aae-169a-4028-ace2-0f5482005252"
+  name="Folder structure"
+  alt="Folder structure"
+/>
 
 ```css
 /* themes/variants/dark.css */
