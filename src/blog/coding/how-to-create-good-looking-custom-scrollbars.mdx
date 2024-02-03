@@ -16,6 +16,11 @@ export const metadata = {
       title: 'Two Browsers Walked Into a Scrollbar',
       link: 'https://www.filamentgroup.com/lab/scrollbars/',
     },
+        {
+      date: '2024-02-02T18:00:00.500Z',
+      title: 'Reddit',
+      link: 'https://www.reddit.com',
+    },
   ],
 }
 
@@ -28,45 +33,76 @@ At my first year as developer, I always will remember a gaffe committed when int
 <Img
   src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/stat-counter-graph.png"
   source="https://gs.statcounter.com"
+  name="Browser Market Share Worldwide Dec 2022 - Jan 2024"
   alt="Statcounter graph showing Chrome are used by 70% of the users"
 />
 
-So the CEO. Yes, the scrollbar's feature was horrible in Chrome because the scrollbars are not aesthetic as Firefox. In the end, I did not got any problems, the CEO only just pointed out and I did the fix in the next patch. I learnt to never forget scrollbars again, it cannot be neglected.
+So the CEO. Yes, the scrollbar's feature was horrible in Chrome because the scrollbars are not aesthetic as Firefox. In the end, I did not got any in any trouble, the CEO only just pointed out and I did the fix in the next patch. I learnt to never forget scrollbars again, it cannot be neglected.
 
 ## Problems
 
-{/* TODO rewrite this section */}
+The main issue with scrollbars it is different styles in each browser which makes really hard to us track how the final layout is gonna be delivered to the user. And is not only the visuals, some browsers make the scrollbars take a size of the container, which can lead to layout looking weird. We gonna follow the name convention in [this fantastic article by Zach Leatherman - Two Browsers Walked Into a Scrollbar](https://www.filamentgroup.com/lab/scrollbars/):
+<Blockquote cite="https://www.filamentgroup.com/lab/scrollbars">
+- Obtrusive scrollbars: scrollbars that take up screen real estate. These do not overlay on top of the content, but appear next to it.
 
-- Every browser has issues-
-I don't like how Firefox "grows" the scrollbar on hover only on it, I think if it has to grow, that should grow on hover the content to be easy accessed and not the scrollbar
+- Unobtrusive scrollbars: scrollbars that sit on top of the content. These don't subtract screen real estate away from the container they belong to.
+</Blockquote>
 
-- Chromium browsers has a lot of similar things, including the scrollbar, but the majority it's so ugly and big. I think the only exception would be the Edge, yes the successor of Internet Explorer, Edge has a very like Chrome scrollbar but more rounded and a little bit more thin. But even that, I think can be thinner
+I personally would prefer that every browser had unobtrusive scrollbars most because we as developer would not need to worry about taking some space in our layout. But I know that's not possible and probably would ruin a lot of layouts out there. Don't get me wrong, I am not saying some browser is better than other, I really think that every browser has some kind of problem when talking about scrollbars. Let's point out:
 
-On mobile, the scrollbar do not need to be that big, because the scroll is supposed to work on every part of content not only the scrollbar, much like the proper mouse scroll. So I do not see a reason to these scrollbars be so big
+### Mozilla Firefox
 
-Other problem is the width of the scrollbar actually being count on the width size of the content only on Chromium browsers, on the other hand, Mozilla does not count as actually width of the content, so WHY?, can you just have a common standard Mozilla and Chromium
+Firefox has unobtrusive and really aesthetic scrollbar which is great but I don't like how only "grows" the scrollbar on hover, not the container, but the scrollbar. I think if it has to grow, that should grow on hover the content to be easy accessed and not the scrollbar. Like if I already have reached the scrollbar, it does not need to grow, right? The grow is to make the bar more accessible...
+
+<Img
+  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/firefox-default.gif"
+  name="Mozilla Firefox default scrollbar"
+  alt="Gif showing that Firefox only grows the scrollbar if hovered IN the scrollbar"
+/>
+
+### Chromium Browsers
+
+I love chromium browsers specially Chrome and Opera GX, I use them both in different situations, like coding I like Chrome and Mozilla Firefox Developer, but for daily routines I prefer Opera GX. But most of the scrollbars are not that great. First, they are obtrusive which for sole already brings some problems. Second, it is so wider even if user is not hovering the content, which is really ugly...
+
+<Img
+  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/chrome-default.gif"
+  name="Chrome default scrollbar"
+  alt="Gif showing the default behavior scrollbar in Mozilla Firefox"
+/>
+
+### Edge
+
+One scrollbar I really like is from Edge Browser, yes, the successor of Internet Explorer. I think Edge has a lot of similar stuff with Chrome and the scrollbar is no different. Edge still has a wide scrollbar, but the borders are rounded which gives like a Firefox feeling. I really like, but I think could be better if were a little thinner.
+
+<Img
+  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/edge-default.gif"
+  name="Edge default scrollbar"
+  alt="Gif showing the default behavior scrollbar in Edge"
+/>
+
+## Mobile
+
+In mobile we have a little different problem. In my opinion mobile, the scrollbar can have the same problems above depending on which mobile browser you are, but with additional that scrollbars are only shown if you are actually scrolling, how I am supposed to know if that container has scroll if does not have a scrollbar?
 
 ## Objectives
 
-In this article I gonna show you how you can make your scrollbars aesthetic as can be in many different browsers, only using CSS. I am already warning you that is not possible to make like a reset to them, like we did to `h1`, `p` and so on. CSS has its limitations and to achieve the article goal probably will you need some Javascript code or maybe create all the logic with it. The method I am gonna show you is relative simple and can works on most browsers like Mozilla Firefox, Google Chrome, Brave, Opera GX, Edge and Safari, there will be an image with properties browser support in the end of the article. I think that's enough of talk, let's code.
+In this article I gonna show you how you can make your scrollbars aesthetic as can be in many different browsers, only using CSS. I am already warning you that is not possible to make like a reset to them, like we have done to `h1`, `p` and so on. CSS has its limitations and to achieve the fully goal probably will you need some Javascript code or maybe create all the logic with it. The method I am gonna show you is relative simple and can works on most browsers like Mozilla Firefox, Google Chrome, Brave, Opera GX, Edge and Safari, there will be an image with properties browser support in the end of the article. I think that's enough of talk, let's code.
 
 ## Solution
 
-{/* TODO explain more this */}
+First, please, do not ever style the main scrollbar. This is not standard, this do not need to follow your layout, it's good to look native to users do get lost. I think is good to style your scrollbars inside something you created, because this is "part" of your layout, different from the main scrollbar that is "part" of browser's layout. Did get it?
 
-DO NOT STYLE THE MAIN SCROLLBAR, IT'S NOT MEANT TO BE STYLED
-
-I came to a lot of sites with very difficult approaches using a lot of Javascript and a lot of CSS, because of that I filtered the really necessary styles, most of them are gotten from Reddit's aside menu
+Well, for the solution, I searched a lot and got really frustrated when finding out the perfect solution do not exist, but we can came to a really nice result. Most of the sites uses some kind of Javascript or very difficult CSS approaches, so I filtered out the really necessary styles and merge them in a class `styled-scrollbars` you can use in the overflowing container. Most of these styles were gotten from [Reddit's aside menu](https://www.reddit.com).
 
 ## CSS code
 
-{/* TODO explain more this */}
+There is no error, we gonna use two properties for Firefox (`scrollbar-color` and `scrollbar-width`) and some webkit for Chromium's browsers.
 
 ``` css
   /* Firefox Only */
 /* Approaches mobile first, because here, the scrollbar-color will be set and always will be that color, but on desktop, that we have hover effect, we can give a transparent color, but how this is mobile first, we give the color here, and treat the desktop in other style */
 .styled-scrollbars {
-  scrollbar-color: var(--brand-primary);
+  scrollbar-color: var(--some-really-nice-color-here);
   scrollbar-width: thin;
 }
 
@@ -81,27 +117,52 @@ I came to a lot of sites with very difficult approaches using a lot of Javascrip
   background: transparent;
 }
 
-/* With device has hover (Desktop or TV, etc) give a little effect on hover  */
+/* With device has hover (Desktop or TV, etc) give a little effect on hover */
 @media (hover: hover) {
   .styled-scrollbars {
-    scrollbar-color:#47484baa  transparent ;
+    scrollbar-color: var(--some-really-nice-color-here-not-hover)  transparent ;
     scrollbar-width: thin;
     border-radius: 8px;
     transition: cubic-bezier(0.165, 0.84, 0.44, 1) 500ms  all ;
   }
 
   .styled-scrollbars:hover {
-    scrollbar-color: #47484b transparent
+    scrollbar-color: var(--some-really-nice-color-here) transparent
   }
 
   .styled-scrollbars:hover::-webkit-scrollbar-thumb {
-    background: #47484b;
+    background: var(--some-really-nice-color-here);
     border-radius: 8px;
     -ms-overflow-style: none;
     scrollbar-width: thin;
   }
 }
 ```
+
+To find the browser's support, please look at:
+- [webkit-scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar)
+- [scrollbar-color](https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color)
+- [scrollbar-width](https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-width)
+
+## Final results
+
+<Img
+  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/firefox-after.gif"
+  name="Mozilla Firefox"
+  alt="Gif showing the result of aesthetic scrollbar in Firefox"
+/>
+
+<Img
+  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/chrome-after.gif"
+  name="Chrome"
+   alt="Gif showing the result of aesthetic scrollbar in Chrome"
+/>
+
+<Img
+  src="/blog-assets/coding/how-to-create-good-looking-custom-scrollbars/edge-after.gif"
+  name="Edge"
+   alt="Gif showing the result of aesthetic scrollbar in Edge"
+/>
 
 ## Additional tips
 
