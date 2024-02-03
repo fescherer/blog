@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    :root {
+      --styled-scrollbar-background: white; /* Necessary to be color, does not work if `transparent` */
+      --scrollbar-background: green; /*  */
+      --color-neutral-border: black; /* Actual color of the scrollbar */
+    }
+
+    /* Firefox Only */
+    /* Aproches mobile first, because here, the ``scrollbar-color` will be set and always will be that color, but on desktop, that we have hover effect, we can give a transparent color, but how this is mobile first, we give the color here, and treat the desktop in other style */
+    .styled-scrollbars {
+      scrollbar-color: var(--color-neutral-border) var(--color-neutral-border);
+      scrollbar-width: thin;
+    }
+
+    /* Chrome and others Browsers  */
+    .styled-scrollbars::-webkit-scrollbar {
+      width: 16px;
+      height: 16px
+    }
+
+    /* Chrome and others Browsers  */
+    .styled-scrollbars::-webkit-scrollbar-track {
+      background: var(--styled-scrollbar-background)
+    }
+
+    /* With device has hover (Destop or TV, etc) give a little effect on hover  */
+    @media (hover: hover) {
+      .styled-scrollbars {
+        scrollbar-color: transparent transparent;
+      }
+
+      .styled-scrollbars:hover {
+        scrollbar-color: var(--color-neutral-border) transparent
+      }
+
+      .styled-scrollbars:hover::-webkit-scrollbar-thumb {
+        background: var(--color-neutral-border);
+        border: 6px solid var(--styled-scrollbar-background);
+        border-radius: 8px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    }
+    </style>
+</head>
+<body>
+  <div>
+    <!-- <div style="min-height: 100vh;"></div> -->
+    <div class="styled-scrollbars" style="margin: 100px; display: flex; flex-direction: column; height: 60px; overflow-y: scroll; max-width: 100px;">
+      <span>das</span><span>dsa</span><span>dsa</span><span>dsa</span><span>dsa</span><span>das</span><span>dsa</span><span>dsa</span><span>dsa</span><span>dsa</span><span>das</span><span>dsa</span><span>dsa</span><span>dsa</span><span>dsa</span><span>das</span><span>dsa</span><span>dsa</span><span>dsa</span><span>dsa</span>
+    </div>
+  </div>
+</body>
+</html>

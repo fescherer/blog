@@ -24,6 +24,18 @@
   "cSpell.enableFiletypes": [
     "mdx"
   ],
-  "colorize.languages": ["typescript", "javascript", "css", "scss"]
+  "cSpell.enabled": true,
+  "colorize.languages": [
+    "typescript",
+    "javascript",
+    "css",
+    "scss"
+  ],
+  "cSpell.ignoreWords": [
+    "Statcounter"
+  ],
+  "cSpell.words": [
+    "Leatherman"
+  ]
 
 }

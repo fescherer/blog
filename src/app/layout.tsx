@@ -113,7 +113,7 @@ export default function RootLayout({
 
   return (
 
-    <html lang="en" className="flex min-h-screen scroll-smooth" data-theme={theme}>
+    <html lang="en" className="flex min-h-screen scroll-smooth" data-theme={theme} style={{ colorScheme: theme }}>
       <head>
         <link rel="icon" href="/favicon.svg" sizes="any" />
       </head>

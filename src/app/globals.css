@@ -144,4 +144,49 @@ code > [data-line]::before {
   .design-link {
     @apply text-brand-primary hover:text-brand-primary-hover transition-all hover:underline
   }
+
+  /* Firefox Only */
+/* Aproches mobile first, because here, the scrollbar-color will be set and always will be that color, but on desktop, that we have hover effect, we can give a transparent color, but how this is mobile first, we give the color here, and treat the desktop in other style */
+.styled-scrollbars {
+  scrollbar-color: var(--brand-primary);
+  scrollbar-width: thin;
+}
+
+/* Chrome and others Browsers  */
+.styled-scrollbars::-webkit-scrollbar {
+  width: 4px;
+  height: 4px
+}
+
+/* Chrome and others Browsers  */
+.styled-scrollbars::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* With device has hover (Destop or TV, etc) give a little effect on hover  */
+@media (hover: hover) {
+  .styled-scrollbars {
+    scrollbar-color:#47484baa  transparent ;
+    scrollbar-width: thin;
+    border-radius: 8px;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 500ms all ;
+  }
+
+  .styled-scrollbars:hover {
+    scrollbar-color: #47484b transparent
+  }
+
+  .styled-scrollbars:hover::-webkit-scrollbar-thumb {
+    background: #47484b;
+    border-radius: 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: thin;
+  }
+}
+}
+
+@layer utilities {
+  .overflow-x-hidden {
+    overflow-x: hidden !important;
+  }
 }

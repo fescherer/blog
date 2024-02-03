@@ -1,7 +1,16 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import type { MDXComponents } from 'mdx/types'
 import { slugyfy } from './utils/slugfy'
-import { Link } from './components/Primitives'
+import { Link as PrimitiveLink } from './components/Primitives'
 import { Pre } from './components/MdxComponents'
+import { DetailedHTMLProps, ImgHTMLAttributes } from 'react'
+import Link from 'next/link'
+
+interface IImg extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
+  source?: string
+  name: string
+}
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -82,7 +91,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     pre: ({ ...props }: any) => (<Pre {...props} />),
 
     a: ({ children, ...props }: any) => (
-      <Link aria-label={`Go to ${children}`} {...props} target="_blank" className="tracking-wide text-brand-primary transition-all hover:border-b hover:border-b-brand-primary-hover hover:text-brand-primary-hover">{children}</Link>
+      <PrimitiveLink aria-label={`Go to ${children}`} {...props} target="_blank" className="tracking-wide text-brand-primary transition-all hover:border-b hover:border-b-brand-primary-hover hover:text-brand-primary-hover">{children}</PrimitiveLink>
     ),
 
     ul: ({ children, ...props }: any) => (
@@ -100,20 +109,45 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </li>
     ),
-    blockquote: ({ children, ...props }: any) => (
+    Blockquote: ({ children, ...props }: any) => (
       <blockquote className=" mt-6 border-l-2 border-l-bg-foreground pl-6 italic" {...props}>
         {children}
       </blockquote>
     ),
-    // img: (props) => (
-    //   <Image
-    //     sizes="100vw"
-    //     width={100}
-    //     height={200}
-    //     style={{ width: '100%', height: 'auto' }}
-    //     {...(props as ImageProps)}
-    //   />
-    // ),
+    Img: (props: IImg) => {
+      const { source, ...rest } = props
+
+      if (source) {
+        return (
+          <figure>
+            <Link href={source} target="_blank">
+              <img {...rest} className="m-auto" />
+            </Link>
+
+            <figcaption className="text-center">
+              <span className="font-bold">
+                {props.name}
+                .
+              </span>
+
+              <span> Ref.</span>
+
+              <PrimitiveLink href={source} target="_blank">
+                {source}
+              </PrimitiveLink>
+            </figcaption>
+          </figure>
+        )
+      } else return (
+        <figure>
+          <img {...props} className="m-auto" />
+
+          <figcaption className="text-center font-bold">
+            {props.name}
+          </figcaption>
+        </figure>
+      )
+    },
     ...components,
   }
 }

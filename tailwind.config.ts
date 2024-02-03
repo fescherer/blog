@@ -4,9 +4,7 @@ import defaultTheme from 'tailwindcss/defaultTheme'
 import plugin from 'tailwindcss/plugin'
 
 const config: Config = {
-  content: [
-    './src/**/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     colors: {
       'brand': {
@@ -50,11 +48,13 @@ const config: Config = {
       h4: ['12px', { letterSpacing: '0.05em', fontWeight: '500' }],
       h3: ['14px', { letterSpacing: '0.05em', fontWeight: '600' }],
       h2: ['20px', { letterSpacing: '0.05em', fontWeight: '700' }],
-      h1: ['32px', {
+      h1: [
+        '32px', {
         // lineHeight: '1.5rem',
-        letterSpacing: '0.01em',
-        fontWeight: '800',
-      }],
+          letterSpacing: '0.01em',
+          fontWeight: '800',
+        },
+      ],
 
     },
     fontFamily: {
