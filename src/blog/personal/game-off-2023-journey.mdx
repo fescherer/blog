@@ -33,33 +33,37 @@ This blog post is my journey into Game Off 2023 by Github and Lee Reilly, starte
 
 ## Day 01
 
-I was so excited to participate. I remember only making one game in Javascript very simple, three or four years ago, I think using [P5](https://p5js.org), It was a runner game, like the [Google's Chrome Dinossaur Game](https://en.wikipedia.org/wiki/Dinosaur_Game), very nice, but I think something more complex.
+I was so excited to participate. I remember only making one game in Javascript very simple, three or four years ago, I think using [P5](https://p5js.org), It was a runner game, like the [Google's Chrome Dinosaur Game](https://en.wikipedia.org/wiki/Dinosaur_Game), very nice, but I think something more complex.
 
 This day was the great theme reveal, which was *Scale*. It was very nice, very embracing. The first moment I thought in making something like [Cuphead](https://store.steampowered.com/app/268910/Cuphead), a boss battle rush themed as [pirate](https://en.wikipedia.org/wiki/Golden_Age_of_Piracy) or other theme related to sea that I can fit [scales](https://en.wikipedia.org/wiki/Scale_(anatomy)).
 
-![Print showing Game's Off Site Scale theme description](https://github.com/fescherer/blog/assets/62115215/dedf7b77-3049-44d9-a724-47bcbea0eddc)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/dedf7b77-3049-44d9-a724-47bcbea0eddc"
+  name="Game's off 2023 theme"
+  alt="Print showing Game's Off Site Scale theme description"
+/>
 
-Thinking more about, a boss battle rush would be very difficult for my first game because I need to create a lot of mechanics, and in one month maybe it's not possible. So I dicided to go to [scale, an increasing stuff](https://en.wikipedia.org/wiki/Scale_(ratio)). I thought in games like [Vampire Survivors](https://store.steampowered.com/app/1794680/?snr=1_5_9__205), a bullet hell game. Maybe I cannot do a lot of enemies variations, but I think I will go if this.
+Thinking more about, a boss battle rush would be very difficult for my first game because I need to create a lot of mechanics, and in one month maybe it's not possible. So I decided to go to [scale, an increasing stuff](https://en.wikipedia.org/wiki/Scale_(ratio)). I thought in games like [Vampire Survivors](https://store.steampowered.com/app/1794680/?snr=1_5_9__205), a bullet hell game. Maybe I cannot do a lot of enemies variations, but I think I will go if this.
 
 ## Day 02
 
 This day I was searching for a game engine. As I only code one game, I do not have an expertise of how game engine is better for my choices, so I take a time to study some of the engines recommended in the Game Off 2023 page. I started in [Unity](https://unity.com), It's a very good engine to design first games because it's simple and intuitive.
 
-I also look at [Unreal](https://www.unrealengine.com/en-US), with a very good lighting system and incredible stuff to handle 3D games it's probably the best engine out there for someone trying a next gen game, but for me that is my first game, and will probably be a 2D game, Unreal would be kill a mosquito with a bazuca, and for this, Unreal will not be my choice.
+I also look at [Unreal](https://www.unrealengine.com/en-US), with a very good lighting system and incredible stuff to handle 3D games it's probably the best engine out there for someone trying a next gen game, but for me that is my first game, and will probably be a 2D game, Unreal would be kill a mosquito with a bazooka, and for this, Unreal will not be my choice.
 
-The last engine I tryed was [Godot](https://godotengine.org), a very good engine open source that you can create 2D and 3D games, but I think the greater part is for 2D games. Godot has a scripting language called [GDScript](https://godotengine.org/features/#script) with a very simple syntax inspired mostly by [Python](https://www.python.org), a programming language that I used a lot on my side projects.
+The last engine I tried was [Godot](https://godotengine.org), a very good engine open source that you can create 2D and 3D games, but I think the greater part is for 2D games. Godot has a scripting language called [GDScript](https://godotengine.org/features/#script) with a very simple syntax inspired mostly by [Python](https://www.python.org), a programming language that I used a lot on my side projects.
 
-In the end I chose Godot, mostly because GDScript is so similar to Python that I had the better experience of the three ones. Godot is also intuitive, and I think my challenge in the next days will learn everthing about Godot and create the game.
+In the end I chose Godot, mostly because GDScript is so similar to Python that I had the better experience of the three ones. Godot is also intuitive, and I think my challenge in the next days will learn everything about Godot and create the game.
 
 I had a little extra time in this day, and started to learn about Godot using the Godot's fundamental's playlist in the [Game Dev Artisan channel](https://www.youtube.com/watch?v=6YNKi3hcS5U&list=PLrnWJKR7bTuw7L0g70GzCM-cUr9XmtnAp).
 
 ## Day 03
 
-This was a not good day. I mostly study how to use Godot, I learned to create collision and pickup items, but I tryeed to refactor my files and I delete my Player with all the animations and logic already finished 🥲🥲🥲. I stoped and I hope tomorrow will be a better day.
+This was a not good day. I mostly study how to use Godot, I learned to create collision and pickup items, but I tried to refactor my files and I delete my Player with all the animations and logic already finished 🥲🥲🥲. I stopped and I hope tomorrow will be a better day.
 
-Well at late night I thought better and decided to start a new project, this time, with a better preparation, and clarification of the ideas. I started searching in the assets I downloaded at [Ichio.io](https://itch.io/game-assets). I found a very good collection with free license [Ninja Adventure](https://pixel-boy.itch.io/ninja-adventure-asset-pack), it has a full set of incredible pixel art with event dialog faces that I can use in the buy menu. The next step was think of what type of game I wanted and maybe, a tower defence it's really nice and I can reuse some code to other enemies. Other point is the map, I just need to create one for this first time.
+Well at late night I thought better and decided to start a new project, this time, with a better preparation, and clarification of the ideas. I started searching in the assets I downloaded at [Ichio.io](https://itch.io/game-assets). I found a very good collection with free license [Ninja Adventure](https://pixel-boy.itch.io/ninja-adventure-asset-pack), it has a full set of incredible pixel art with event dialog faces that I can use in the buy menu. The next step was think of what type of game I wanted and maybe, a tower defense it's really nice and I can reuse some code to other enemies. Other point is the map, I just need to create one for this first time.
 
-To get started I search in the assets pack and decided the towers. Of course I can have a lot of towers, but the game is scope is to be small and finishable until December, so I cut and decided to create only 6 towers, each one being unique and having a upgraded version.
+To get started I search in the assets pack and decided the towers. Of course I can have a lot of towers, but the game is scope is to be small and fishable until December, so I cut and decided to create only 6 towers, each one being unique and having a upgraded version.
 
 Name|Damage|Sprite normal|Sprite special|Weapon
 :---:|:---:|:---:|:---:|:---:
@@ -67,8 +71,8 @@ Knight|area, close|![Faceset](https://github.com/fescherer/blog/assets/62115215/
 Mage|single, far|![Faceset](https://github.com/fescherer/blog/assets/62115215/9bf88738-5ba0-4980-bd87-b784440dba08)|![Faceset](https://github.com/fescherer/blog/assets/62115215/5527d227-bc4d-498e-b4b7-a720f4488446)|![WandSprite](https://github.com/fescherer/blog/assets/62115215/eeeebf18-ab52-41cd-9b8a-cf617117ebae)
 Support|None (gain coins and life)|![Faceset](https://github.com/fescherer/blog/assets/62115215/0e806c05-b600-4ed5-ab53-ad97b478ae76)|![Faceset](https://github.com/fescherer/blog/assets/62115215/a9d87a88-ba1f-4a4e-a34b-61c0da86ec8d)|![Sprite](https://github.com/fescherer/blog/assets/62115215/776ec828-5957-4ee0-a730-d70fc6e773ab)
 Ice man|area, far (Slow the enemies)|![Faceset](https://github.com/fescherer/blog/assets/62115215/b808799b-bb5e-4896-844f-5a2d8ab7f0af)|![Faceset](https://github.com/fescherer/blog/assets/62115215/4726bb8c-a508-4446-bd24-f9fb6b3248de)| Ice ball
-Defence|None (Stops the enemies with barrier)|![Faceset](https://github.com/fescherer/blog/assets/62115215/cc70df41-39a1-4d46-a8d0-c576e2396979)|![Faceset](https://github.com/fescherer/blog/assets/62115215/3856589f-75b4-4b9c-bb36-bf19f70d4556)|Stone Rock barrier
-Summmon|single, close|![Faceset](https://github.com/fescherer/blog/assets/62115215/401ff9cf-754e-43bb-a808-8a712c25dc7f)|![Faceset](https://github.com/fescherer/blog/assets/62115215/297d92c6-2104-4135-a555-24533c0776da)|![FacesetWhite](https://github.com/fescherer/blog/assets/62115215/2b243899-e2c5-4eab-b42a-21b72d3d0a92)![FacesetBlack](https://github.com/fescherer/blog/assets/62115215/ba89c060-f664-4ed3-aad1-647f8810faf0)
+Defense|None (Stops the enemies with barrier)|![Faceset](https://github.com/fescherer/blog/assets/62115215/cc70df41-39a1-4d46-a8d0-c576e2396979)|![Faceset](https://github.com/fescherer/blog/assets/62115215/3856589f-75b4-4b9c-bb36-bf19f70d4556)|Stone Rock barrier
+Summon|single, close|![Faceset](https://github.com/fescherer/blog/assets/62115215/401ff9cf-754e-43bb-a808-8a712c25dc7f)|![Faceset](https://github.com/fescherer/blog/assets/62115215/297d92c6-2104-4135-a555-24533c0776da)|![FacesetWhite](https://github.com/fescherer/blog/assets/62115215/2b243899-e2c5-4eab-b42a-21b72d3d0a92)![FacesetBlack](https://github.com/fescherer/blog/assets/62115215/ba89c060-f664-4ed3-aad1-647f8810faf0)
 
 And when thinking of enemies, I would like to show the first boss early because, the objective is to create a simple game, so I decided to separate into 20 levels and each level will have a new enemy. Maybe I will change this in the future and just have 4 levels with a longer duration each one with a boss in the end. I don't know, and we will see what I end doing. For now, the level are these:
 
@@ -95,7 +99,7 @@ Level|Slot|Slot|Slot|Slot|Slot|Boss
 19|![Beast2Faceset](https://github.com/fescherer/blog/assets/62115215/4db6a7ff-a079-4e19-a28b-c4a2643b7545)|![SkullFaceset](https://github.com/fescherer/blog/assets/62115215/1fbefe0a-01fd-4b26-be03-320faf2d3b95)|![Eye2Faceset](https://github.com/fescherer/blog/assets/62115215/b11829e4-2825-4847-b6ed-a81d0bbcd695)|![Mollusc2Faceset](https://github.com/fescherer/blog/assets/62115215/cfa5bd94-1ab2-41a0-ac80-e06a1d6f1347)|![Flam2Faceset](https://github.com/fescherer/blog/assets/62115215/a80dcc97-752b-4c39-b8f3-047e3e84bcc4)|x
 20|![Beast2Faceset](https://github.com/fescherer/blog/assets/62115215/4db6a7ff-a079-4e19-a28b-c4a2643b7545)|![SkullFaceset](https://github.com/fescherer/blog/assets/62115215/1fbefe0a-01fd-4b26-be03-320faf2d3b95)|![Eye2Faceset](https://github.com/fescherer/blog/assets/62115215/b11829e4-2825-4847-b6ed-a81d0bbcd695)|![Mollusc2Faceset](https://github.com/fescherer/blog/assets/62115215/cfa5bd94-1ab2-41a0-ac80-e06a1d6f1347)|![Flam2Faceset](https://github.com/fescherer/blog/assets/62115215/a80dcc97-752b-4c39-b8f3-047e3e84bcc4)|![Faceset](https://github.com/fescherer/blog/assets/62115215/c6f3a1df-4374-459e-a999-051268cb7eb8)
 
-The main ideia is that each tower can be good/bad to a enemy type. For example the Knight tower is only able to damage near enemies but can deal area damage, so It's good to enemies that come in groups(Mostly land), on the other hand the Mage tower has single shot and far distance, which is good to fast and single enemies(Mostly air).
+The main idea is that each tower can be good/bad to a enemy type. For example the Knight tower is only able to damage near enemies but can deal area damage, so It's good to enemies that come in groups(Mostly land), on the other hand the Mage tower has single shot and far distance, which is good to fast and single enemies(Mostly air).
 
 ## Day 04
 
@@ -103,21 +107,29 @@ This day I was little busy playing tennis with my brother and my girlfriend. Was
 
 ## Day 05
 
-Today is Sunday, so I have all the time to play around with the game bulding. I started to follow a Youtube series [from Game Development Center](https://www.youtube.com/watch?v=wFdpCGbrVXI&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6), it's a bit out of date, but we can get a very good ideia to how tower defence games are.
+Today is Sunday, so I have all the time to play around with the game building. I started to follow a Youtube series [from Game Development Center](https://www.youtube.com/watch?v=wFdpCGbrVXI&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6), it's a bit out of date, but we can get a very good idea to how tower defense games are.
 
 The first classes is to structure the project and make the first configurations on Godot. He said that we can reuse this to future projects.
 
-First, the folder struture. It is separated in 6 folders, the first one beeing the `Assets`, that is branched into `Environment`, `Icons` and `UI`, everthing autoexplaning. Inside the `Environment` we have `Props`(Files with one asset per file) and `Tilesets`(Files with two or more assets in). The `Licenses` is where you store license of fonts, assets and evething else. The `Resources` is objects that will be reused on project. The Scenes is where will be store all the objects(Classes) created. Lastely we have Singletons, objects that are independent from the rest of project.
+First, the folder structure. It is separated in 6 folders, the first one being the `Assets`, that is branched into `Environment`, `Icons` and `UI`, everything auto explaining. Inside the `Environment` we have `Props`(Files with one asset per file) and `Tilesets`(Files with two or more assets in). The `Licenses` is where you store license of fonts, assets and everything else. The `Resources` is objects that will be reused on project. The Scenes is where will be store all the objects(Classes) created. Lastly we have Singletons, objects that are independent from the rest of project.
 
-![image](https://github.com/fescherer/blog/assets/62115215/90c25a0f-701a-46fc-a34f-7c9bfff6ec7a)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/90c25a0f-701a-46fc-a34f-7c9bfff6ec7a"
+  name="Folder structure"
+  alt="Folder structure"
+/>
 
-Other thing I did is the first map, I finally learned about [tilesets](https://docs.godotengine.org/pt-br/4.x/classes/class_tileset.html). Following the documentation and the [video of Game Development Center](https://www.youtube.com/watch?v=SIQKpBCmkvk) I finally make the first map using some scalable tecniques like make terrains.
+Other thing I did is the first map, I finally learned about [tilesets](https://docs.godotengine.org/pt-br/4.x/classes/class_tileset.html). Following the documentation and the [video of Game Development Center](https://www.youtube.com/watch?v=SIQKpBCmkvk) I finally make the first map using some scalable techniques like make terrains.
 
 Terrains for now is just used to create roads, that using assets Godot can automatically find the right asset to that road, this way I don't need to find the right asset to that corner on the road. I followed [this tutorial by Maker Tech](https://www.youtube.com/watch?v=N6aVQ2ylMrU).
 
-The map has still really poor flora and I want to trees like terrains, to  be more efficient in creating forests (If you pay attention, there are some tiles with bugged trees). In general was a very productive game. If I hope I can keep up this rithm.
+The map has still really poor flora and I want to trees like terrains, to  be more efficient in creating forests (If you pay attention, there are some tiles with bugged trees). In general was a very productive game. If I hope I can keep up this rhythm.
 
-![image](https://github.com/fescherer/blog/assets/62115215/ab6f4c7a-500f-4dc3-9e87-d8a05bb2f66c)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/ab6f4c7a-500f-4dc3-9e87-d8a05bb2f66c"
+  name="Fist scenario"
+  alt="Fist scenario with a lot of trees and a really strange path"
+/>
 
 ## Day 06
 
@@ -129,9 +141,13 @@ I know I should give more attention to the map, but everything seems kind weird.
 
 Anyways, I started with `node2D` and then put the sprite inside, I don't know if this is the best practice, but for me, giving a wrapper of `node2D` makes me feel more organized. The sprite for now will be the idle:
 
-![Idle](https://github.com/fescherer/blog/assets/62115215/3a8c84b0-8d1d-4ccc-995f-cce346e14ada)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/3a8c84b0-8d1d-4ccc-995f-cce346e14ada"
+  name="Idle Knight animation"
+  alt="Idle Knight animation spritesheet"
+/>
 
-One thing is that it has right, left, bottom and top sides, which gives me the necessity to turn the sprite as the enemy changes it's direction. I started trying the sprite to follow my mouse, after many tries, I came with a simple code, but I happy that I can undestand everthing from this code. 😁
+One thing is that it has right, left, bottom and top sides, which gives me the necessity to turn the sprite as the enemy changes it's direction. I started trying the sprite to follow my mouse, after many tries, I came with a simple code, but I happy that I can understand everything from this code. 😁
 
 ```python
 extends Node2D
@@ -156,75 +172,115 @@ func turn():
     get_node("Knight").set_frame(1)
 ```
 
-![gif](https://github.com/fescherer/blog/assets/62115215/ca045152-c4bb-4d7a-947f-a29860f2eee7)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/ca045152-c4bb-4d7a-947f-a29860f2eee7"
+  name="Mouse following"
+  alt="Gif showing character knight follows the mouse direction"
+/>
 
 ## Day 08, 09, 10 and 11
 
-I am gonna group all these days together because I really did not have a lot of time to progress in the game and the little time I had was trying to make the map looks a little bit better. It was really hard, not because the sprites, they are awesome, it's because of me, I did not have and experience grouping those tiles together in a pleasent way to the eye. I don't know, I was looking for a diverse map, having the flower, ice, rocky and forest parts, but I don't know, something looks out of place.
+I am gonna group all these days together because I really did not have a lot of time to progress in the game and the little time I had was trying to make the map looks a little bit better. It was really hard, not because the sprites, they are awesome, it's because of me, I did not have and experience grouping those tiles together in a pleasant way to the eye. I don't know, I was looking for a diverse map, having the flower, ice, rocky and forest parts, but I don't know, something looks out of place.
 
-![image](https://github.com/fescherer/blog/assets/62115215/8add9292-f00c-4027-9fc4-bcd2073e91c2)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/8add9292-f00c-4027-9fc4-bcd2073e91c2"
+  name="Map details"
+  alt="Add more details(maybe too much) and removed most of trees"
+/>
 
 ## Day 12
 
-This day I created another tower and rescale the ***knight*** already created to fit better in the map. It was very nice, I learned about scaling and import pixel art in Godot 4. I also put a base in tower to better hightlight on map.
+This day I created another tower and rescale the ***knight*** already created to fit better in the map. It was very nice, I learned about scaling and import pixel art in Godot 4. I also put a base in tower to better highlight on map.
 
 The code part was very easy, following the tutorial [Game Development Center](https://www.youtube.com/watch?v=IHGEiQhR1PQ&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=3) I just imported the logic from a generic class.
 
-![towers2](https://github.com/fescherer/blog/assets/62115215/fcb3e20c-5cc4-46e5-875c-5aac6817c6bd)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/fcb3e20c-5cc4-46e5-875c-5aac6817c6bd"
+  name="Tower Knight and Mage"
+  alt="Picture showing the two towers created, one the knight and other the mage"
+/>
 
 ## Day 13
 
-It was a very short day. The only thing I could do was the main menu. I was following the video of Game Development Center, but in Gotot 4, some methods have changed, main thing is to **connect** now is deprecated and we need to use something like `[Node].[Signal].connect([method])` insted of `.connect([signal], [object], [method]`
+It was a very short day. The only thing I could do was the main menu. I was following the video of Game Development Center, but in Godot 4, some methods have changed, main thing is to **connect** now is deprecated and we need to use something like `[Node].[Signal].connect([method])` instead of `.connect([signal], [object], [method]`
 
-![menu](https://github.com/fescherer/blog/assets/62115215/94a8289c-ca05-4aa0-ad54-636d5b24d053)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/94a8289c-ca05-4aa0-ad54-636d5b24d053"
+  name="Menu"
+  alt="Picture showing the menu created, three blue buttons"
+/>
 
 ## Day 14
 
 This is one more busy day, I just make some initial HUD, following the same tutorial of [Game Development Center](https://www.youtube.com/watch?v=X5YsM-dLbCA&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=4). It was kinda simple because this hud doesn't do anything else, it's just two images.
 
-I used the assets of [Ninja's Adventure](https://pixel-boy.itch.io/ninja-adventure-asset-pack) again, they are just wonderfull, I just need to make them smaller, but this is problem for other day.
+I used the assets of [Ninja's Adventure](https://pixel-boy.itch.io/ninja-adventure-asset-pack) again, they are just wonderful, I just need to make them smaller, but this is problem for other day.
 
-![image](https://github.com/fescherer/blog/assets/62115215/4540f130-9de2-4318-8ab1-5fa8aff532b2)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/4540f130-9de2-4318-8ab1-5fa8aff532b2"
+  name="HUD"
+  alt="Showing the HUD below the map, having only the image of the two towers"
+/>
 
 ## Day 15, 16 and 17
 
-These days I found a very big problem 😓. At day 15 I was intended to do the fifth part of the [Game Development Center Godot's tutorial](https://www.youtube.com/watch?v=9W4zVD-kOwU&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=6), but there were a lot of different things I did in the project that I was getting the consequences. Like the resolution of 1280x720 is too big for a 16x16 assets of [Ninja's Adventure](https://pixel-boy.itch.io/ninja-adventure-asset-pack), so I tried to add scale and messed with everthing else, now, 4 tiles were supposed to be just 1, and the collision system was not working and I knew I needed to make a work around that I would not like.
+These days I found a very big problem 😓. At day 15 I was intended to do the fifth part of the [Game Development Center Godot's tutorial](https://www.youtube.com/watch?v=9W4zVD-kOwU&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=6), but there were a lot of different things I did in the project that I was getting the consequences. Like the resolution of 1280x720 is too big for a 16x16 assets of [Ninja's Adventure](https://pixel-boy.itch.io/ninja-adventure-asset-pack), so I tried to add scale and messed with everything else, now, 4 tiles were supposed to be just 1, and the collision system was not working and I knew I needed to make a work around that I would not like.
 
 So after trying many strategies, I just stopped 😕.
 
-![building tower](https://github.com/fescherer/blog/assets/62115215/0105d092-1eda-4a39-b605-3e2333f4a00f)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/0105d092-1eda-4a39-b605-3e2333f4a00f"
+  name="Building tower"
+  alt="User clicks in the HUD and get the tower to build it"
+/>
 
 ## Day 18
 
-I was so frustated because of bugs that I decided not think about it today.
+I was so frustrated because of bugs that I decided not think about it today.
 
 ## Day 19, 20 and 21
 
-Even if I was frustrated, I have not given up, and would make the game from zero if necessary. And so I did, not everthing, but I can guarantee was a lot.
+Even if I was frustrated, I have not given up, and would make the game from zero if necessary. And so I did, not everything, but I can guarantee was a lot.
 
 One of the many problems was the scale, resolution and sprite sizes. The problem I had was a pixelart game with assets of 16x16 that was running on a resolution of 1280x720 which are 1280/16 * 720/16 = **3,600** tiles to fill the entire screen. Think about it, every sprite is 16x16, *even the towers* which in the 3600 tiles, max 10 would be towers, of course this will cause a strange sensation, ***it's not in the right scale***. To solve this, I scale some arts, like the towers and bases, this way, a tower had 1 tile size, but the path was 3 tiles size. You can imagine the problem when making collisions.
 
-To solve this, I changed the ***Viewport width and height*** to something way smaller (**320x192**) and put the ***Window Width and height Override*** to 3 times of the **Viewport size**. This way, the game will have a resolution of 320x192 and will open in a window of 960x576, making all the scale for me. The game now doesn't needed to scale some arts, everthing from enemies, path and towers will be 16x16 and just one tile. I did a small change on the [Ninja's Adventure' assets](https://pixel-boy.itch.io/ninja-adventure-asset-pack) because some tiles were way to big for me, and then I made them smaller (Logs and a type of grass).
+To solve this, I changed the ***Viewport width and height*** to something way smaller (**320x192**) and put the ***Window Width and height Override*** to 3 times of the **Viewport size**. This way, the game will have a resolution of 320x192 and will open in a window of 960x576, making all the scale for me. The game now doesn't needed to scale some arts, everything from enemies, path and towers will be 16x16 and just one tile. I did a small change on the [Ninja's Adventure' assets](https://pixel-boy.itch.io/ninja-adventure-asset-pack) because some tiles were way to big for me, and then I made them smaller (Logs and a type of grass).
 
-![image](https://github.com/fescherer/blog/assets/62115215/e71883a2-56cf-43b0-addc-49873b9fd0bf)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/e71883a2-56cf-43b0-addc-49873b9fd0bf"
+  name="Fixing viewport"
+  alt="Picture showing the viewport 320 x 192 and the override 960 x 572"
+/>
 
-![image](https://github.com/fescherer/blog/assets/62115215/8804a239-4187-4f20-8a73-b5ec86cfd2f7)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/8804a239-4187-4f20-8a73-b5ec86cfd2f7"
+  name="Map remade"
+  alt="The new map with only one clear path at center and forest borders, the HUD now is in the right, very clean layout"
+/>
 
 Now using a resolution of 320x192 gives us 320/16 * 192/16 = **240** tiles only. It may look way to little, but is not. I feel I can make better maps with this size.
 
-Of course this brought me a lot of more problems 🥲. All the assets in the scenes were with wrong sizes and so I went in every scene fixing the bugs (towers, map, ui, menu, everthing 🥲. If you are starting as me, just make sure the scale is right 😅).
+Of course this brought me a lot of more problems 🥲. All the assets in the scenes were with wrong sizes and so I went in every scene fixing the bugs (towers, map, ui, menu, everything 🥲. If you are starting as me, just make sure the scale is right 😅).
 
 In this process I redid the menu, ui and the map. Here is the final result:
 
-![redid](https://github.com/fescherer/blog/assets/62115215/08ce33c1-c752-4c92-9527-f4440ceb74ff)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/08ce33c1-c752-4c92-9527-f4440ceb74ff"
+  name="New menu"
+  alt="Remake of menu, now is dark with shadows on buttons"
+/>
 
-*Note*: I lerned how to animate some sprites in the map 🤩🤩🤩.
+*Note*: I leaned how to animate some sprites in the map 🤩🤩🤩.
 
 # Day 22
 
 Now after all that remake I finally can move on to other features. In this day I finish the selection and collision/building tower system. There were some changes to make from tutorial because Godot 4 has changed some names, but essentially is the same of the [Game Development Center's tutorial](https://www.youtube.com/watch?v=-K1c4OfC2SU&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=5).
 
-![working](https://github.com/fescherer/blog/assets/62115215/2d81e57a-a589-47a2-aad0-32be40018016)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/2d81e57a-a589-47a2-aad0-32be40018016"
+  name="Collision"
+  alt="Gif showing when tower is pickup you cannot put in other tower, or blocked grid"
+/>
 
 I also did a very simple thing that I was supposed to do in the first time starting this project 😅. A [git repo](https://github.com/fescherer/game-off-2023).
 
@@ -232,11 +288,15 @@ I also did a very simple thing that I was supposed to do in the first time start
 
 Now I can see a game under construction. This day I make a range indicator to tower following [Game Development Center's tutorial #5](https://www.youtube.com/watch?v=9W4zVD-kOwU&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=6). This range can be configured in a separate file, this way the towers can have different sizes of ranges (Of course this file also can be used to configured damage, rate of fire, cost, etc.).
 
-![range-indicator](https://github.com/fescherer/blog/assets/62115215/d1230900-33e8-4ede-9d3a-628b9cd60b84)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/d1230900-33e8-4ede-9d3a-628b9cd60b84"
+  name="Range indicator"
+  alt="A gif showing the range indicator, green circle area in the character"
+/>
 
 ## Day 24
 
-It has finally come, the day I built the enemies. A enemy in a tower defence game should not be a problem, because it's IA is just- "Follow the path", and so I just need to configure the path and make the enemy follow it. Can easy be done using [Godot's Path2D](https://docs.godotengine.org/en/stable/classes/class_path2d.html).
+It has finally come, the day I built the enemies. A enemy in a tower defense game should not be a problem, because it's IA is just- "Follow the path", and so I just need to configure the path and make the enemy follow it. Can easy be done using [Godot's Path2D](https://docs.godotengine.org/en/stable/classes/class_path2d.html).
 
 My problem was not configure this path, but configure enemy's animation, well the [Game Development Center's tutorial #6](https://www.youtube.com/watch?v=JBQgmy3Oiw4&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=7) uses a top down view asset, as [Ninja's Adventure' assets](https://pixel-boy.itch.io/ninja-adventure-asset-pack) uses side view assets, so just rotating the sprite will not work in my case.
 
@@ -271,51 +331,71 @@ func move(delta):
     last_position = current_position
 ```
 
-![enemy](https://github.com/fescherer/blog/assets/62115215/36af2dec-a5e7-44f3-a92d-e881252e0c74)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/36af2dec-a5e7-44f3-a92d-e881252e0c74"
+  name="Enemy"
+  alt="First enemy following the path. It is an angry bamboo enemy"
+/>
 
 ## Day 25
 
 As I solve a lot of problems in the last days, I lost my track of progressing the game creation, so this day I finally had the sense of progression. I did a lot of things.
-First of all, I make a start/pause/fastfoward system. Very simple, just followed [Game Development Center's tutorial #7](https://www.youtube.com/watch?v=T1auCC-PT4k&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=8) and make some simple pixelart 16x16 sprites, because [Ninja's Adventure](https://pixel-boy.itch.io/ninja-adventure-asset-pack) didn't have sprites for arrow, double arrow and pause.
+First of all, I make a start/pause/fast forward system. Very simple, just followed [Game Development Center's tutorial #7](https://www.youtube.com/watch?v=T1auCC-PT4k&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=8) and make some simple pixelart 16x16 sprites, because [Ninja's Adventure](https://pixel-boy.itch.io/ninja-adventure-asset-pack) didn't have sprites for arrow, double arrow and pause.
 
 Second, the tower need to look at enemy and not my mouse 😅 I followed the most part of the [Game Development Center's tutorial #8](https://www.youtube.com/watch?v=ugNRDsl33OI&list=PLZ-54sd-DMAJltIzTtZ6ZhC-9hkqYXyp6&index=9), but seeing the comments, we could improve the tower tracking.
 
 In the video, Stefan select the enemy with most progress in the path (Which is very good, because more progress in the path, means more likely to complete the path), but this gets a problem when using more than one path. Think with me, if we have two paths and enemies in both that crossed the same amount of pixels, the tower will get confused with enemy is the right to pick. The best choice will be get the enemy with the largest progression and in the shortest path.
 
-For example if we have two paths, one having 450px size and other having 200px size, there are enemies in both paths and the enemies have crossed the same amount of pixels, like 30. The progress of the first path will be 450 - 30 = 420, and the second will be 200 - 30 = 170, if we get the largest number, the enemy on path1 will be choosen, but can agree that is more likely to enemy on path two finish the path, because only need to cross more 170 insted of 420 in the first path. So that's why we need to get the minimum value.
+For example if we have two paths, one having 450px size and other having 200px size, there are enemies in both paths and the enemies have crossed the same amount of pixels, like 30. The progress of the first path will be 450 - 30 = 420, and the second will be 200 - 30 = 170, if we get the largest number, the enemy on path1 will be chosen, but can agree that is more likely to enemy on path two finish the path, because only need to cross more 170 instead of 420 in the first path. So that's why we need to get the minimum value.
 
-After this though I made the damage system. It was very simple, the only thing I did different from the tutorial was that there, Stefan put a heath bar above the enemy. In my case, I changed the enemy color based on heath percentage like: heath > 70% = Normal Color; heath > 50% = Yellowish; heath > 20% = Orangish; else = Redish.
+After this though I made the damage system. It was very simple, the only thing I did different from the tutorial was that there, Stefan put a heath bar above the enemy. In my case, I changed the enemy color based on heath percentage like: heath > 70% = Normal Color; heath > 50% = Yellowish; heath > 20% = Orangish; else = Reddish.
 
 The last thing I did was a shooting mechanic. In the tutorial, the towers shoot the same projectile, but in my game, it needs to be different so I abstracted the code and make a muzzle and impact animation for each tower, so thats in the future I can add a projectile to certain towers, like the Mage one, and for the Knight it does not need this. I will think more about this tomorrow.
 
 The result:
-![power](https://github.com/fescherer/blog/assets/62115215/2b8b60d8-c0c1-4d93-817a-9c8a1835c1b7)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/2b8b60d8-c0c1-4d93-817a-9c8a1835c1b7"
+  name="Powers"
+  alt="Knight powers, lounging his spear"
+/>
 
 ## Day 26
 
 This was a very simple day I just make the system of health and coin, there is no much to say. I just make some signals that are emit when enemy is killed or its complete the map's path.
 
-![coin-health](https://github.com/fescherer/blog/assets/62115215/f11b65d3-b434-434a-a861-0b161788ab7f)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/f11b65d3-b434-434a-a861-0b161788ab7f"
+  name="Coin - Health"
+  alt="Gif showing the HUD with coins and health and every enemy defeated, add one coin, if the enemy escapes, you loose one life"
+/>
 
 ## Day 27, 28, 29 and 30
 
-As the voting day is coming, I decided to focus in finish the main mechanics insted of adding new stuff, so I decided to make the last updated in this article grouping all the stuff made in the last 4 days.😶‍🌫️
+As the voting day is coming, I decided to focus in finish the main mechanics instead of adding new stuff, so I decided to make the last updated in this article grouping all the stuff made in the last 4 days.😶‍🌫️
 
 Well, first of all, as usual I went through the game and noticed 4 things to do: The game need waves counter, more enemies, about page (Where the credits of me and Ninja's Adventure will be), and for last, there are some bugs to take care.
 
-The first thing I did was about the waves. This time I would finally make the balance between towers and enemies (I can say to that I though would be easy, but not, this is a very crucial part that can make your game look good or terrible). Was very hard to do that, but I made. I add a simple wave counter, and made the waves into an `GameData` dictionary so I could easialy modify. I add two more screens, one for `Game over` and other for `Game Win`. And of course, more enemies. They are just an extension of the main enemy's script, with some values and sprites changed (In the future, I want to make this less manual, to add even more enemies, creating a scene in usual way is no good). In the meantime I noticed that the game was very short, so I add a `Infinity mode` that would spawn random enemies (In the end, this was supposed to be a very challenging mode, but proved to be not so difficult, in the future I will change that).
+The first thing I did was about the waves. This time I would finally make the balance between towers and enemies (I can say to that I though would be easy, but not, this is a very crucial part that can make your game look good or terrible). Was very hard to do that, but I made. I add a simple wave counter, and made the waves into an `GameData` dictionary so I could easily modify. I add two more screens, one for `Game over` and other for `Game Win`. And of course, more enemies. They are just an extension of the main enemy's script, with some values and sprites changed (In the future, I want to make this less manual, to add even more enemies, creating a scene in usual way is no good). In the meantime I noticed that the game was very short, so I add a `Infinity mode` that would spawn random enemies (In the end, this was supposed to be a very challenging mode, but proved to be not so difficult, in the future I will change that).
 
 The about page was very easy to make. It's just a simple new scene. The more complicated part was to create a `Game over` and `Game win` because these two scenes need to be over `game's scene` and not in root. But it was ok, and simple to do.😊
 
-In the bug's part, there were a lot linked to the wave system. I don't know, but making all that logic in just one script just made it very confusing. This is one more thing to change in the future, a better `game's script`, I don't know, maybe just separate the logic of spawing enemies, controlling the waves, building towers and enemies path in a separate script would make so much better.
+In the bug's part, there were a lot linked to the wave system. I don't know, but making all that logic in just one script just made it very confusing. This is one more thing to change in the future, a better `game's script`, I don't know, maybe just separate the logic of spawning enemies, controlling the waves, building towers and enemies path in a separate script would make so much better.
 
-It had a bug in the fast foward too, but I could not had time to fix this, so it will be a future issue 😅.
+It had a bug in the fast forward too, but I could not had time to fix this, so it will be a future issue 😅.
 
 You can play the game at [Itch.io](https://drafonf.itch.io/enchanted-towers-realm-defenders). Leave a message to me. I will be very happy to talk to you 😊.
 
-![final version](https://github.com/fescherer/blog/assets/62115215/2f68d076-42f7-459e-b723-6ac36d7ceb98)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/2f68d076-42f7-459e-b723-6ac36d7ceb98"
+  name="Final results"
+  alt="Gif showing everything made, with new enemies- bugs"
+/>
 
-![image](https://github.com/fescherer/blog/assets/62115215/d9dc2485-144c-4e6f-9b9d-08e23b67b1af)
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/d9dc2485-144c-4e6f-9b9d-08e23b67b1af"
+  name="Game over screen"
+  alt="Game over screen, reddish, with two buttons to leave or play again"
+/>
 
 ## Final thoughts
 

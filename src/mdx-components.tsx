@@ -23,7 +23,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 id={slugyfy(children?.toString() || '')} className="mt-5 inline-block scroll-m-24 text-bg-on-background">
+      <h2 id={slugyfy(children?.toString() || '')} className="mb-2 mt-5 inline-block scroll-m-24 text-bg-on-background">
         <a href={`#${slugyfy(children?.toString() || '')}`}>
           #
           {children}
@@ -31,7 +31,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 id={slugyfy(children?.toString() || '')} className="mt-5 inline-block scroll-m-24 text-bg-on-background">
+      <h3 id={slugyfy(children?.toString() || '')} className="mb-2 mt-5 inline-block scroll-m-24 text-bg-on-background">
         <a href={`#${slugyfy(children?.toString() || '')}`}>
           #
           {children}
@@ -39,7 +39,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 id={slugyfy(children?.toString() || '')} className="mt-5 inline-block scroll-m-24 text-bg-on-background">
+      <h4 id={slugyfy(children?.toString() || '')} className="mb-2 mt-5 inline-block scroll-m-24 text-bg-on-background">
         <a href={`#${slugyfy(children?.toString() || '')}`}>
           #
           {children}
@@ -47,7 +47,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h4>
     ),
     h5: ({ children }) => (
-      <h5 id={slugyfy(children?.toString() || '')} className="mt-5 inline-block scroll-m-24 text-bg-on-background">
+      <h5 id={slugyfy(children?.toString() || '')} className="mb-2 mt-5 inline-block scroll-m-24 text-bg-on-background">
         <a href={`#${slugyfy(children?.toString() || '')}`}>
           #
           {children}
@@ -55,7 +55,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h5>
     ),
     h6: ({ children }) => (
-      <h6 id={slugyfy(children?.toString() || '')} className="mt-5 inline-block scroll-m-24 text-bg-on-background">
+      <h6 id={slugyfy(children?.toString() || '')} className="mb-2 mt-5 inline-block scroll-m-24 text-bg-on-background">
         <a href={`#${slugyfy(children?.toString() || '')}`}>
           #
           {children}

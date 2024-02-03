@@ -1,5 +1,12 @@
 Contentful
+elif
+Faceset
 fescherer
+Ichio
+onready
+pixelart
+spritesheet
 tailwindcss
 Themer
+Tilesets
 Wathan
