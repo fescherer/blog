@@ -1,13 +1,11 @@
 import { Link } from '@/components/Lib/Link'
 
-// import { allDocs } from 'contentlayer/generated'
 import { PostList } from '@/features/PostList'
 import { getPostsData } from '@/utils/functions/getPostsData'
 
 interface PostsByTagProps {
   params: {
     tag: string
-
   }
 }
 

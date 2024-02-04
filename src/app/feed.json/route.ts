@@ -1,7 +1,7 @@
 import { generateRss } from '@/utils/generateRSS'
 
-export function GET() {
-  const { json } = generateRss()
+export async function GET() {
+  const { json } = await generateRss()
 
   return new Response(json, {
     headers: {

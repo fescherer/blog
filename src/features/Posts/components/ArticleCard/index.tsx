@@ -1,7 +1,5 @@
 import Image from 'next/image'
 import readingTime from 'reading-time'
-
-// import type { Doc } from 'contentlayer/generated'
 import { getTimeFormated } from '@/utils/functions'
 import { Link } from '@/components/Primitives'
 import type { IArticle } from '@/@types/Article'

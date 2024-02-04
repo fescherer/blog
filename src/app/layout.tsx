@@ -101,12 +101,12 @@ export const viewport: Viewport = {
   themeColor: '#FFFFFF',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  generateRss()
+  await generateRss()
 
   const cookieTheme = cookies().get('data-theme')
   const theme = themes.includes(cookieTheme?.value ?? '') ? cookieTheme?.value : ''
