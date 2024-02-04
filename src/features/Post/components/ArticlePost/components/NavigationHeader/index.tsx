@@ -1,8 +1,7 @@
-'use client'
-
-import { FigmaLogo, GithubLogo, Laptop } from 'phosphor-react'
 import { Link } from '@/components/Lib/Link'
 import type { IArticle } from '@/@types/Article'
+import { Laptop, LayoutGrid } from 'lucide-react'
+import { GithubIcon } from '@/Icons/Social'
 
 interface NavigationHeaderProps {
   article: IArticle
@@ -34,7 +33,7 @@ export function NavigationHeader({ article }: NavigationHeaderProps) {
           article.figma_url
             ? (
               <Link aria-label="Go to Figma's page" href={article.figma_url}>
-                <FigmaLogo size={24} />
+                <LayoutGrid size={24} />
               </Link>
               )
             : null
@@ -44,7 +43,7 @@ export function NavigationHeader({ article }: NavigationHeaderProps) {
           article.github_url
             ? (
               <Link aria-label="Go to source code in Github" href={article.github_url}>
-                <GithubLogo size={24} />
+                <GithubIcon />
               </Link>
               )
             : null

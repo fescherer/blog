@@ -1,6 +1,4 @@
-'use client'
-
-import { Star } from 'phosphor-react'
+import { Star } from 'lucide-react'
 
 export function Rating() {
   return (

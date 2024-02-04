@@ -1,8 +1,8 @@
-'use client'
-import { Browser, FigmaLogo, GithubLogo, YoutubeLogo } from 'phosphor-react'
 import { Card } from '@/components/Lib/Card'
 import { Link } from '@/components/Lib/Link'
 import type { IArticle } from '@/@types/Article'
+import { Layout, PanelTop, Youtube } from 'lucide-react'
+import { GithubIcon } from '@/Icons/Social'
 
 interface ArticleLinkCardProps {
   article: IArticle
@@ -17,7 +17,7 @@ export function ArticleLinkCard({ article }: ArticleLinkCardProps) {
             article.project_url
               ? (
                 <Link aria-label="Link to article's project deploy" href={article.project_url} className="flex items-center gap-1">
-                  <Browser weight="fill" size={20} />
+                  <PanelTop size={20} />
                   Deploy
                 </Link>
                 )
@@ -28,7 +28,7 @@ export function ArticleLinkCard({ article }: ArticleLinkCardProps) {
             article.figma_url
               ? (
                 <Link aria-label="Link to article's project Figma page" href={article.figma_url} className="flex items-center gap-1">
-                  <FigmaLogo weight="fill" size={20} />
+                  <Layout size={20} />
                   Figma
                 </Link>
                 )
@@ -39,7 +39,7 @@ export function ArticleLinkCard({ article }: ArticleLinkCardProps) {
             article.github_url
               ? (
                 <Link aria-label="Link to article's source code on Github" href={article.github_url} className="flex items-center gap-1">
-                  <GithubLogo weight="fill" size={20} />
+                  <GithubIcon />
                   Github
                 </Link>
                 )
@@ -50,7 +50,7 @@ export function ArticleLinkCard({ article }: ArticleLinkCardProps) {
             article.video_url
               ? (
                 <Link aria-label="Link to article's video on Youtube" href={article.video_url} className="flex items-center gap-1">
-                  <YoutubeLogo weight="fill" size={20} />
+                  <Youtube size={20} />
                   Video
                 </Link>
                 )

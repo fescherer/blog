@@ -1,9 +1,8 @@
-'use client'
-
-import { GithubLogo, LinkedinLogo, Rss } from 'phosphor-react'
 import { Link } from '@/components/Lib/Link'
 import { LogoIcon } from '@/Icons'
+import { SocialIcon } from '@/Icons/Social/Social'
 import { ownerConfigs } from '@/utils/ownerConfigs'
+import { Rss } from 'lucide-react'
 
 export function PersonalSkills() {
   return (
@@ -18,11 +17,11 @@ export function PersonalSkills() {
         </Link>
 
         <Link aria-label="Go to Linkedin's author" href={ownerConfigs.linkedinLink}>
-          <LinkedinLogo size={24} />
+          <SocialIcon type="linkedin" />
         </Link>
 
         <Link aria-label="Go to Github's author" href={ownerConfigs.githubLink}>
-          <GithubLogo size={24} />
+          <SocialIcon type="github" />
         </Link>
 
         {/* <Link aria-label="Go to Figma's author" href={ownerConfigs.figmaLink}>

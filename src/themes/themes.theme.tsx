@@ -1,15 +1,13 @@
-'use client'
-
-import { Moon, Sun } from 'phosphor-react'
+import { Moon, Sun } from 'lucide-react'
 
 export const themes = {
   dark: {
     name: 'dark',
-    icon: <Moon size={16} weight="fill" />,
+    icon: <Moon size={16} />,
   },
   light: {
     name: 'light',
-    icon: <Sun size={16} weight="fill" />,
+    icon: <Sun size={16} />,
   },
   // forest: {
   //   name: 'forest',

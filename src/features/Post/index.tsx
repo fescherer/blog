@@ -18,10 +18,6 @@ export function Post({ article }: PostProps) {
     <div className="relative">
       <ReadingBarIndicator />
 
-      {/* <MobileMenuArticle>
-        <AsidePost article={article} />
-      </MobileMenuArticle> */}
-
       <div className="block lg:hidden">
         <AsidePostIndex article={article} />
       </div>

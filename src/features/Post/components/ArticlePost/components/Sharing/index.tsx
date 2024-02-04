@@ -1,7 +1,5 @@
-'use client'
-
-import { FacebookLogo, LinkedinLogo, Plus, TwitterLogo, WhatsappLogo } from 'phosphor-react'
 import { Link } from '@/components/Lib/Link'
+import { Plus } from 'lucide-react'
 
 export function Sharing() {
   return (
@@ -10,23 +8,28 @@ export function Sharing() {
 
       <div className="flex gap-2">
         <Link aria-label="Share this article on Twitter" href="gg">
-          <TwitterLogo size={24} />
+          twitter- x
+          {/* <TwitterLogo size={24} /> */}
         </Link>
 
         <Link aria-label="Share this article on Whatsapp" href="gg">
-          <WhatsappLogo size={24} />
+          Whatsapp
+          {/* <WhatsappLogo size={24} /> */}
         </Link>
 
         <Link aria-label="Share this article on Linkedin" href="gg">
-          <LinkedinLogo size={24} />
+          linkedin
+          {/* <LinkedinLogo size={24} /> */}
         </Link>
 
         <Link aria-label="Share this article on Facebook" href="gg">
-          <FacebookLogo size={24} />
+          facebook
+          {/* <FacebookLogo size={24} /> */}
         </Link>
 
         <Link aria-label="Share this article" href="ddsad">
-          <Plus size={20} />
+          <Plus />
+          {/* <Plus size={20} /> */}
         </Link>
       </div>
     </div>

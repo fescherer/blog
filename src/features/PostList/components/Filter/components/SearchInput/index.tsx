@@ -2,7 +2,7 @@
 
 import type { ChangeEvent, Dispatch, SetStateAction } from 'react'
 import { useSearchContext } from '@/contexts/search.context'
-import { Sliders } from 'phosphor-react'
+import { Sliders } from 'lucide-react'
 
 type SearchInputProps = {
   setIsFilterTrigged: Dispatch<SetStateAction<boolean>>

@@ -1,8 +1,7 @@
 'use client'
 
-import { Copy } from 'phosphor-react'
 import { useState } from 'react'
-
+import { Copy, CopyCheck } from 'lucide-react'
 interface CopyButtonProps {
   text: string
 }
@@ -19,12 +18,15 @@ export function CopyButton({ text }: CopyButtonProps) {
 
     setTimeout(() => {
       setIsCopied(false)
-    }, 5000)
+    }, 1000)
   }
 
   return (
     <button aria-label="Copy code" type="button" disabled={isCopied} onClick={copy}>
-      <Copy size={20} weight={isCopied ? 'fill' : 'regular'} />
+      {/* <Copy size={20} weight={isCopied ? 'fill' : 'regular'} /> */}
+      {
+        isCopied ? <CopyCheck className="text-brand-primary" /> : <Copy className="transition-all hover:text-brand-primary" />
+      }
     </button>
   )
 }

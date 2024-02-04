@@ -1,6 +1,6 @@
 'use client'
 
-import { Bird, Laptop, User } from 'phosphor-react'
+import { Dice6, Laptop, User } from 'lucide-react'
 
 export function getCategoryIcon(type: string) {
   switch (type) {
@@ -11,6 +11,6 @@ export function getCategoryIcon(type: string) {
       return <User size={16} />
 
     default:
-      return <Bird size={16} />
+      return <Dice6 size={16} />
   }
 }
