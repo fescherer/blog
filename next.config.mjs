@@ -27,14 +27,6 @@ const nextConfig = {
       },
     ],
   },
-  async rewrites() {
-    return [
-      {
-        source: '/rss.xml',
-        destination: '/api/feed/rss',
-      },
-    ]
-  },
 }
 
 /** @type {import('rehype-pretty-code').Options} */
