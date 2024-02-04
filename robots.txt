@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: http://blog.felipescherer.com/sitemap.xml
