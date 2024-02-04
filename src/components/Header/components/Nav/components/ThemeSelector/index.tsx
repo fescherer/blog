@@ -2,11 +2,11 @@
 
 import { setCookie } from 'cookies-next'
 import { useEffect, useState } from 'react'
-import { CaretDown } from 'phosphor-react'
 import clsx from 'clsx'
 import { themes } from '@/themes/themes.theme'
 import { Dropdown } from '@/components/Primitives'
 import { Separator } from '@/components/Lib'
+import { ChevronDown } from 'lucide-react'
 
 interface ThemeSelectorProps {
   theme: string
@@ -48,7 +48,7 @@ export function ThemeSelector({ theme }: ThemeSelectorProps) {
       </button>
 
       <Dropdown>
-        <Dropdown.Trigger aria-label="Open menu with more themes to choose"><CaretDown /></Dropdown.Trigger>
+        <Dropdown.Trigger aria-label="Open menu with more themes to choose"><ChevronDown /></Dropdown.Trigger>
 
         <Dropdown.Content>
           <ul>

@@ -1,12 +1,9 @@
-'use client'
-
 import readingTime from 'reading-time'
-import { ArrowFatLinesUp, CalendarBlank, Coffee } from 'phosphor-react'
 import { ItemHeader, ItemSeparator } from './components'
 
-// import type { Doc } from 'contentlayer/generated'
 import { getTimeFormated } from '@/utils/functions'
 import type { IArticle } from '@/@types/Article'
+import { Calendar, CalendarClock, Coffee } from 'lucide-react'
 
 interface ArticleHeaderProps {
   article: IArticle
@@ -30,7 +27,7 @@ export function ArticleHeader({ article }: ArticleHeaderProps) {
 
         <small className="flex flex-wrap gap-4 text-xs">
           <ItemHeader
-            icon={<CalendarBlank size={12} />}
+            icon={<Calendar size={12} />}
             date={publishedDate}
             title={`Published at ${publishedDate}`}
           />
@@ -41,7 +38,7 @@ export function ArticleHeader({ article }: ArticleHeaderProps) {
             updatedDate
               ? (
                 <ItemHeader
-                  icon={<ArrowFatLinesUp size={12} />}
+                  icon={<CalendarClock size={12} />}
                   date={updatedDate}
                   title={`Updated at ${updatedDate}`}
                 />

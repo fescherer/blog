@@ -2,8 +2,6 @@ import { AdContainer, ArticleLinkCard, AsidePostIndex } from './components'
 import type { IArticle } from '@/@types/Article'
 import { AllCategories, AllTags } from '@/components/AsideAllTagsAndCategories/components'
 
-// import type { Doc } from 'contentlayer/generated'
-
 interface AsidePostProps {
   article: IArticle
   className?: string

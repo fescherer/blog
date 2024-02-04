@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-// import type { Doc } from 'contentlayer/generated'
 import { authors } from '@/utils/authors'
 import { SocialIcon } from '@/Icons/Social/Social'
 import { GithubIcon } from '@/Icons/Social'

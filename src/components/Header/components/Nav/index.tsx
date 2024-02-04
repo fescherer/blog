@@ -1,10 +1,10 @@
 'use client'
 
 import clsx from 'clsx'
-import { List, X } from 'phosphor-react'
 import { useState } from 'react'
 import { ThemeSelector } from './components'
 import { Link } from '@/components/Lib/Link'
+import { List, X } from 'lucide-react'
 
 interface NavProps {
   theme: string

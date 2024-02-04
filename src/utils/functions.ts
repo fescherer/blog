@@ -1,6 +1,3 @@
-// import type { IRecommendedArticle } from '@/@types'
-// import { type Doc, allDocs } from 'contentlayer/generated'
-
 import type { IArticle, IRecommendedArticle } from '@/@types/Article'
 
 export function getTimeFormated(dateString: string) {
