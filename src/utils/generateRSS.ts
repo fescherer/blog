@@ -1,9 +1,8 @@
 import { Feed } from 'feed'
-
-// import { allDocs } from 'contentlayer/generated'
 import { ownerConfigs, ownerMetaData } from '@/utils/ownerConfigs'
+import { getPostsData } from './functions/getPostsData'
 
-export function generateRss() {
+export async function generateRss() {
   const feed = new Feed({
     title: ownerConfigs.name,
     description: ownerMetaData.description,
@@ -26,19 +25,24 @@ export function generateRss() {
     },
   })
 
-  // allDocs.map((post) => {
-  //   return feed.addItem({
-  //     title: post.title,
-  //     id: `${ownerMetaData.url}${post.slug}`,
-  //     guid: `${ownerMetaData.url}${post.slug}`,
-  //     link: `${ownerMetaData.url}${post.slug}`,
-  //     date: new Date(post.published_date),
-  //     description: post.body.raw.slice(0, 300),
-  //     author: [{ name: post.author, link: ownerConfigs.githubLink, email: ownerConfigs.githubLink }],
-  //     content: post.body.raw,
-  //     image: post.image,
-  //   })
-  // })
+  const articles = await getPostsData()
+  articles.map((post) => {
+    return feed.addItem({
+      title: post.title,
+      id: `${ownerMetaData.url}/${post.category}/${post.slug}`,
+      guid: `${ownerMetaData.url}/${post.category}/${post.slug}`,
+      link: `${ownerMetaData.url}/${post.category}/${post.slug}`,
+      date: new Date(post.published_date),
+      description: post.content.slice(0, 300),
+      author: [{ name: post.author, link: ownerConfigs.githubLink, email: ownerConfigs.githubLink }],
+      content: 'post.content',
+      image: post.image,
+    })
+  })
+
+  feed.addCategory('Technology')
+
+  feed.addContributor({ name: ownerConfigs.name, link: ownerConfigs.githubLink, email: ownerConfigs.githubLink })
 
   return {
     rss: feed.rss2(),
