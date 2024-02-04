@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import { getPostContent } from './getPostContent'
 import type { IArticle } from '@/@types/Article'
 
@@ -23,22 +24,6 @@ export async function getPostData(blogType: string, blogSlug: string): Promise<I
       throw new Error(`Unable to find metadata in file ${blogSlug}.mdx`)
     }
   } catch (error: any) {
-    return {
-      slug: '',
-      category: '',
-      title: '',
-      published_date: '',
-      updated_at: '',
-      image: '',
-      alt: '',
-      video_url: '',
-      project_url: '',
-      figma_url: '',
-      github_url: '',
-      tags: [],
-      author: '',
-      sources: [],
-      content: '',
-    }
+    notFound()
   }
 }
