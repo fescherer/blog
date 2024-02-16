@@ -1,11 +1,15 @@
 Contentful
+decrypter
 elif
+encrypter
 Faceset
 fescherer
 Ichio
 onready
 pixelart
+scripter
 spritesheet
+Stackoverflow
 tailwindcss
 Themer
 Tilesets
