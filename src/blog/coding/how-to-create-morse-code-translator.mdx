@@ -1,0 +1,204 @@
+export const metadata = {
+  title: 'How to create morse code translator',
+  published_date: '2024-02-16T21:00:00.500Z',
+  updated_at: '2024-02-16T21:00:00.500Z',
+  image: 'https://github.com/fescherer/blog/assets/62115215/ba31de40-2507-4dd1-ab66-829ecf1df224',
+  alt: 'How to create morse translator',
+  video_url: '',
+  project_url: 'https://morse-secret-scripter.felipescherer.com',
+  figma_url: '',
+  github_url: 'https://github.com/fescherer/morse-secret-scripter',
+  tags: ['javascript', 'dictionary'],
+  author: 'fescherer',
+  sources: [
+    {
+      date: '2024-02-16T18:00:00.500Z',
+      title: 'Hamilton Public Library- Learning at home - MORSE CODE',
+      link: 'https://www.hpl.ca/sites/default/files/L%40H%20Morse%20Code.pdf',
+    },
+    {
+      date: '2024-02-16T18:00:00.500Z',
+      title: 'Stackoverflow - Using JavaScript to encode morse code',
+      link: 'https://stackoverflow.com/questions/26059170/using-javascript-to-encode-morsecode'
+    },
+        {
+      date: '2024-02-16T18:00:00.500Z',
+      title: 'Wikipedia - Morse Code',
+      link: 'https://en.wikipedia.org/wiki/Morse_code'
+    }
+  ],
+}
+
+Did you know what is morse code? It is a method of communication using short and long signals that are common represented as dots and dashes. Developed to transmit human language to math language and as only translate letters it became and international standard.
+
+## Short Answer
+
+To create a morse code encrypter and decrypter you have two methods. One can use the [ASCII table](https://www.lookuptables.com/text/ascii-table) as described in this [answer of Stackoverflow](https://stackoverflow.com/a/26059284). But my preferred way is making a dictionary mapping all valid characters, which would be letters A from Z, number 0 to 9 and a blank space to separate words, anything else would be `undefined` and you can handle as you want.
+
+1. Create a dictionary containing all valid characters:
+```typescript
+const dictionary = {
+  'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..-.', 'g': '--.', 'h': '....',  'i': '..', 'j': '.---', 'k': '-.-', 'l': '.-..', 'm': '--', 'n': '-.', 'o': '---', 'p': '.--.', 'q': '--.-', 'r': '.-.', 's': '...', 't': '-', 'u': '..-', 'v': '...-', 'w': '.--', 'x': '-..-', 'y': '-.--', 'z': '--..', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', '0': '-----', ' ': '/'
+}
+```
+
+2. Add function to transform letters into morse code:
+```typescript
+  function transformToMorse(rawText: string) {
+    return rawText.split('').map(letter => dictionary[letter.toLowerCase()]).join(' ')
+  }
+```
+
+---
+
+## Long Answer
+### What is morse code?
+
+Morse code was created by [Samuel Morse](https://en.wikipedia.org/wiki/Samuel_Morse) and [Alfred Vail](https://en.wikipedia.org/wiki/Alfred_Vail). It is a method to encode human words characters into just short and long sequences that can be anything from lights, sounds, smoke, anything you can make a short or long signal can be used to represent any word or number from *a-z* and *0-9*. It became very popular in telegraph - grandfather of communication that used morse code to transmit messages from short and long bip. They even had a profession to people hearing and translating the messages- [telegraphist](https://en.wikipedia.org/wiki/Telegraphist).
+
+Morse code works by using a [sequence of short or long signal](https://en.wikipedia.org/wiki/Morse_code) to represent one letter/number. For example, the letter **t** can be represent by a long signal **-**, but the letter **g** is two long signal and one short signal **--.**. With this you can make a very good system of communication to transform human language into natural language.
+
+It's also very popular on pop culture as almost every riddle movie has a part using morse to encrypt or decrypt some kind of message.
+
+### Alphabet
+|Character | Morse Equivalent|
+|----|----|
+| 0 | ----- |
+| 1 | .---- |
+| 2 | ..--- |
+| 3 | ...-- |
+| 4 | ....- |
+| 5 | ..... |
+| 6 | -.... |
+| 7 | --... |
+| 8 | ---.. |
+| 9 | ----. |
+| a | .- |
+| b | -... |
+| c | -.-. |
+| d | -.. |
+| e | . |
+| f | ..-. |
+| g | --. |
+| h | .... |
+| i | .. |
+| j | .--- |
+| k | -.- |
+| l | .-.. |
+| m | -- |
+| n | -. |
+| o | --- |
+| p | .--. |
+| q | --.- |
+| r | .-. |
+| s | ... |
+| t | - |
+| u | ..- |
+| v | ...- |
+| w | .-- |
+| x | -..- |
+| y | -.-- |
+| z | --.. |
+
+### Google learn morse
+
+If you stay curious to learn more about morse code, I highly recommend you try [Google's morse learn](https://morse.withgoogle.com/learn). They use images to help us remember the letters.
+
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/65e73bb9-c4a8-4316-9391-a001b0d77d2a"
+  source="https://kpronline.com/blog/learn-morse-code-with-the-morse-typing-trainer"
+  name="Code cues used in the Morse Typing Trainer"
+  alt="List of all codes cues used in morse typing trainer"
+/>
+
+### Javascript/Typescript functions
+
+To create a morse code encrypter and decrypter you have two methods.
+
+- Using ASCII table
+You can use the [ASCII table](https://www.lookuptables.com/text/ascii-table) as described in this [answer of Stackoverflow](https://stackoverflow.com/a/26059284). By knowing that ASCII table characters *a - z* goes from *97* to *122* and numbers *0 - 9* goes from *48* to *57* you can do something like this.
+
+1. First create 2 arrays containing the characters and one constant for the space.
+```typescript
+// Characters in order A - Z and 0 - 9
+  const charactersAZ = ['.-', '-...','-.-.','-..','.','..-.','--.','....','..','.---','-.-','.-..','--','-.','---','.--.','--.-','.-.','...','-','..-','...-','.--','-..-','-.--','--..']
+  const numbers09 = ['-----', '.----', '..---', '...--', '....-', '.....', '-....', '--...', '---..', '----.']
+  const characterSpace = '/'
+```
+
+2. Now you need to remove all weird characters that does not have an index on our arrays
+```typescript
+  function cleanRawText(rawText: string) {
+    return rawText.toLowerCase().replace(/[^a-z0-9\s]/g, "");
+  }
+```
+
+3. Finally make a function to return the encrypted character.
+```typescript
+  const isNumberRegex = /^\d+$/
+
+function transformToMorse(rawText: string) {
+  const formatText = cleanRawText(rawText);
+  return formatText.split('').map(letter => {
+    if(letter === " ") return characterSpace;
+
+    asciiCode = letter.charCodeAt(letter);
+    if(isNumberRegex.test(letter)) return numbers09[asciiCode - 48];
+    else return charactersAZ[asciiCode - 97];
+  }).join(' ');
+}
+```
+
+4. Test the functions
+```typescript
+  transformToMorse('Hello world')
+  // result .... . .-.. .-.. --- / .-- --- .-. .-.. -..
+```
+
+
+-Using dictionary
+
+My preferred way is making a dictionary mapping all valid characters, which would be letters A from Z, number 0 to 9 and a blank space to separate words, anything else would be `undefined` and you can handle as you want.
+
+1. Create a dictionary containing all valid characters:
+```typescript
+  const dictionary = {
+    'a': '.-', 'b': '-...', 'c': '-.-.', 'd': '-..', 'e': '.', 'f': '..-.', 'g': '--.', 'h': '....',  'i': '..', 'j': '.---', 'k': '-.-', 'l': '.-..', 'm': '--', 'n': '-.', 'o': '---', 'p': '.--.', 'q': '--.-', 'r': '.-.', 's': '...', 't': '-', 'u': '..-', 'v': '...-', 'w': '.--', 'x': '-..-', 'y': '-.--', 'z': '--..', '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.', ' ': '/'
+  }
+```
+
+2. Add function to transform letters into morse code:
+```typescript
+  function transformToMorse(rawText: string) {
+    return rawText.split('').map(letter => dictionary[letter.toLowerCase()]).join(' ')
+  }
+```
+
+3. Test it
+```typescript
+  transformToMorse('Hello world')
+  // result .... . .-.. .-.. --- / .-- --- .-. .-.. -..
+```
+
+Which one of them should I choose? Well, I think is up to you, personally I will not go to performance side because both has `map` method and the others doesn't make that much difference. I would choose based on readability as the first one the arrays seems a bit confusing and object making a dictionary seems much more readable for me.
+
+Okay, but this is only an encrypter, where is the decrypter? For this, just invert the logic, make a dictionary containing morse code as keys, letters with values and the backslash for white space.
+
+### Bonus: UI - NextJS - Tailwind
+
+This article only shows how to convert, but not how to create an application with these logics. I'am gonna leave this for you to create a design. I personally recommend to create a [NextJS](https://nextjs.org/docs/getting-started/installation) project with [TailwindCSS](https://tailwindcss.com/docs/installation) for styling and [Vercel](https://vercel.com) as free host.
+
+[You can checkout the source code to get inspired](https://github.com/fescherer/morse-secret-scripter)
+
+<Img
+  src="https://github.com/fescherer/blog/assets/62115215/e3c04fd3-5140-484a-8063-541abe46f66f"
+  source="https://morse-secret-scripter.felipescherer.com"
+  name="Morse secret scripter home page"
+  alt="Home page of morse secret scripter containing input and output text areas for encrypt and decrypt"
+/>
+
+### Conclusion
+
+In this article you learnt the history of morse code and how to create simple functions to translate/encrypt/decrypt morse code using Javascript/Typescript. Feel free to leave any suggestions, corrections and tips. Thank you for reading and see you in the next article. Have a nice day. 😎✨✨✨😎
+
+
