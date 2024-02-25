@@ -10,6 +10,7 @@ export const ownerConfigs = {
   youtubeLink: '',
   tiktokLink: '',
   twitterLink: '',
+  repo: 'https://github.com/fescherer/blog',
 }
 
 export const ownerMetaData = {

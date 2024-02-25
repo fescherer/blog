@@ -6,6 +6,7 @@ import { SourcesRef } from './components/SourcesRef'
 import { NavigationHeader } from './components/NavigationHeader'
 import { Separator } from '@/components/Lib'
 import type { IArticle } from '@/@types/Article'
+import { ContributeInGithub } from './components/ContributeInGithub'
 
 interface ArticlePostProps {
   article: IArticle
@@ -60,6 +61,8 @@ export function ArticlePost({ article }: ArticlePostProps) {
           : null
       } */}
 
+      <ContributeInGithub article={article} />
+      <Separator dataOrientation="horizontal" />
       <Author article={article} />
       <Separator dataOrientation="horizontal" />
       <RecommendedArticles article={article} />
