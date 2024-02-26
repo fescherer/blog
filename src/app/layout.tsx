@@ -9,6 +9,7 @@ import { CookieMessage } from '@/components/CookieMessage'
 import { themes } from '@/themes/serverSideThemes'
 import { ownerMetaData } from '@/utils/ownerConfigs'
 import { generateRss } from '@/utils/generateRSS'
+import LoadingBar from '@/components/LoadingBar'
 
 const APP_DEFAULT_TITLE = 'My Awesome PWA App'
 
@@ -119,15 +120,16 @@ export default async function RootLayout({
       </head>
 
       <body className="flex w-full flex-col gap-8 bg-bg-background font-satoshi text-bg-on-background">
+        <LoadingBar>
+          <main className="m-auto flex w-full max-w-screen-lg flex-1 pt-24 sm:px-4">
+            {children}
+            {typeof window !== 'undefined' && <CookieMessage />}
+          </main>
 
-        <Header />
+          <Footer />
+          <Header />
+        </LoadingBar>
 
-        <main className="m-auto flex w-full max-w-screen-lg flex-1 pt-24 sm:px-4">
-          {children}
-          {typeof window !== 'undefined' && <CookieMessage />}
-        </main>
-
-        <Footer />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4BVC96WBH7" />
 
         <Script id="google-analytics">
@@ -139,6 +141,7 @@ export default async function RootLayout({
           gtag('config', 'G-4BVC96WBH7');
         `}
         </Script>
+
       </body>
     </html>
   )

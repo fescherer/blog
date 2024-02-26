@@ -6,6 +6,6 @@ export function ReadingBarIndicator() {
   const value = useScrollBarPercentage()
 
   return (
-    <div className="sticky top-[70px] z-50 h-1 rounded-lg bg-brand-primary opacity-50" style={{ width: `${value}%` }} />
+    <div className="sticky top-[70px] z-50 h-1 rounded-lg bg-bg-on-background opacity-20" style={{ width: `${value}%` }} />
   )
 }
