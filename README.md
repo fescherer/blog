@@ -11,7 +11,7 @@
   <br />
   <a href="https://github.com/fescherer/blog">
     <img src="https://github.com/fescherer/blog/assets/62115215/832af738-c716-4a32-85a7-06e9f464b5c5" alt="Logo" width="80" height="80">
-   </a>
+   </a> 
 
 <h3 align="center">Blog</h3>
 
