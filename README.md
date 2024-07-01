@@ -30,3 +30,23 @@ This blog is your one-stop shop for all things tech, game development, and the c
 ![Article Page](https://github.com/fescherer/fennec-tales-blog-v1/assets/62115215/53151c02-b5c7-4f28-bad8-92a24626d30c)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- **********************🐲Contributors🐲********************** -->
+<a name="contributors"></a>
+
+## 🤗 Contributors
+
+<table>
+  <tr>
+    <td align="center">
+        <a href=https://github.com/fescherer>
+          <img src=https://github.com/fescherer.png width="100px;" alt="Felipe Scherer Picture"/><br>
+          <sub>
+            <b>Felipe Scherer</b>
+          </sub>
+        </a>
+      </td>
+  </tr>
+</table>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
